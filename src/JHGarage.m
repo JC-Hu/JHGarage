@@ -10,4 +10,8 @@
 
 @implementation JHGarage
 
++ (void)test
+{
+    NSLog(@"123");
+}
 @end
