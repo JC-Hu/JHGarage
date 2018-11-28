@@ -13,6 +13,12 @@ s.source       = { :git => "https://github.com/JC-Hu/JHGarage.git", :tag => s.ve
 s.frameworks   =  'Foundation','UIKit'
 s.requires_arc = true
 
+# Pod Dependencies
+#s.dependency   'AFNetworking',
+#s.dependency   'SDWebImage'
+#s.dependency   'JHCellConfig'
+#s.dependency   'Masonry'
+
 s.source_files = 'src/**/*.{h,m,c,mm}'
 
 end

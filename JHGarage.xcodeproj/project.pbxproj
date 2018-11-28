@@ -14,6 +14,7 @@
 		85FC833521A6F4E00067F46B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FC833321A6F4E00067F46B /* LaunchScreen.storyboard */; };
 		85FC833821A6F4E00067F46B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC833721A6F4E00067F46B /* main.m */; };
 		85FC834021A6F5600067F46B /* JHGarage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC831E21A6EAB60067F46B /* JHGarage.m */; };
+		B24778F2C7D70732A3A73C53 /* libPods-JHGarage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57376C6813CC44B952A202D5 /* libPods-JHGarage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24778F2C7D70732A3A73C53 /* libPods-JHGarage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85FC833921A6F4E00067F46B /* Build configuration list for PBXNativeTarget "JHGarage" */;
 			buildPhases = (
+				77D41A17DB21BF0BB76D0711 /* [CP] Check Pods Manifest.lock */,
 				85FC832221A6F4DF0067F46B /* Sources */,
 				85FC832321A6F4DF0067F46B /* Frameworks */,
 				85FC832421A6F4DF0067F46B /* Resources */,
+				2768A538C51973A722CE3DA0 /* [CP] Embed Pods Frameworks */,
+				B9E94C285C94B6DD0337A9D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +177,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2768A538C51973A722CE3DA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77D41A17DB21BF0BB76D0711 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JHGarage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9E94C285C94B6DD0337A9D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SIAlertView/SIAlertView/SIAlertView.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SIAlertView.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		85FC832221A6F4DF0067F46B /* Sources */ = {
@@ -321,14 +384,12 @@
 		};
 		85FC833A21A6F4E00067F46B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DFA5293930547C84573D880 /* Pods-JHGarage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JHGarage/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.JHGarage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -337,14 +398,12 @@
 		};
 		85FC833B21A6F4E00067F46B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C7ABE95832A852F61E76DB5 /* Pods-JHGarage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JHGarage/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.JHGarage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
