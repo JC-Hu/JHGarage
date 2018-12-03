@@ -27,7 +27,7 @@ target 'JHGarage' do
   pod 'WZLBadge'
   
   # Table
-  pod 'JHCellConfig'
+  pod 'JHCellConfig', '~> 2.0.0'
   
   
   # other

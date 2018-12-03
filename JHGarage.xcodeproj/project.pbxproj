@@ -88,6 +88,13 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		852697D021B51F49009F2CE6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		85FC828421A6E5670067F46B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +122,7 @@
 			children = (
 				85FC832021A6EAB60067F46B /* JHGarage.h */,
 				85FC831E21A6EAB60067F46B /* JHGarage.m */,
+				852697D021B51F49009F2CE6 /* Network */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -172,7 +180,6 @@
 				85FC832221A6F4DF0067F46B /* Sources */,
 				85FC832321A6F4DF0067F46B /* Frameworks */,
 				85FC832421A6F4DF0067F46B /* Resources */,
-				2768A538C51973A722CE3DA0 /* [CP] Embed Pods Frameworks */,
 				B9E94C285C94B6DD0337A9D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -241,21 +248,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2768A538C51973A722CE3DA0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		77D41A17DB21BF0BB76D0711 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
