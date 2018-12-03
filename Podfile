@@ -27,7 +27,8 @@ target 'JHGarage' do
   pod 'WZLBadge'
   
   # Table
-  pod 'JHCellConfig', :git => 'https://github.com/JC-Hu/JHCellConfig.git', branch: 'develop'
+  pod 'JHCellConfig'
+  
   
   # other
   pod 'IQKeyboardManager'

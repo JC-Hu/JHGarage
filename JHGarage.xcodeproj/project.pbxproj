@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852697C821B4CD32009F2CE6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852697C721B4CD32009F2CE6 /* Tests.m */; };
+		852697CF21B4CD7A009F2CE6 /* JHGarage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC831E21A6EAB60067F46B /* JHGarage.m */; };
 		85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832921A6F4DF0067F46B /* AppDelegate.m */; };
 		85FC832D21A6F4DF0067F46B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832C21A6F4DF0067F46B /* ViewController.m */; };
 		85FC833021A6F4DF0067F46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FC832E21A6F4DF0067F46B /* Main.storyboard */; };
@@ -17,10 +19,23 @@
 		B24778F2C7D70732A3A73C53 /* libPods-JHGarage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57376C6813CC44B952A202D5 /* libPods-JHGarage.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		852697CA21B4CD32009F2CE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85FC828521A6E5670067F46B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85FC832521A6F4DF0067F46B;
+			remoteInfo = JHGarage;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		57376C6813CC44B952A202D5 /* libPods-JHGarage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JHGarage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7ABE95832A852F61E76DB5 /* Pods-JHGarage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHGarage.release.xcconfig"; path = "Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage.release.xcconfig"; sourceTree = "<group>"; };
 		5DFA5293930547C84573D880 /* Pods-JHGarage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHGarage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage.debug.xcconfig"; sourceTree = "<group>"; };
+		852697C521B4CD32009F2CE6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		852697C721B4CD32009F2CE6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		852697C921B4CD32009F2CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85FC831E21A6EAB60067F46B /* JHGarage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGarage.m; sourceTree = "<group>"; };
 		85FC831F21A6EAB60067F46B /* JHGarage.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JHGarage.podspec; sourceTree = "<group>"; };
 		85FC832021A6EAB60067F46B /* JHGarage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGarage.h; sourceTree = "<group>"; };
@@ -37,6 +52,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		852697C221B4CD32009F2CE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85FC832321A6F4DF0067F46B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,12 +79,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		852697C621B4CD32009F2CE6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				852697C721B4CD32009F2CE6 /* Tests.m */,
+				852697C921B4CD32009F2CE6 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		85FC828421A6E5670067F46B = {
 			isa = PBXGroup;
 			children = (
 				85FC831F21A6EAB60067F46B /* JHGarage.podspec */,
 				85FC831D21A6EAB60067F46B /* src */,
-				85FC832721A6F4DF0067F46B /* JHGarage */,
+				85FC832721A6F4DF0067F46B /* Demo */,
+				852697C621B4CD32009F2CE6 /* Tests */,
 				85FC828E21A6E5670067F46B /* Products */,
 				39A7A22D0B125E4345F4AC48 /* Pods */,
 				DDFA6F7283C3BE9904D1A0DE /* Frameworks */,
@@ -73,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				85FC832621A6F4DF0067F46B /* JHGarage.app */,
+				852697C521B4CD32009F2CE6 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +119,7 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		85FC832721A6F4DF0067F46B /* JHGarage */ = {
+		85FC832721A6F4DF0067F46B /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				85FC832821A6F4DF0067F46B /* AppDelegate.h */,
@@ -99,7 +132,7 @@
 				85FC833621A6F4E00067F46B /* Info.plist */,
 				85FC833721A6F4E00067F46B /* main.m */,
 			);
-			path = JHGarage;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		DDFA6F7283C3BE9904D1A0DE /* Frameworks */ = {
@@ -113,6 +146,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		852697C421B4CD32009F2CE6 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 852697CC21B4CD32009F2CE6 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				852697C121B4CD32009F2CE6 /* Sources */,
+				852697C221B4CD32009F2CE6 /* Frameworks */,
+				852697C321B4CD32009F2CE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				852697CB21B4CD32009F2CE6 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 852697C521B4CD32009F2CE6 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		85FC832521A6F4DF0067F46B /* JHGarage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85FC833921A6F4E00067F46B /* Build configuration list for PBXNativeTarget "JHGarage" */;
@@ -142,6 +193,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Jason Hu";
 				TargetAttributes = {
+					852697C421B4CD32009F2CE6 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					85FC832521A6F4DF0067F46B = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -161,11 +215,19 @@
 			projectRoot = "";
 			targets = (
 				85FC832521A6F4DF0067F46B /* JHGarage */,
+				852697C421B4CD32009F2CE6 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		852697C321B4CD32009F2CE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85FC832421A6F4DF0067F46B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,6 +299,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		852697C121B4CD32009F2CE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				852697CF21B4CD7A009F2CE6 /* JHGarage.m in Sources */,
+				852697C821B4CD32009F2CE6 /* Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85FC832221A6F4DF0067F46B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +320,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		852697CB21B4CD32009F2CE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85FC832521A6F4DF0067F46B /* JHGarage */;
+			targetProxy = 852697CA21B4CD32009F2CE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		85FC832E21A6F4DF0067F46B /* Main.storyboard */ = {
@@ -270,6 +349,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		852697CD21B4CD32009F2CE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		852697CE21B4CD32009F2CE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		85FC82A121A6E5680067F46B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -388,8 +499,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = JHGarage/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.JHGarage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -402,8 +516,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = JHGarage/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.JHGarage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,6 +530,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		852697CC21B4CD32009F2CE6 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				852697CD21B4CD32009F2CE6 /* Debug */,
+				852697CE21B4CD32009F2CE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		85FC828821A6E5670067F46B /* Build configuration list for PBXProject "JHGarage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

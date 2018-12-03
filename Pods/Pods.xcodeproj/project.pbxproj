@@ -2872,28 +2872,6 @@
 			};
 			name = Debug;
 		};
-		631C8837574FF326843A5D403DD20A17 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 938773C6035BC082F337CC451D536728 /* JHCellConfig.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/JHCellConfig/JHCellConfig-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		64186F97880A107DF2B37F748D0A2A13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A790524B1CFC052FF1DE8E17BECFA782 /* SIAlertView.xcconfig */;
@@ -3130,6 +3108,28 @@
 			};
 			name = Release;
 		};
+		99C5234868C294EB75EC560F5638A551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 938773C6035BC082F337CC451D536728 /* JHCellConfig.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/JHCellConfig/JHCellConfig-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		A09C955DC6696E0B4F68042D6B1A8E17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A8AF2E501F676501A558B240596C463A /* YYModel.xcconfig */;
@@ -3151,6 +3151,27 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		A0C8E0DA02716B7EC82AC324DA4A95F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 938773C6035BC082F337CC451D536728 /* JHCellConfig.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/JHCellConfig/JHCellConfig-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		A9FCA7D51F8002A41B4D414CBDA298DE /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3283,27 +3304,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		D0E268D7F3B61577D8E97A428E2A48F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 938773C6035BC082F337CC451D536728 /* JHCellConfig.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/JHCellConfig/JHCellConfig-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		DB25E09D9CA74BF7684F14769B7EF27C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3604,8 +3604,8 @@
 		A3CA74C59A66C201A6BAACEB3C45603E /* Build configuration list for PBXNativeTarget "JHCellConfig" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D0E268D7F3B61577D8E97A428E2A48F6 /* Debug */,
-				631C8837574FF326843A5D403DD20A17 /* Release */,
+				A0C8E0DA02716B7EC82AC324DA4A95F6 /* Debug */,
+				99C5234868C294EB75EC560F5638A551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
