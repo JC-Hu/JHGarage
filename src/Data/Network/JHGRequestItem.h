@@ -47,15 +47,13 @@ typedef void(^JHGRequestFailureBlock)(NSDictionary *responseData, NSError* error
 @property (nonatomic, copy) JHGRequestSuccessBlock successBlock;
 @property (nonatomic, copy) JHGRequestFailureBlock failureBlock;
 
-@end
-
-@interface JHGRequestItem (AutoHUD)
-
+#pragma mark - AutoHUD AutoBlank
 @property (nonatomic, weak) UIViewController <JHGRequestItemHUDDelegate,JHGRequestItemBlankDelegate>*vcRelated;
 
 @property (nonatomic, assign) BOOL autoHUD; // auto show process & error HUD,default YES
 @property (nonatomic, assign) BOOL onlyErrorHUD; // only show error HUD when autoHUD is on ,default NO
 
 @property (nonatomic, assign) BOOL autoShowBlankContent; // if set YES, will show BlankContentView(if needBlankContent) when request fail or empty array, default NO.
+
 
 @end

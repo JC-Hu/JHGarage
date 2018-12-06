@@ -5,11 +5,11 @@
 
 #import "JHGBaseViewController.h"
 
-//#import "ZTBaseRequestItem.h"
+#import "JHGRequestItem.h"
 
 #import "Toast.h"
 
-@interface JHGBaseViewController () //<JHRequestItemHUDDelegate, JHRequestItemBlankDelegate>
+@interface JHGBaseViewController () <JHGRequestItemHUDDelegate, JHGRequestItemBlankDelegate>
 @end
 
 @implementation JHGBaseViewController
@@ -80,83 +80,83 @@
 
 
 #pragma - HTTP
-//- (void)requestWithItem:(ZTBaseRequestItem *)item
-//{
-//    item.vcRelated = self;
-//
-//    [item sendRequest];
-//}
-//
-//- (void)requestWithItemNoHUD:(ZTBaseRequestItem *)item
-//{
-//    item.autoHUD = NO;
-//    [self requestWithItem:item];
-//}
-//
-//- (void)requestWithItemOnlyError:(ZTBaseRequestItem *)item
-//{
-//    item.autoHUD = YES;
-//    item.onlyErrorHUD = YES;
-//    [self requestWithItem:item];
-//}
+- (void)requestWithItem:(JHGRequestItem *)item
+{
+    item.vcRelated = self;
 
-//- (void)requestWithMainItem:(ZTBaseRequestItem *)item
-//{
-//    item.autoHUD = YES;
-//    item.autoShowBlankContent = YES;
-//    [self requestWithItem:item];
-//}
+//    [item sendRequest];
+}
+
+- (void)requestWithItemNoHUD:(JHGRequestItem *)item
+{
+    item.autoHUD = NO;
+    [self requestWithItem:item];
+}
+
+- (void)requestWithItemOnlyError:(JHGRequestItem *)item
+{
+    item.autoHUD = YES;
+    item.onlyErrorHUD = YES;
+    [self requestWithItem:item];
+}
+
+- (void)requestWithMainItem:(JHGRequestItem *)item
+{
+    item.autoHUD = YES;
+    item.autoShowBlankContent = YES;
+    [self requestWithItem:item];
+}
 
 
 
 // Auto HUD
-//- (void)requestItemHUDStateShouldChange:(ZTBaseRequestItem *)item loading:(BOOL)loading
-//{
-//    if (!item.autoHUD) {
-//        return;
-//    }
-//    if (loading) {
-//        // 开始请求，加载转圈提示
-//        if (!item.onlyErrorHUD) {
-//            [self showLoadingHUD];
-//        }
-//    } else {
-//        // 请求完成
-//        if (!item.onlyErrorHUD) {
-//            [self hideHUD];
-//        }
-//
-//        if (item.responseDict) {
+- (void)requestItemHUDStateShouldChange:(JHGRequestItem *)item loading:(BOOL)loading
+{
+    if (!item.autoHUD) {
+        return;
+    }
+    if (loading) {
+        // 开始请求，加载转圈提示
+        if (!item.onlyErrorHUD) {
+            [self showLoadingHUD];
+        }
+    } else {
+        // 请求完成
+        if (!item.onlyErrorHUD) {
+            [self hideHUD];
+        }
+
+        if (item.responseDict) {
 //            if (item.responseModel.isOK) {
 //                // 请求成功且数据正确
 //            } else {
 //                // 请求成功但数据异常
 //                [self showToast:item.responseModel.msg];
 //            }
-//        } else {
-//            // 请求失败
-//            [self showToastNetworkError];
-//        }
-//    }
-//}
-//
-//// Auto Blank
-//- (void)requestItemBlankStateShouldChange:(JHRequestItem *)item loading:(BOOL)loading
-//{
-//    // TODO : Auto Blank Function
-//}
-//
-//#pragma mark - HUD
-//- (void)showLoadingHUD
-//{
-//    // TODO: new HUD management system
-//    [[LoadingHUDViewController shareInstance] showHUD];
-//}
-//
-//- (void)hideHUD
-//{
-//    [[LoadingHUDViewController shareInstance] hideHUD];
-//}
+        } else {
+            // 请求失败
+            [self showToastNetworkError];
+        }
+    }
+}
+
+// Auto Blank
+- (void)requestItemBlankStateShouldChange:(JHGRequestItem *)item loading:(BOOL)loading
+{
+    // TODO : Auto Blank Function
+}
+
+#pragma mark - HUD
+- (void)showLoadingHUD
+{
+    // TODO: new HUD management system
+    
+}
+
+- (void)hideHUD
+{
+   
+}
 
 #pragma mark - BlankView
 - (void)showBlankViewForState:(JHBlankContentState)state

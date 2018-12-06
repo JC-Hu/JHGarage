@@ -8,20 +8,6 @@
 
 #import "JHGRequestItem.h"
 
-@interface JHGRequestItem ()
-
-@property (nonatomic, weak) UIViewController <JHGRequestItemHUDDelegate,JHGRequestItemBlankDelegate>*vcRelated;
-
-// - AutoHUD
-@property (nonatomic, assign) BOOL autoHUD;
-@property (nonatomic, assign) BOOL onlyErrorHUD;
-
-// - AutoBlank
-@property (nonatomic, assign) BOOL autoShowBlankContent;
-
-
-@end
-
 @implementation JHGRequestItem
 
 - (instancetype)init
@@ -30,6 +16,7 @@
     {
         self.autoHUD = YES;
         self.onlyErrorHUD = NO;
+        self.autoShowBlankContent = NO;
     }
     return self;
 }

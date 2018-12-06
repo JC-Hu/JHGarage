@@ -5,9 +5,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
+#import <JHCellConfig/JHCellConfig.h>
+#import <Masonry/Masonry.h>
+#import "UIView+JHGShortcut.h"
 
-@class ZTBaseRequestItem;
+@class JHGRequestItem;
 
 typedef NS_ENUM(NSInteger, SortImgType) {
     Type_Base = 0,
@@ -46,9 +49,9 @@ typedef enum : NSUInteger {
 - (void)showToastInNCViewNetworkError;
 
 #pragma - HTTP
-- (void)requestWithItem:(ZTBaseRequestItem *)item;
-- (void)requestWithItemNoHUD:(ZTBaseRequestItem *)item;
-- (void)requestWithItemOnlyError:(ZTBaseRequestItem *)item;
+- (void)requestWithItem:(JHGRequestItem *)item;
+- (void)requestWithItemNoHUD:(JHGRequestItem *)item;
+- (void)requestWithItemOnlyError:(JHGRequestItem *)item;
 
 #pragma mark - HUD
 - (void)showLoadingHUD;

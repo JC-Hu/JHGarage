@@ -5,8 +5,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "JHCellConfig.h"
-#import "Masonry.h"
+#import <JHCellConfig/JHCellConfig.h>
+#import <Masonry/Masonry.h>
 #import "UIView+JHGShortcut.h"
 
 @interface JHGBaseCell : UITableViewCell <JHCellConfigProtocol>
