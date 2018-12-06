@@ -28,13 +28,14 @@ s.dependency   'MBProgressHUD'
 s.dependency   'Masonry'
 s.dependency   'MJRefresh'
 s.dependency   'Toast', '~> 4.0.0'
-s.dependency   'SIAlertView'
-s.dependency   'WZLBadge'
 # Table
 s.dependency   'JHCellConfig','~> 2.0.0'
 # other
 s.dependency   'IQKeyboardManager'
 s.dependency   'NJKWebViewProgress'
+s.dependency   'SIAlertView'
+s.dependency   'WZLBadge'
+s.dependency   'ActionSheetPicker-3.0'
 
 # 工具--
 s.dependency   'INTULocationManager'

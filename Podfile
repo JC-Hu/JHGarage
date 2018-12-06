@@ -24,8 +24,7 @@ target 'JHGarage' do
     pod 'Masonry'
     pod 'MJRefresh'
     pod 'Toast', '~> 4.0.0'
-    pod 'SIAlertView'
-    pod 'WZLBadge'
+    
     
     # Table
     pod 'JHCellConfig', '~> 2.0.0'
@@ -33,7 +32,9 @@ target 'JHGarage' do
     # other
     pod 'IQKeyboardManager'
     pod 'NJKWebViewProgress'
-    
+    pod 'SIAlertView'
+    pod 'WZLBadge'
+    pod 'ActionSheetPicker-3.0'
     
     # 工具--
     pod 'INTULocationManager'
