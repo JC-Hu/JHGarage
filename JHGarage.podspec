@@ -14,11 +14,36 @@ s.frameworks   =  'Foundation','UIKit'
 s.requires_arc = true
 
 # Pod Dependencies
-#s.dependency   'AFNetworking',
-#s.dependency   'SDWebImage'
-#s.dependency   'JHCellConfig'
-#s.dependency   'Masonry'
+
+s.dependency   'YYKit',
+s.dependency   'BlocksKit',
+
+# 网络数据--
+s.dependency   'AFNetworking',
+
+# UI--
+# Basic
+s.dependency   'SDWebImage',
+s.dependency   'MBProgressHUD',
+s.dependency   'Masonry',
+s.dependency   'MJRefresh',
+s.dependency   'Toast', '~> 4.0.0',
+s.dependency   'SIAlertView',
+s.dependency   'WZLBadge',
+# Table
+s.dependency   'JHCellConfig',
+# other
+s.dependency   'IQKeyboardManager',
+s.dependency   'NJKWebViewProgress',
+
+# 工具--
+s.dependency   'INTULocationManager'
+
 
 s.source_files = 'src/**/*.{h,m,c,mm}'
+
+pod 'YYKit'
+
+
 
 end
