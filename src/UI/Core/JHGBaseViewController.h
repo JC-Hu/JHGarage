@@ -7,7 +7,6 @@
 
 #import <Masonry/Masonry.h>
 #import <JHCellConfig/JHCellConfig.h>
-#import <Masonry/Masonry.h>
 #import "UIView+JHGShortcut.h"
 
 @class JHGRequestItem;

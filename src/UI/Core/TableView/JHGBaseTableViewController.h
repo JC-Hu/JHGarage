@@ -5,12 +5,11 @@
 
 #import "JHGBaseViewController.h"
 
-#import "JHCellConfig.h"
-#import "UIView+JHGShortcut.h"
+#import <JHCellConfig/JHCellConfig.h>
 #import "JHGBaseCell.h"
 #import "JHGBlankCell.h"
 
-#import "MJRefresh.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface JHGBaseTableViewController : JHGBaseViewController <UITableViewDataSource,UITableViewDelegate>
 
