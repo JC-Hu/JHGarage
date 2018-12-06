@@ -6,7 +6,7 @@
 #import <UIKit/UIKit.h>
 
 // Tool
-#import "JHGMarcoTools.h"
+#import "JHMarcoTools.h"
 #import "YYModel.h"
 
 // Network
