@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "JHGarage.h"
+
 @interface ViewController ()
 
 @end
