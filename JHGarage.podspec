@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
 s.name         = "JHGarage"
-s.version      = "0.0.1"
+s.version      = "0.0.2"
 s.summary      = "Personal Usage."
 s.homepage     = "https://github.com/JC-Hu/JHGarage"
 s.license      = "MIT"
@@ -31,7 +31,7 @@ s.dependency   'Toast', '~> 4.0.0',
 s.dependency   'SIAlertView',
 s.dependency   'WZLBadge',
 # Table
-s.dependency   'JHCellConfig',
+s.dependency   'JHCellConfig','~> 2.0.0',
 # other
 s.dependency   'IQKeyboardManager',
 s.dependency   'NJKWebViewProgress',
