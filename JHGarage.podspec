@@ -25,7 +25,7 @@ s.dependency   'YYDispatchQueuePool'
 s.dependency   'YYAsyncLayer'
 
 # 网络数据--
-s.dependency   'AFNetworking'
+s.dependency   'AFNetworking','~> 3.2.1'
 
 # UI--
 # Basic

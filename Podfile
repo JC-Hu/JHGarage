@@ -9,16 +9,16 @@ target 'JHGarage' do
     inhibit_all_warnings!
     
     pod 'BlocksKit', '~> 2.2.5'
-    pod 'YYModel',
-    pod 'YYCache',
-    pod 'YYImage',
-    pod 'YYWebImage',
-    pod 'YYText',
-    pod 'YYDispatchQueuePool',
-    pod 'YYAsyncLayer',
+    pod 'YYModel'
+    pod 'YYCache'
+    pod 'YYImage'
+    pod 'YYWebImage'
+    pod 'YYText'
+    pod 'YYDispatchQueuePool'
+    pod 'YYAsyncLayer'
     
     # 网络数据--
-    pod 'AFNetworking'
+    pod 'AFNetworking','~> 3.2.1'
     
     # 本地数据--
     pod 'FMDB'
