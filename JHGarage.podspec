@@ -15,8 +15,14 @@ s.requires_arc = true
 
 # Pod Dependencies
 
-s.dependency   'YYKit'
 s.dependency   'BlocksKit'
+s.dependency   'YYModel'
+s.dependency   'YYCache'
+s.dependency   'YYImage'
+s.dependency   'YYWebImage'
+s.dependency   'YYText'
+s.dependency   'YYDispatchQueuePool'
+s.dependency   'YYAsyncLayer'
 
 # 网络数据--
 s.dependency   'AFNetworking'

@@ -8,8 +8,14 @@ target 'JHGarage' do
     # Pods for JHGarage
     inhibit_all_warnings!
     
-    pod 'YYKit'
     pod 'BlocksKit', '~> 2.2.5'
+    pod 'YYModel',
+    pod 'YYCache',
+    pod 'YYImage',
+    pod 'YYWebImage',
+    pod 'YYText',
+    pod 'YYDispatchQueuePool',
+    pod 'YYAsyncLayer',
     
     # 网络数据--
     pod 'AFNetworking'
@@ -25,6 +31,7 @@ target 'JHGarage' do
     pod 'Masonry'
     pod 'MJRefresh'
     pod 'Toast', '~> 4.0.0'
+    
     
     
     # Table
