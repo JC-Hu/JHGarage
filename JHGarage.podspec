@@ -8,7 +8,7 @@ s.homepage     = "https://github.com/JC-Hu/JHGarage"
 s.license      = "MIT"
 s.author             = { "JC-Hu" => "jchu_dlcn@icloud.com" }\
 
-s.platform     = :ios, "8.0"
+s.platform     = :ios, "9.0"
 s.source       = { :git => "https://github.com/JC-Hu/JHGarage.git", :tag => s.version }
 s.frameworks   =  'Foundation','UIKit'
 s.requires_arc = true
@@ -38,7 +38,7 @@ s.dependency   'WZLBadge'
 s.dependency   'ActionSheetPicker-3.0'
 
 # 工具--
-s.dependency   'INTULocationManager'
+s.dependency   'INTULocationManager', '~> 4.3.2'
 
 s.source_files = 'src/**/*.{h,m,c,mm}'
 
