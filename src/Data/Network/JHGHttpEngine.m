@@ -39,6 +39,14 @@ MMSingletonImplementation
     return manager;
 }
 
+- (AFHTTPSessionManager *)manager
+{
+    if (!_manager) {
+        _manager = [self createAFSessionManager];
+    }
+    return _manager;
+}
+
 - (NSURLSessionDataTask *)sendAsynchronousWithRequestItem:(JHGRequestItem *)item
 {
     if (!item.urlString || item.urlString.length <= 0){
@@ -217,7 +225,7 @@ MMSingletonImplementation
     NSMutableString *formatString =
     [NSMutableString stringWithString:@"\n============================================="
      @"==============================================="];
-    [formatString appendFormat:@"\n----JHHttpEngine Log-----"];
+    [formatString appendFormat:@"\n----JHGHttpEngine Log-----"];
     [formatString appendFormat:@"\n----HttpUrl = %@",request.URL.absoluteString];
     [formatString appendFormat:@"\n----HTTP send %@:%@",request.HTTPMethod, methodName];
     [formatString appendFormat:@"\n----formated args = %@", requestParams];
@@ -241,10 +249,10 @@ MMSingletonImplementation
     NSMutableString *formatString =
     [NSMutableString stringWithString:@"\n============================================="
      @"==============================================="];
-    [formatString appendFormat:@"\n----JHHttpEngine Log-----"];
-    [formatString appendFormat:@"\n----requestUrl = %@", request.URL];
+    [formatString appendFormat:@"\n---- JHGHttpEngine Log -----"];
+    [formatString appendFormat:@"\n---- requestUrl = %@", request.URL];
     if (response) {
-        [formatString appendFormat:@"\n----Response: (status %zd) (JSON) =", ((NSHTTPURLResponse *)response).statusCode];
+        [formatString appendFormat:@"\n---- Response: (status %zd) (JSON) =", ((NSHTTPURLResponse *)response).statusCode];
         [formatString appendFormat:@"\n%@", responseString];
         
     }

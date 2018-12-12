@@ -24,6 +24,8 @@
 
 MMSingletonInterface
 
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+
 @property (nonatomic, assign) BOOL disableLog;
 
 @property (nonatomic, assign) id<JHGHttpEngineDelegate> delegate;
