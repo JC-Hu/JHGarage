@@ -7,10 +7,11 @@
 
 // Tool
 #import "JHMarcoTools.h"
-#import <YYKit/YYkit.h>
+#import <YYModel/YYModel.h>
 
 // Network
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "JHGBaseViewController.h"
+#import "JHGBaseTableViewController.h"
 
 // LocalData
 //#import "LocalUserDefaults.h"

@@ -84,7 +84,7 @@
 {
     item.vcRelated = self;
 
-//    [item sendRequest];
+    [item sendRequest];
 }
 
 - (void)requestWithItemNoHUD:(JHGRequestItem *)item
@@ -127,12 +127,12 @@
         }
 
         if (item.responseDict) {
-//            if (item.responseModel.isOK) {
-//                // 请求成功且数据正确
-//            } else {
-//                // 请求成功但数据异常
-//                [self showToast:item.responseModel.msg];
-//            }
+            if (item.responseModel.isOK) {
+                // 请求成功且数据正确
+            } else {
+                // 请求成功但数据异常
+                [self showToast:item.responseModel.msg];
+            }
         } else {
             // 请求失败
             [self showToastNetworkError];

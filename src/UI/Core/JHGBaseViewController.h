@@ -11,26 +11,6 @@
 
 @class JHGRequestItem;
 
-typedef NS_ENUM(NSInteger, SortImgType) {
-    Type_Base = 0,
-    Type_Asc,
-    Type_Desc
-};
-
-typedef NS_ENUM(NSInteger, NavigationBarStyle) {
-    STYLE_BLUE = 0,
-    STYLE_WHITE
-};
-
-typedef NS_ENUM(NSInteger,OrderType) {
-    TYPE_ALL = 0,
-    TYPE_WAIT,
-    TYPE_GOODS,
-    TYPE_COMPLETE,
-    TYPE_CANCLE,
-    
-};
-
 typedef enum : NSUInteger {
     JHBlankContentEmpty,            // 无结果,无内容
     JHBlankContentLoading,           // 加载中

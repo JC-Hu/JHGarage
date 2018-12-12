@@ -11,7 +11,6 @@
 #import "AFNetworking.h"
 
 
-// TODO: delegate
 #define LogSucceed NSLog(@"request successed,the response is %@",operation.responseString)
 #define LogFailed NSLog(@"request failed,the response is %@,error = %@",operation.responseString,error)
 
@@ -26,7 +25,6 @@
 
 MMSingletonImplementation
 
-// TODO:delegate
 - (AFHTTPSessionManager *)createAFSessionManager
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -37,8 +35,7 @@ MMSingletonImplementation
     manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"platform"];
-
+    
     return manager;
 }
 
