@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIViewController+JHGarage.h"
+
 @interface ViewController : UIViewController
 
 

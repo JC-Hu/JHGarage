@@ -19,7 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
+- (IBAction)buttonAction:(id)sender {
+    
+    
+    [self.navigationController pushViewController:[ViewController new] animated:YES];
+    
+}
+
+- (void)dealloc
+{
+    NSLog(@"123hhh");
+}
 
 @end

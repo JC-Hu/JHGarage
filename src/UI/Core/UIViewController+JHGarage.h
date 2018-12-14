@@ -1,6 +1,9 @@
 //
-//  Created by JasonHu on 2018/12/6.
-//  Copyright © 2018年 Jingchen Hu. All rights reserved.
+//  UIViewController+JHGarage.h
+//  JHGarage
+//
+//  Created by Jason Hu on 2018/12/13.
+//  Copyright © 2018 Jason Hu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -8,6 +11,7 @@
 #import <Masonry/Masonry.h>
 #import <JHCellConfig/JHCellConfig.h>
 #import "UIView+JHGShortcut.h"
+
 
 @class JHGRequestItem;
 
@@ -19,7 +23,7 @@ typedef enum : NSUInteger {
     JHBlankContentError              // 不需要具体说明的错误
 } JHBlankContentState;
 
-@interface JHGBaseViewController : UIViewController 
+@interface UIViewController (JHGarage) 
 
 #pragma mark - Toast
 - (void)showToast:(NSString *)str;

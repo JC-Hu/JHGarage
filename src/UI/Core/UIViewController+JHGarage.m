@@ -1,54 +1,71 @@
 //
-//  Created by JasonHu on 2018/12/6.
-//  Copyright © 2018年 Jingchen Hu. All rights reserved.
+//  UIViewController+JHGarage.m
+//  JHGarage
+//
+//  Created by Jason Hu on 2018/12/13.
+//  Copyright © 2018 Jason Hu. All rights reserved.
 //
 
-#import "JHGBaseViewController.h"
-
+#import "UIViewController+JHGarage.h"
 #import "JHGRequestItem.h"
-
 #import "Toast.h"
 
-@interface JHGBaseViewController () <JHGRequestItemHUDDelegate, JHGRequestItemBlankDelegate>
+#import <objc/runtime.h>
+#import "JHGSwizzle.h"
+
+static NSString * const JHGarage_Key_BlackView;
+
+
+@interface UIViewController () <JHGRequestItemHUDDelegate, JHGRequestItemBlankDelegate>
+
 @end
 
-@implementation JHGBaseViewController
+@implementation UIViewController (JHGarage)
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
++ (void)load
+{
+    [self jhg_swizzleMethod:@selector(viewDidLoad) withMethod:@selector(jhg_viewDidLoad) error:nil];
+    [self jhg_swizzleMethod:@selector(viewWillAppear:) withMethod:@selector(jhg_viewWillAppear:) error:nil];
+    [self jhg_swizzleMethod:@selector(viewWillDisappear:) withMethod:@selector(jhg_viewWillDisappear:) error:nil];
+    [self jhg_swizzleMethod:@selector(viewDidAppear:) withMethod:@selector(jhg_viewDidLoad) error:nil];
+    [self jhg_swizzleMethod:NSSelectorFromString(@"dealloc") withMethod:@selector(jhg_dealloc) error:nil];
+}
+
+- (void)jhg_viewDidLoad {
+    [self jhg_viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+
     if (self.navigationController && self.navigationController.viewControllers.firstObject != self) {
         [self setHidesBottomBarWhenPushed:YES];
     }
-    
+
     // blankView
     [self.view addSubview:self.blankView];
     self.blankView.hidden = YES;
-    
+
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)jhg_viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [self jhg_viewWillAppear:animated];
     NSLog(@"%@ viewWillAppear", NSStringFromClass(self.class));
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)jhg_viewWillDisappear:(BOOL)animated
 {
-    [super viewWillDisappear:animated];
+    [self jhg_viewWillDisappear:animated];
     NSLog(@"%@ viewWillDisappear", NSStringFromClass(self.class));
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)jhg_viewDidAppear:(BOOL)animated {
+    [self jhg_viewDidAppear:animated];
 }
 
-- (void)dealloc
+- (void)jhg_dealloc
 {
-    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+    NSString *str = NSStringFromClass(self.class);
+    [self jhg_dealloc];
+    NSLog(@"%@ dealloc", str);
 }
 
 #pragma mark -
@@ -59,7 +76,6 @@
 - (void)showToast:(NSString *)str
 {
     [self.view makeToast:str duration:2 position:CSToastPositionCenter];
-//    [[ErrorToastViewController shareInstance] showToastWithErrorMsg:str];
 }
 
 - (void)showToastInNCView:(NSString *)str
@@ -83,7 +99,7 @@
 - (void)requestWithItem:(JHGRequestItem *)item
 {
     item.vcRelated = self;
-
+    
     [item sendRequest];
 }
 
@@ -125,7 +141,7 @@
         if (!item.onlyErrorHUD) {
             [self hideHUD];
         }
-
+        
         if (item.responseDict) {
             if (item.responseModel.isOK) {
                 // 请求成功且数据正确
@@ -155,7 +171,7 @@
 
 - (void)hideHUD
 {
-   
+    
 }
 
 #pragma mark - BlankView
@@ -177,12 +193,20 @@
     
 }
 
+
+- (void)setBlankView:(UIView *)blankView
+{
+    objc_setAssociatedObject(self, &JHGarage_Key_BlackView, blankView, OBJC_ASSOCIATION_RETAIN);
+}
 - (UIView *)blankView
 {
-    if (!_blankView) {
-        _blankView = [UIView new];
+    UIView *_value = objc_getAssociatedObject(self, &JHGarage_Key_BlackView);
+    if (!_value) {
+        _value = [UIView new];
+        self.blankView = _value;
     }
-    return _blankView;
+    return _value;
 }
+
 
 @end

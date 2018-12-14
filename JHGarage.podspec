@@ -13,8 +13,11 @@ s.source       = { :git => "https://github.com/JC-Hu/JHGarage.git", :tag => s.ve
 s.frameworks   =  'Foundation','UIKit'
 s.requires_arc = true
 
+
+
 # Pod Dependencies
 
+s.dependency   'JRSwizzle'
 s.dependency   'BlocksKit'
 s.dependency   'YYModel'
 s.dependency   'YYCache'

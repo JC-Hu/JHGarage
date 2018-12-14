@@ -10,7 +10,7 @@
 #import <YYModel/YYModel.h>
 
 // Network
-#import "JHGBaseViewController.h"
+#import "UIViewController+JHGarage.h"
 #import "JHGBaseTableViewController.h"
 
 // LocalData

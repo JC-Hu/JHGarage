@@ -3,7 +3,7 @@
 //  Copyright © 2018年 Jingchen Hu. All rights reserved.
 //
 
-#import "JHGBaseViewController.h"
+#import "UIViewController+JHGarage.h"
 
 #import <JHCellConfig/JHCellConfig.h>
 #import "JHGBaseCell.h"
@@ -11,7 +11,7 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface JHGBaseTableViewController : JHGBaseViewController <UITableViewDataSource,UITableViewDelegate>
+@interface JHGBaseTableViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
