@@ -113,7 +113,7 @@ MMSingletonImplementation
     // 请求发起后
     [self didSendRequestItem:item];
     
-    [self logDebugInfoWithRequest:sessionTask.currentRequest requestParams:item.paramsDic];
+    [self logDebugInfoWithRequest:sessionTask.currentRequest requestParams:paramDict];
     
     return sessionTask;
 }
