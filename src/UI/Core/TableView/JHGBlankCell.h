@@ -3,9 +3,9 @@
 //  Copyright © 2018年 Jingchen Hu. All rights reserved.
 //
 
-#import "JHGBaseCell.h"
+#import "UITableViewCell+JHCellConfig.h"
 
-@interface JHGBlankCell : JHGBaseCell
+@interface JHGBlankCell : UITableViewCell
 
 @end
 

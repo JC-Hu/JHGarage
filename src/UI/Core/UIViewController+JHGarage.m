@@ -27,14 +27,13 @@ static NSString * const JHGarage_Key_BlackView;
     [self jhg_swizzleMethod:@selector(viewDidLoad) withMethod:@selector(jhg_viewDidLoad) error:nil];
     [self jhg_swizzleMethod:@selector(viewWillAppear:) withMethod:@selector(jhg_viewWillAppear:) error:nil];
     [self jhg_swizzleMethod:@selector(viewWillDisappear:) withMethod:@selector(jhg_viewWillDisappear:) error:nil];
-    [self jhg_swizzleMethod:@selector(viewDidAppear:) withMethod:@selector(jhg_viewDidLoad) error:nil];
+    [self jhg_swizzleMethod:@selector(viewDidAppear:) withMethod:@selector(jhg_viewDidAppear:) error:nil];
     [self jhg_swizzleMethod:NSSelectorFromString(@"dealloc") withMethod:@selector(jhg_dealloc) error:nil];
 }
 
 - (void)jhg_viewDidLoad {
-    [self jhg_viewDidLoad];
-    // Do any additional setup after loading the view.
-
+    
+    
     if (self.navigationController && self.navigationController.viewControllers.firstObject != self) {
         [self setHidesBottomBarWhenPushed:YES];
     }
@@ -42,6 +41,8 @@ static NSString * const JHGarage_Key_BlackView;
     // blankView
     [self.view addSubview:self.blankView];
     self.blankView.hidden = YES;
+    
+    [self jhg_viewDidLoad];
 
 }
 
@@ -192,10 +193,10 @@ static NSString * const JHGarage_Key_BlackView;
     
 }
 
-
+#pragma mark
 - (void)setBlankView:(UIView *)blankView
 {
-    objc_setAssociatedObject(self, &JHGarage_Key_BlackView, blankView, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &JHGarage_Key_BlackView, blankView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (UIView *)blankView
 {

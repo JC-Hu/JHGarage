@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		852697C821B4CD32009F2CE6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852697C721B4CD32009F2CE6 /* Tests.m */; };
 		8562B1BF21DF304E00C2C6D7 /* UIViewController+JHGTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */; };
-		85A5385B21B76F2600E510AF /* JHGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */; };
-		85A5385C21B76F2600E510AF /* JHGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */; };
+		8562B1C521DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */; };
 		85A5385D21B76F2600E510AF /* JHGBlankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385721B76F2500E510AF /* JHGBlankCell.m */; };
 		85A5385E21B76F2600E510AF /* JHGBlankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385721B76F2500E510AF /* JHGBlankCell.m */; };
-		85A5385F21B76F2600E510AF /* JHGBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385921B76F2600E510AF /* JHGBaseCell.m */; };
-		85A5386021B76F2600E510AF /* JHGBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385921B76F2600E510AF /* JHGBaseCell.m */; };
 		85A5386521B770EC00E510AF /* UIView+JHGShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5386421B770EC00E510AF /* UIView+JHGShortcut.m */; };
 		85A5386621B770EC00E510AF /* UIView+JHGShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5386421B770EC00E510AF /* UIView+JHGShortcut.m */; };
 		85A5386E21B7749C00E510AF /* UIImage+JHGImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5386C21B7749C00E510AF /* UIImage+JHGImageUtil.m */; };
@@ -67,12 +64,10 @@
 		852697C921B4CD32009F2CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8562B1BD21DF304E00C2C6D7 /* UIViewController+JHGTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JHGTable.h"; sourceTree = "<group>"; };
 		8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGTable.m"; sourceTree = "<group>"; };
-		85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGBaseTableViewController.m; sourceTree = "<group>"; };
-		85A5385521B76F2500E510AF /* JHGBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGBaseTableViewController.h; sourceTree = "<group>"; };
-		85A5385621B76F2500E510AF /* JHGBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGBaseCell.h; sourceTree = "<group>"; };
+		8562B1C321DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JHCellConfig.h"; sourceTree = "<group>"; };
+		8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JHCellConfig.m"; sourceTree = "<group>"; };
 		85A5385721B76F2500E510AF /* JHGBlankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGBlankCell.m; sourceTree = "<group>"; };
 		85A5385821B76F2600E510AF /* JHGBlankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGBlankCell.h; sourceTree = "<group>"; };
-		85A5385921B76F2600E510AF /* JHGBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGBaseCell.m; sourceTree = "<group>"; };
 		85A5386321B770EC00E510AF /* UIView+JHGShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JHGShortcut.h"; sourceTree = "<group>"; };
 		85A5386421B770EC00E510AF /* UIView+JHGShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JHGShortcut.m"; sourceTree = "<group>"; };
 		85A5386C21B7749C00E510AF /* UIImage+JHGImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JHGImageUtil.m"; sourceTree = "<group>"; };
@@ -166,12 +161,10 @@
 		852697D221B75956009F2CE6 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				85A5385621B76F2500E510AF /* JHGBaseCell.h */,
-				85A5385921B76F2600E510AF /* JHGBaseCell.m */,
-				85A5385521B76F2500E510AF /* JHGBaseTableViewController.h */,
-				85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */,
 				8562B1BD21DF304E00C2C6D7 /* UIViewController+JHGTable.h */,
 				8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */,
+				8562B1C321DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.h */,
+				8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */,
 				85A5385821B76F2600E510AF /* JHGBlankCell.h */,
 				85A5385721B76F2500E510AF /* JHGBlankCell.m */,
 			);
@@ -499,9 +492,7 @@
 				85A5386621B770EC00E510AF /* UIView+JHGShortcut.m in Sources */,
 				85A5386F21B7749C00E510AF /* UIImage+JHGImageUtil.m in Sources */,
 				85A5388C21B793F900E510AF /* JHGRequestItem.m in Sources */,
-				85A5386021B76F2600E510AF /* JHGBaseCell.m in Sources */,
 				85A5388821B793F900E510AF /* JHGHttpEngine.m in Sources */,
-				85A5385C21B76F2600E510AF /* JHGBaseTableViewController.m in Sources */,
 				85A5387321B774AB00E510AF /* UIImage+JHGColor.m in Sources */,
 				85A5385E21B76F2600E510AF /* JHGBlankCell.m in Sources */,
 				85A5389E21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
@@ -520,6 +511,7 @@
 				85A5387621B774BB00E510AF /* UIColor+JHGRandom.m in Sources */,
 				85A5386E21B7749C00E510AF /* UIImage+JHGImageUtil.m in Sources */,
 				85A5388721B793F900E510AF /* JHGHttpEngine.m in Sources */,
+				8562B1C521DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m in Sources */,
 				85A5388B21B793F900E510AF /* JHGRequestItem.m in Sources */,
 				85A5385D21B76F2600E510AF /* JHGBlankCell.m in Sources */,
 				85FC832D21A6F4DF0067F46B /* ViewController.m in Sources */,
@@ -528,10 +520,8 @@
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
 				85A5386521B770EC00E510AF /* UIView+JHGShortcut.m in Sources */,
-				85A5385F21B76F2600E510AF /* JHGBaseCell.m in Sources */,
 				85A5387221B774AB00E510AF /* UIImage+JHGColor.m in Sources */,
 				85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */,
-				85A5385B21B76F2600E510AF /* JHGBaseTableViewController.m in Sources */,
 				85A5389221B7944700E510AF /* ZTBaseResponseModel.m in Sources */,
 				85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */,
 				85A5387E21B77CEF00E510AF /* JHGWebViewController.m in Sources */,

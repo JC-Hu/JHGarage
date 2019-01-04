@@ -17,10 +17,13 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
+    NSLog(@"1");
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    NSLog(@"2");
 }
 
 - (IBAction)buttonAction:(id)sender {
