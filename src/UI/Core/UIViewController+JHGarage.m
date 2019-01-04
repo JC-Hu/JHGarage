@@ -165,13 +165,12 @@ static NSString * const JHGarage_Key_BlackView;
 #pragma mark - HUD
 - (void)showLoadingHUD
 {
-    // TODO: new HUD management system
-    
+    [self.view makeToastActivity:CSToastPositionCenter];
 }
 
 - (void)hideHUD
 {
-    
+    [self.view hideToastActivity];
 }
 
 #pragma mark - BlankView

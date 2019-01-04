@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		852697C821B4CD32009F2CE6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852697C721B4CD32009F2CE6 /* Tests.m */; };
+		8562B1BF21DF304E00C2C6D7 /* UIViewController+JHGTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */; };
 		85A5385B21B76F2600E510AF /* JHGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */; };
 		85A5385C21B76F2600E510AF /* JHGBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */; };
 		85A5385D21B76F2600E510AF /* JHGBlankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385721B76F2500E510AF /* JHGBlankCell.m */; };
@@ -64,6 +65,8 @@
 		852697C521B4CD32009F2CE6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		852697C721B4CD32009F2CE6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		852697C921B4CD32009F2CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8562B1BD21DF304E00C2C6D7 /* UIViewController+JHGTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JHGTable.h"; sourceTree = "<group>"; };
+		8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGTable.m"; sourceTree = "<group>"; };
 		85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGBaseTableViewController.m; sourceTree = "<group>"; };
 		85A5385521B76F2500E510AF /* JHGBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGBaseTableViewController.h; sourceTree = "<group>"; };
 		85A5385621B76F2500E510AF /* JHGBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGBaseCell.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 				85A5385921B76F2600E510AF /* JHGBaseCell.m */,
 				85A5385521B76F2500E510AF /* JHGBaseTableViewController.h */,
 				85A5385321B76F2500E510AF /* JHGBaseTableViewController.m */,
+				8562B1BD21DF304E00C2C6D7 /* UIViewController+JHGTable.h */,
+				8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */,
 				85A5385821B76F2600E510AF /* JHGBlankCell.h */,
 				85A5385721B76F2500E510AF /* JHGBlankCell.m */,
 			);
@@ -530,6 +535,7 @@
 				85A5389221B7944700E510AF /* ZTBaseResponseModel.m in Sources */,
 				85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */,
 				85A5387E21B77CEF00E510AF /* JHGWebViewController.m in Sources */,
+				8562B1BF21DF304E00C2C6D7 /* UIViewController+JHGTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

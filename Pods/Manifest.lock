@@ -35,7 +35,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - INTULocationManager (4.3.2)
   - IQKeyboardManager (6.2.0)
-  - JHCellConfig (2.0.0)
+  - JHCellConfig (2.0.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.15.7)
@@ -118,7 +118,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   INTULocationManager: e5dc524611b0cd582f473bc56cc8c389adb2f338
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
-  JHCellConfig: 90e220bb01bbf79b67e37d7393202e60587091bf
+  JHCellConfig: fee0d8ba7d9c998e8666a43cf29db1c37e6ad379
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
