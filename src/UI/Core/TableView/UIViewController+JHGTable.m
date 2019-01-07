@@ -23,8 +23,16 @@ static NSString * const JHCellConfig_Key_PageCount;
     [self jhg_swizzleMethod:@selector(viewDidLoad) withMethod:@selector(jhgt_viewDidLoad) error:nil];
 }
 
-- (void)jhgt_viewDidLoad {
+- (void)jhgt_viewDidLoad
+{
     
+    [self jhgt_viewDidLoad];
+
+}
+
+
+- (void)setupJHGTableView
+{
     [self.view addSubview:self.mainTableView];
     
     if ([self needRefreshHeader]) {
@@ -39,12 +47,6 @@ static NSString * const JHCellConfig_Key_PageCount;
     if ([self needRefreshFooter]) {
         self.mainTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshFooterAction)];
     }
-    
-//    self.pageSize = 10;
-//    self.pageCount = 1;
-    
-    [self jhgt_viewDidLoad];
-
 }
 
 #pragma mark -

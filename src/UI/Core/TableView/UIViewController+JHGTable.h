@@ -17,6 +17,10 @@
 
 @property (nonatomic, strong) IBOutlet UITableView *mainTableView;
 
+// call this in viewDidLoad to use JHGTable
+- (void)setupJHGTableView;
+
+
 - (JHCellConfig *)cellConfigOfIndexPath:(NSIndexPath *)indexPath;
 
 // to rewrite
