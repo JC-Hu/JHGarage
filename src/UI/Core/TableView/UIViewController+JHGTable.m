@@ -258,6 +258,8 @@ static NSString * const JHCellConfig_Key_PageCount;
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds
                                                               style:[self getTableStyle]];
         _value = tableView;
+        self.mainTableView = _value;
+
         tableView.autoresizingMask =
         UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         tableView.separatorStyle = [self getSeparatorStyle];

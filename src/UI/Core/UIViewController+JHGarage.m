@@ -33,11 +33,6 @@ static NSString * const JHGarage_Key_BlackView;
 
 - (void)jhg_viewDidLoad {
     
-    
-    if (self.navigationController && self.navigationController.viewControllers.firstObject != self) {
-        [self setHidesBottomBarWhenPushed:YES];
-    }
-
     // blankView
     [self.view addSubview:self.blankView];
     self.blankView.hidden = YES;
