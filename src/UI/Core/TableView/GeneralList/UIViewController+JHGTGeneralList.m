@@ -56,7 +56,7 @@ static NSString * const JHCellConfig_Key_ModelArray;
 #pragma mark - general list
 - (void)setupModelArray:(NSMutableArray *)modelArray withNewListArray:(NSArray *)newListArray
 {
-    
+    // 处理主列表业务数据，分页与空白页逻辑
     if (modelArray) {
         self.jhg_modelArray = modelArray;
     }
@@ -80,7 +80,7 @@ static NSString * const JHCellConfig_Key_ModelArray;
     }
 }
 
-
+// 重制页码刷新
 - (void)resetListAndPage
 {
     [self.dataArray removeAllObjects];
