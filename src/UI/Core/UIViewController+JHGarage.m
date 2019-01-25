@@ -13,9 +13,6 @@
 #import <objc/runtime.h>
 #import "JHGSwizzle.h"
 
-static NSString * const JHGarage_Key_BlackView;
-
-
 @interface UIViewController () <JHGRequestItemHUDDelegate, JHGRequestItemBlankDelegate>
 
 @end
@@ -32,10 +29,6 @@ static NSString * const JHGarage_Key_BlackView;
 }
 
 - (void)jhg_viewDidLoad {
-    
-    // blankView
-    [self.view addSubview:self.blankView];
-    self.blankView.hidden = YES;
     
     [self jhg_viewDidLoad];
 
@@ -169,39 +162,6 @@ static NSString * const JHGarage_Key_BlackView;
     [self.view hideToastActivity];
 }
 
-#pragma mark - BlankView
-- (void)showBlankViewForState:(JHBlankContentState)state
-{
-    self.blankView.hidden = NO;
-    [self.view bringSubviewToFront:self.blankView];
-    
-    [self updateBlankViewWithState:state];
-}
-
-- (void)hideBlankView
-{
-    self.blankView.hidden = YES;
-}
-
-- (void)updateBlankViewWithState:(JHBlankContentState)state
-{
-    
-}
-
-#pragma mark
-- (void)setBlankView:(UIView *)blankView
-{
-    objc_setAssociatedObject(self, &JHGarage_Key_BlackView, blankView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-- (UIView *)blankView
-{
-    UIView *_value = objc_getAssociatedObject(self, &JHGarage_Key_BlackView);
-    if (!_value) {
-        _value = [UIView new];
-        self.blankView = _value;
-    }
-    return _value;
-}
 
 
 @end

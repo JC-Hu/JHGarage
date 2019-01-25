@@ -14,8 +14,6 @@
 static NSString * const JHCellConfig_Key_DataArray;
 static NSString * const JHCellConfig_Key_MainTableView;
 
-static NSString * const JHCellConfig_Key_PageSize;
-static NSString * const JHCellConfig_Key_PageCount;
 
 @implementation UIViewController (JHGTable)
 + (void)load
@@ -170,65 +168,7 @@ static NSString * const JHCellConfig_Key_PageCount;
     return NO;
 }
 
-
-#pragma mark - refresh header footer
-- (BOOL)needRefreshHeader
-{
-    return NO;
-}
-
-- (void)refreshHeaderAction
-{
-    
-}
-
-- (BOOL)needRefreshFooter
-{
-    return NO;
-}
-
-- (void)refreshFooterAction
-{
-    
-}
-
-- (void)triggerRefreshManully
-{
-    [self.mainTableView.mj_header beginRefreshing];
-}
-
-- (void)endHeaderFooterRefreshing
-{
-    [self.mainTableView.mj_header endRefreshing];
-    [self.mainTableView.mj_footer endRefreshing];
-}
-
-#pragma mark
-//- (void)setPageSize:(NSInteger)pageSize
-//{
-//    objc_setAssociatedObject(self, &JHCellConfig_Key_PageSize, @(pageSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//
-//}
-//
-//- (NSInteger)pageSize
-//{
-//    NSInteger _value = [objc_getAssociatedObject(self, &JHCellConfig_Key_PageSize) integerValue];
-//    return _value;
-//}
-//
-//- (void)setPageCount:(NSInteger)pageCount
-//{
-//    objc_setAssociatedObject(self, &JHCellConfig_Key_PageCount, @(pageCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//
-//}
-//
-//- (NSInteger)pageCount
-//{
-//    NSInteger _value = [objc_getAssociatedObject(self, &JHCellConfig_Key_PageCount) integerValue];
-//    return _value;
-//
-//}
-
+#pragma mark -
 - (void)setDataArray:(NSMutableArray *)dataArray
 {
     objc_setAssociatedObject(self, &JHCellConfig_Key_DataArray, dataArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -259,7 +199,7 @@ static NSString * const JHCellConfig_Key_PageCount;
                                                               style:[self getTableStyle]];
         _value = tableView;
         self.mainTableView = _value;
-
+        
         tableView.autoresizingMask =
         UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         tableView.separatorStyle = [self getSeparatorStyle];
@@ -267,12 +207,6 @@ static NSString * const JHCellConfig_Key_PageCount;
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = [self getTableViewBackgroundColor];
-        
-        //    if (@available(iOS 11.0, *)) {
-        //        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        //    }else {
-        //        self.automaticallyAdjustsScrollViewInsets = NO;
-        //    }
         
         tableView.estimatedRowHeight = 0;
         tableView.estimatedSectionHeaderHeight = 0;
@@ -283,6 +217,54 @@ static NSString * const JHCellConfig_Key_PageCount;
     
     return _value;
 }
+
+
+
+#pragma mark - refresh header footer
+- (BOOL)needRefreshHeader
+{
+    return NO;
+}
+
+- (void)refreshHeaderAction
+{
+    
+}
+
+- (BOOL)needRefreshFooter
+{
+    return NO;
+}
+
+- (void)refreshFooterAction
+{
+    
+}
+
+- (void)triggerRefreshManully
+{
+    [self.mainTableView.mj_header beginRefreshing];
+}
+
+- (void)endHeaderFooterRefreshing
+{
+    [self.mainTableView.mj_header endRefreshing];
+    if (self.mainTableView.mj_footer.state != MJRefreshStateNoMoreData) {
+        [self.mainTableView.mj_footer endRefreshing];
+    }
+}
+
+- (void)setNoMoreData
+{
+    self.mainTableView.mj_footer.state = MJRefreshStateNoMoreData;
+}
+
+- (void)resetNoMoreData
+{
+    [self.mainTableView.mj_footer resetNoMoreData];
+}
+
+
 
 
 

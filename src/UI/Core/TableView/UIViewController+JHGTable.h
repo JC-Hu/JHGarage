@@ -30,8 +30,6 @@
 - (UIColor *)getTableViewBackgroundColor;
 
 #pragma mark - refresh header footer
-//@property (nonatomic, assign) NSInteger pageSize;
-//@property (nonatomic, assign) NSInteger pageCount;
 
 - (BOOL)needRefreshHeader;
 - (void)refreshHeaderAction;
@@ -39,6 +37,8 @@
 - (void)refreshFooterAction;
 - (void)triggerRefreshManully;
 - (void)endHeaderFooterRefreshing;
+- (void)setNoMoreData;
+- (void)resetNoMoreData;
 
 @end
 

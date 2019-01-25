@@ -15,13 +15,6 @@
 
 @class JHGRequestItem;
 
-typedef enum : NSUInteger {
-    JHBlankContentEmpty,            // 无结果,无内容
-    JHBlankContentLoading,           // 加载中
-    JHBlankContentNetworkError,    // 无网络
-    JHBlankContentCustom,           // 特殊
-    JHBlankContentError              // 不需要具体说明的错误
-} JHBlankContentState;
 
 @interface UIViewController (JHGarage) 
 
@@ -41,8 +34,7 @@ typedef enum : NSUInteger {
 - (void)hideHUD;
 
 
-#pragma mark - BlankView
-@property (nonatomic, strong) UIView *blankView;
+
 
 @end
 
