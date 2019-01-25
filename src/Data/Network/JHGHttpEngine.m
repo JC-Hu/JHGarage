@@ -66,7 +66,7 @@ MMSingletonImplementation
     
     NSURLSessionDataTask *sessionTask;
     switch (item.httpMethod){
-        case HTTPGET:
+        case JHGHTTPGET:
         {
             sessionTask = [manager GET:item.urlString parameters:paramDict progress:^(NSProgress * _Nonnull downloadProgress) {
                 
@@ -77,7 +77,7 @@ MMSingletonImplementation
             }];
         }
             break;
-        case HTTPPOST:
+        case JHGHTTPPOST:
         {
             sessionTask = [manager POST:item.urlString parameters:paramDict progress:^(NSProgress * _Nonnull downloadProgress) {
                 

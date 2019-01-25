@@ -11,8 +11,8 @@
 
 typedef enum HttpMethod
 {
-    HTTPPOST,
-    HTTPGET,
+    JHGHTTPPOST,
+    JHGHTTPGET,
     JHGHTTPPUT,
     JHGHTTPDELETE
 }JHGHttpMethod;
