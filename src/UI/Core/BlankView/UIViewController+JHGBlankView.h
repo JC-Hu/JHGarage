@@ -23,6 +23,7 @@ typedef enum : NSUInteger {
 
 #pragma mark - BlankView
 @property (nonatomic, strong) JHGBlankView *jhg_blankView;
+- (void)setupBlankView;
 - (void)showBlankViewForState:(JHBlankContentState)state;
 - (void)hideBlankView;
 
