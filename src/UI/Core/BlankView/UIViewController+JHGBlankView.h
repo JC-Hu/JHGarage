@@ -15,7 +15,8 @@ typedef enum : NSUInteger {
     JHBlankContentEmpty,            // 无结果,无内容
     JHBlankContentLoading,           // 加载中
     JHBlankContentNetworkError,    // 无网络
-    JHBlankContentCustom,           // 特殊12qq    JHBlankContentError              // 不需要具体【的错误
+    JHBlankContentCustom,           // 特殊
+    JHBlankContentError              // 不需要具体的错误
 } JHBlankContentState;
 
 

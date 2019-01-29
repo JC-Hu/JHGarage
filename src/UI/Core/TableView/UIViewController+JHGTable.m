@@ -116,7 +116,8 @@ static NSString * const JHCellConfig_Key_MainTableView;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     JHCellConfig *cellConfig = [self cellConfigOfIndexPath:indexPath];
-    
+    cellConfig.tableView = tableView;
+
     return [cellConfig cellHeight];
 }
 
