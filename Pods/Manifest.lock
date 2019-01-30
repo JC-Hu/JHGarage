@@ -69,7 +69,7 @@ DEPENDENCIES:
   - FMDB
   - INTULocationManager (~> 4.3.2)
   - IQKeyboardManager
-  - JHCellConfig
+  - JHCellConfig (~> 2.1.0)
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -135,6 +135,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 0e955bb9d3718706631a63117ba24bea5b785f89
+PODFILE CHECKSUM: d8afdbf446e37a670dc8161be992581ed332cb4d
 
 COCOAPODS: 1.5.3

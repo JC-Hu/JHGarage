@@ -35,7 +35,7 @@ target 'JHGarage' do
     
     
     # Table
-    pod 'JHCellConfig'
+    pod 'JHCellConfig', '~> 2.1.0'
     
     # other
     pod 'IQKeyboardManager'

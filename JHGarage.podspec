@@ -38,7 +38,7 @@ s.dependency   'Masonry'
 s.dependency   'MJRefresh'
 s.dependency   'Toast', '~> 4.0.0'
 # Table
-s.dependency   'JHCellConfig','~> 2.0.0'
+s.dependency   'JHCellConfig', '~> 2.1.0'
 # other
 s.dependency   'IQKeyboardManager'
 s.dependency   'NJKWebViewProgress'
