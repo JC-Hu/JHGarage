@@ -1,9 +1,5 @@
-//
-//  ZTBlankView.h
-//  ZTStore
-//
+
 //  Created by Jason Hu on 2018/12/28.
-//  Copyright © 2018 ZhengTian. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

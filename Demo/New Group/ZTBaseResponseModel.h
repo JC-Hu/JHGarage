@@ -1,9 +1,6 @@
 //
-//  ZTBaseResponseModel.h
-//  ZTStore
 //
 //  Created by Jason Hu on 2018/8/18.
-//  Copyright © 2018年 ZhengTian. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
