@@ -28,7 +28,8 @@
 
 - (IBAction)buttonAction:(id)sender {
     
-    
+    id good = @"";
+    [good setValue:@1 forKey:@"123"];
     [self.navigationController pushViewController:[ViewController new] animated:YES];
     
 }
