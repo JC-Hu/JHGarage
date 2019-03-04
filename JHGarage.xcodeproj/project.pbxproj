@@ -37,6 +37,7 @@
 		85A5389521B7944700E510AF /* ZTBaseRequestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389121B7944700E510AF /* ZTBaseRequestItem.m */; };
 		85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389C21B7954700E510AF /* JHGAppStoreTools.m */; };
 		85A5389E21B7954800E510AF /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389C21B7954700E510AF /* JHGAppStoreTools.m */; };
+		85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC90BC222CE46F00B00262 /* JHGTouchButton.m */; };
 		85CC04E121C21DCE006693DD /* UIViewController+JHGarage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */; };
 		85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E221C24094006693DD /* JHGSwizzle.m */; };
 		85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832921A6F4DF0067F46B /* AppDelegate.m */; };
@@ -103,6 +104,8 @@
 		85A5389A21B7952900E510AF /* JHMarcoTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMarcoTools.h; sourceTree = "<group>"; };
 		85A5389B21B7954700E510AF /* JHGAppStoreTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAppStoreTools.h; sourceTree = "<group>"; };
 		85A5389C21B7954700E510AF /* JHGAppStoreTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAppStoreTools.m; sourceTree = "<group>"; };
+		85AC90BB222CE46F00B00262 /* JHGTouchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHGTouchButton.h; sourceTree = "<group>"; };
+		85AC90BC222CE46F00B00262 /* JHGTouchButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHGTouchButton.m; sourceTree = "<group>"; };
 		85CC04DF21C21DCE006693DD /* UIViewController+JHGarage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JHGarage.h"; sourceTree = "<group>"; };
 		85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGarage.m"; sourceTree = "<group>"; };
 		85CC04E221C24094006693DD /* JHGSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSwizzle.m; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 			children = (
 				85A5388021B77D0B00E510AF /* Core */,
 				852697D321B75956009F2CE6 /* Navigation */,
+				85AC90BA222CE45300B00262 /* CustomViews */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -313,6 +317,15 @@
 				85A5389A21B7952900E510AF /* JHMarcoTools.h */,
 			);
 			path = JHMarcoTools;
+			sourceTree = "<group>";
+		};
+		85AC90BA222CE45300B00262 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				85AC90BB222CE46F00B00262 /* JHGTouchButton.h */,
+				85AC90BC222CE46F00B00262 /* JHGTouchButton.m */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		85FC828421A6E5670067F46B = {
@@ -550,6 +563,7 @@
 				85FC832D21A6F4DF0067F46B /* ViewController.m in Sources */,
 				85A5388921B793F900E510AF /* JHGHttpEngine+UploadDownload.m in Sources */,
 				85FC833821A6F4E00067F46B /* main.m in Sources */,
+				85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */,
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
 				85A5386521B770EC00E510AF /* UIView+JHGShortcut.m in Sources */,
