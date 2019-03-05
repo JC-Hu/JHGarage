@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import <Masonry/Masonry.h>
-#import <JHCellConfig/JHCellConfig.h>
 #import "UIView+JHGShortcut.h"
 
 
 @class JHGRequestItem;
 
 
-@interface UIViewController (JHGarage) 
+@interface UIViewController (JHGarage)
 
 #pragma mark - Toast
 - (void)showToast:(NSString *)str;

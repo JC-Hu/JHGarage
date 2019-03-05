@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "UIViewController+JHGTable.h"
-#import "UIViewController+JHGarage.h"
+#import "UIViewController+JHGBlankView.h"
 
 @interface UIViewController (JHGTGeneralList)
 

@@ -8,8 +8,6 @@
 
 #import "UIViewController+JHGTGeneralList.h"
 
-#import "UIViewController+JHGBlankView.h"
-
 #import <objc/runtime.h>
 #import "JHGSwizzle.h"
 
