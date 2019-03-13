@@ -31,7 +31,8 @@
 - (void)setupContraints
 {
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.centerX.mas_equalTo(0);
+        make.bottom.mas_equalTo(self.titleLabel.mas_top).offset(-15);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
