@@ -68,6 +68,11 @@
     }
 }
 
+- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures
+{
+    [webView loadRequest:navigationAction.request];
+    return nil;
+}
 
 #pragma mark - get
 
@@ -77,6 +82,7 @@
         _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:self.wkConfig];
         _webView.navigationDelegate = self;
         _webView.scrollView.delegate = self;
+        _webView.UIDelegate = self;
     }
     
     

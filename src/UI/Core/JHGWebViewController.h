@@ -6,7 +6,7 @@
 
 #import <WebKit/WebKit.h>
 
-@interface JHGWebViewController : UIViewController<WKNavigationDelegate, UIScrollViewDelegate>
+@interface JHGWebViewController : UIViewController<WKNavigationDelegate, UIScrollViewDelegate,WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, strong) WKWebViewConfiguration *wkConfig;
