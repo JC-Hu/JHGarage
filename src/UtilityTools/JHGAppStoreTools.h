@@ -15,13 +15,12 @@ typedef NS_ENUM(NSUInteger, JHGInReviewStatus) {
 
 @interface JHGAppStoreTools : NSObject
 
-@property (nonatomic, strong) NSString *appID;
 
 @property (nonatomic, strong) NSString *storeVersion;
 
 + (instancetype)sharedInstance;
 
-- (void)requestIfNeededIsInReview:(void (^)(BOOL inReview))block;
+- (void)requestIfNeededIsInReviewWithAppID:(NSString *)appID block:(void (^)(BOOL inReview))block;
 
 - (void)requestStoreVersionWithAppID:(NSString *)appID;
 

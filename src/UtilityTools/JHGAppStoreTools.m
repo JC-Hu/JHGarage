@@ -25,7 +25,7 @@
 }
 
 
-- (void)requestIfNeededIsInReview:(void (^)(BOOL inReview))block
+- (void)requestIfNeededIsInReviewWithAppID:(NSString *)appID block:(void (^)(BOOL inReview))block
 {
     // 是否绕过
     // 使用商店信息判断是否审核中
@@ -34,7 +34,7 @@
     if ([self isInReview] == JHGInReviewStatusNone) {
         // 没有版本信息
         // 再次请求版本信息
-        [[JHGAppStoreTools sharedInstance] requestStoreVersionWithAppID:self.appID withBlock:^(BOOL success) {
+        [[JHGAppStoreTools sharedInstance] requestStoreVersionWithAppID:appID withBlock:^(BOOL success) {
             if (success) {
                 // 版本信息请求成功
                 if ([[JHGAppStoreTools sharedInstance] isInReview] == JHGInReviewStatusYES) {
