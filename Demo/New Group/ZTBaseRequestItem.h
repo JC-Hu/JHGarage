@@ -16,9 +16,6 @@ typedef void(^ZTRequestFailureBlock)(NSDictionary *jsonDict, NSError *error, ZTB
 
 @interface ZTBaseRequestItem : JHGRequestItem
 
-@property (nonatomic, strong) ZTBaseResponseModel *responseModel;
-@property (nonatomic, strong) NSURLSessionDataTask *task;
-
 /**
  生成item
  生成后调用sendRequest:方法发送请求
