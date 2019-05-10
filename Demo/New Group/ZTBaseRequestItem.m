@@ -86,7 +86,7 @@
     if (self.paramsDic) {
         [dict setValuesForKeysWithDictionary:self.paramsDic];
     }
-//    [dict setObject:@"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W10.dF26uM2kVQadC0QYogwf_pX2qurUqdPQQecTFOV2HcY" forKey:@"credit"];
+//    [dict setObject:@"" forKey:@"credit"];
     
 //    if (!_noToken) {
 //        // 根据业务需求拼接token
