@@ -5,6 +5,8 @@
 #import "ZTBaseRequestItem.h"
 #import "JHGHttpEngine.h"
 
+#import "JHGDomainManager.h"
+
 
 @interface ZTBaseRequestItem()
 
@@ -118,9 +120,15 @@
 
 + (NSString *)getCurrentDomain
 {
-    // TODO: 域名切换管理
-//    return BaseServiceURL;
-    return nil;
+    // 域名切换管理
+    
+    NSString *domain = JHGDomainManager.sharedInstance.currentDomain;
+    
+    if (!domain.length) {
+        NSLog(@"========\n\n ERROR: No Domain\n=========");
+    }
+    
+    return domain;
 }
 
 

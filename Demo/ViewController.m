@@ -10,6 +10,10 @@
 
 #import "JHGarage.h"
 
+#import "JHGDomainSwitchViewController.h"
+
+#import "ZTBaseRequestItem.h"
+
 @interface ViewController ()
 
 @end
@@ -24,13 +28,40 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSLog(@"2");
+    
+    [JHGDomainManager.sharedInstance addDomainWithTitle:@"测试环境" domain:@"http://39.104.17.18:8080"];
+    [JHGDomainManager.sharedInstance addDomainWithTitle:@"正式环境" domain:@"https://www.zhengtiancy.com"];
+    JHGDomainManager.sharedInstance.currentDomain = @"https://www.zhengtiancy.com";
+    
+}
+
+- (void)sendRequest {
+    ZTBaseRequestItem *item = [ZTBaseRequestItem itemWithUrl:@"/api/v3.0/ec/goods/query" params:@{} success:^(NSDictionary *jsonDict, ZTBaseResponseModel *response, ZTBaseRequestItem *ztItem) {
+        
+    } failure:^(NSDictionary *jsonDict, NSError *error, ZTBaseRequestItem *ztItem) {
+        
+    }];
+    
+    [item sendRequest];
+}
+
+- (void)showDomainSwitcher {
+    
+    [JHGDomainSwitchViewController show];
+    
 }
 
 - (IBAction)buttonAction:(id)sender {
     
-    id good = @"";
-    [good setValue:@1 forKey:@"123"];
-    [self.navigationController pushViewController:[ViewController new] animated:YES];
+//    id good = @"";
+//    [good setValue:@1 forKey:@"123"];
+    
+    
+    //
+    [self showDomainSwitcher];
+    
+    //
+    [self sendRequest];
     
 }
 
