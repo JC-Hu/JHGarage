@@ -14,30 +14,40 @@ static JHBaseUserDefaults *userDefaults = nil;
     return userDefaults;
 }
 
+- (NSString *)userDefaultKeyForProperty:(NSString *)propertyName
+{
+    // bundleId + className + propertyName
+    
+    return [[[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"] stringByAppendingString: NSStringFromClass(self.class)] stringByAppendingString:propertyName];
+}
+
 - (id)init {
     if (self = [super init]) {
         NSMutableArray *properties = [self getProperties];
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         
         for (int i = 0; i < properties.count; i++) {
+            
+            NSString *key = [self userDefaultKeyForProperty:properties[i]];
+            
             void (^setMethodBlock)(id, id) = ^(id info, id object) {
-                [userDefaults setObject:object forKey:properties[i]];
+                [userDefaults setObject:object forKey:key];
             };
             void (^setBoolMethodBlock)(id, BOOL) = ^(id info, BOOL result) {
-                [userDefaults setBool:result forKey:properties[i]];
+                [userDefaults setBool:result forKey:key];
             };
             void (^setIntegerMethodBlock)(id, NSInteger) = ^(id info, NSInteger value) {
-                [userDefaults setInteger:value forKey:properties[i]];
+                [userDefaults setInteger:value forKey:key];
             };
 
             id (^getMethodBlock)(id) = ^(id info) {
-                return [userDefaults objectForKey:properties[i]];
+                return [userDefaults objectForKey:key];
             };
             BOOL (^getBoolMethodBlock)(id) = ^(id info) {
-                return [userDefaults boolForKey:properties[i]];
+                return [userDefaults boolForKey:key];
             };
             NSInteger (^getIntegerMethodBlock)(id) = ^(id info) {
-                return [userDefaults integerForKey:properties[i]];
+                return [userDefaults integerForKey:key];
             };
 
             objc_property_t property  = class_getProperty([self class], [properties[i] UTF8String]);
@@ -112,7 +122,7 @@ static const char * getPropertyType(objc_property_t property) {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     for (NSString *property in properties) {
-        [userDefaults removeObjectForKey:property];
+        [userDefaults removeObjectForKey:[self userDefaultKeyForProperty:property]];
     }
 }
 
