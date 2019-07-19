@@ -42,6 +42,7 @@
 		85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC90BC222CE46F00B00262 /* JHGTouchButton.m */; };
 		85CC04E121C21DCE006693DD /* UIViewController+JHGarage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */; };
 		85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E221C24094006693DD /* JHGSwizzle.m */; };
+		85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DC4CEF22E1AD0900DBA83D /* JHBaseUserDefaults.m */; };
 		85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832921A6F4DF0067F46B /* AppDelegate.m */; };
 		85FC832D21A6F4DF0067F46B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832C21A6F4DF0067F46B /* ViewController.m */; };
 		85FC833021A6F4DF0067F46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85FC832E21A6F4DF0067F46B /* Main.storyboard */; };
@@ -116,6 +117,8 @@
 		85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGarage.m"; sourceTree = "<group>"; };
 		85CC04E221C24094006693DD /* JHGSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSwizzle.m; sourceTree = "<group>"; };
 		85CC04E321C24094006693DD /* JHGSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGSwizzle.h; sourceTree = "<group>"; };
+		85DC4CEE22E1AD0900DBA83D /* JHBaseUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseUserDefaults.h; sourceTree = "<group>"; };
+		85DC4CEF22E1AD0900DBA83D /* JHBaseUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseUserDefaults.m; sourceTree = "<group>"; };
 		85FC831F21A6EAB60067F46B /* JHGarage.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JHGarage.podspec; sourceTree = "<group>"; };
 		85FC832021A6EAB60067F46B /* JHGarage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGarage.h; sourceTree = "<group>"; };
 		85FC832621A6F4DF0067F46B /* JHGarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JHGarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +214,8 @@
 		852697D521B75957009F2CE6 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				85DC4CEE22E1AD0900DBA83D /* JHBaseUserDefaults.h */,
+				85DC4CEF22E1AD0900DBA83D /* JHBaseUserDefaults.m */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
 				85A5386521B770EC00E510AF /* UIView+JHGShortcut.m in Sources */,
+				85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */,
 				85A5387221B774AB00E510AF /* UIImage+JHGColor.m in Sources */,
 				85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */,
 				85A5389221B7944700E510AF /* ZTBaseResponseModel.m in Sources */,
