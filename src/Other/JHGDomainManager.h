@@ -15,7 +15,7 @@
 
 MMSingletonInterface
 
-@property (nonatomic, strong) NSString *currentDomain;
+@property (nonatomic, strong, readwrite) NSString *currentDomain;
 
 @property (nonatomic, strong) NSMutableArray *domainDataArray;
 // "title":"dev","domain":"http://39.104.17.18:8080"
