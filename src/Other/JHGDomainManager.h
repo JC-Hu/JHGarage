@@ -12,9 +12,11 @@
 
 /*
  
- JHGDomainManager.sharedInstance.currentDomain = @"https://www.yourserver.com";
+ #ifndef DEBUG
  
- #ifdef DEBUG
+ JHGDomainManager.sharedInstance.currentDomain = @"https://www.yourserver.com";
+
+ #else
  
  [JHGDomainManager.sharedInstance addDomainWithTitle:@"测试环境" domain:@"http://test.server"];
  [JHGDomainManager.sharedInstance addDomainWithTitle:@"正式环境" domain:@"https://www.yourserver.com"];
