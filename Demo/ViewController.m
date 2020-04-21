@@ -11,6 +11,7 @@
 #import "JHGarage.h"
 
 #import "JHGDomainSwitchViewController.h"
+#import "ListDemoViewController.h"
 
 #import "ZTBaseRequestItem.h"
 
@@ -58,7 +59,10 @@
     
     
     //
-    [self showDomainSwitcher];
+//    [self showDomainSwitcher];
+    
+    ListDemoViewController *vc = [ListDemoViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
     
     //
     [self sendRequest];

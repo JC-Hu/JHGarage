@@ -22,7 +22,7 @@
 #pragma mark - general list
 @property (nonatomic, strong) NSMutableArray *jhg_modelArray;
 
-- (void)setupModelArray:(NSMutableArray *)modelArray withNewListArray:(NSArray *)newListArray;
-- (void)resetListAndPage;
+- (void)jhg_setupModelArray:(NSMutableArray *)modelArray withNewListArray:(NSArray *)newListArray;
+- (void)jhg_resetListAndPage;
 @end
 

@@ -10,6 +10,7 @@
 
 #import <objc/runtime.h>
 #import "JHGSwizzle.h"
+#import <Masonry/Masonry.h>
 
 static NSString * const JHGarage_Key_BlankView;
 

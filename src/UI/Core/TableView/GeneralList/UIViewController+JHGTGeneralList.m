@@ -52,7 +52,7 @@ static NSString * const JHCellConfig_Key_ModelArray;
 }
 
 #pragma mark - general list
-- (void)setupModelArray:(NSMutableArray *)modelArray withNewListArray:(NSArray *)newListArray
+- (void)jhg_setupModelArray:(NSMutableArray *)modelArray withNewListArray:(NSArray *)newListArray
 {
     // 处理主列表业务数据，分页与空白页逻辑
     if (modelArray) {
@@ -65,7 +65,7 @@ static NSString * const JHCellConfig_Key_ModelArray;
     
     if (newListArray.count < self.jhg_pageSize) {
         // nomore data
-        [self setNoMoreData];
+        [self jhg_setNoMoreData];
     } else {
         self.jhg_pageCount++;
     }
@@ -79,13 +79,13 @@ static NSString * const JHCellConfig_Key_ModelArray;
 }
 
 // 重制页码刷新
-- (void)resetListAndPage
+- (void)jhg_resetListAndPage
 {
-    [self.dataArray removeAllObjects];
-    [self.mainTableView reloadData];
+    [self.jhg_dataArray removeAllObjects];
+    [self.jhg_mainTableView reloadData];
     self.jhg_pageCount = [self jhg_firstPageCount];
     [self.jhg_modelArray removeAllObjects];
-    [self resetNoMoreData];
+    [self jhg_resetNoMoreData];
 }
 
 - (void)setJhg_modelArray:(NSMutableArray *)jhg_modelArray

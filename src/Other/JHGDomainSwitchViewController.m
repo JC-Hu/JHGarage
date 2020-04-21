@@ -36,8 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupJHGTableView];
-    self.mainTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    [self jhg_setupJHGTableView];
+    self.jhg_mainTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     // "title":"dev","domain":"http://www.baidu.com"
     [self.listDataArray addObjectsFromArray:JHGDomainManager.sharedInstance.domainDataArray];
@@ -45,7 +45,7 @@
     [self updateDataArray];
     
     self.headerLabel.text = [@"  Current Comain - \n  " stringByAppendingString:JHGDomainManager.sharedInstance.currentDomain];
-    self.mainTableView.tableHeaderView = self.headerLabel;
+    self.jhg_mainTableView.tableHeaderView = self.headerLabel;
     
     self.title = @"Domain Switcher";
     
@@ -56,11 +56,11 @@
 
 - (void)updateDataArray
 {
-    [self.dataArray removeAllObjects];
+    [self.jhg_dataArray removeAllObjects];
     
     //
     for (NSDictionary *obj in self.listDataArray) {
-        [self.dataArray addObject:[self listCell:obj]];
+        [self.jhg_dataArray addObject:[self listCell:obj]];
     }
 }
 
@@ -83,7 +83,7 @@
 {
     JHGBlankCellModel *model = [JHGBlankCellModel new];
     model.height = height;
-    model.color = self.mainTableView.backgroundColor;
+    model.color = self.jhg_mainTableView.backgroundColor;
     
     JHCellConfig *cell = [JHCellConfig cellConfigWithCellClass:[JHGBlankCell class] dataModel:model];
     return cell;
@@ -95,7 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 拿到cellConfig
-    JHCellConfig *cellConfig = [self cellConfigOfIndexPath:indexPath];
+    JHCellConfig *cellConfig = [self jhg_cellConfigOfIndexPath:indexPath];
     
     // 拿到对应cell并根据模型显示
     UITableViewCell *cell = [cellConfig cellOfCellConfigWithTableView:tableView];

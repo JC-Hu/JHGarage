@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "UIViewController+JHGarage.h"
 #import "JHGBlankView.h"
 
 typedef enum : NSUInteger {

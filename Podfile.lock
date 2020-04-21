@@ -87,7 +87,7 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - ActionSheetPicker-3.0
     - AFNetworking
     - BlocksKit
@@ -137,4 +137,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d8afdbf446e37a670dc8161be992581ed332cb4d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

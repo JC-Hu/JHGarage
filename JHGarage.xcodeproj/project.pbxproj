@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,7 @@
 		85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389C21B7954700E510AF /* JHGAppStoreTools.m */; };
 		85A5389E21B7954800E510AF /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389C21B7954700E510AF /* JHGAppStoreTools.m */; };
 		85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC90BC222CE46F00B00262 /* JHGTouchButton.m */; };
+		85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B50C1423F90D2700277F47 /* ListDemoViewController.m */; };
 		85CC04E121C21DCE006693DD /* UIViewController+JHGarage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */; };
 		85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E221C24094006693DD /* JHGSwizzle.m */; };
 		85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DC4CEF22E1AD0900DBA83D /* JHBaseUserDefaults.m */; };
@@ -113,6 +114,8 @@
 		85A5389C21B7954700E510AF /* JHGAppStoreTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAppStoreTools.m; sourceTree = "<group>"; };
 		85AC90BB222CE46F00B00262 /* JHGTouchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHGTouchButton.h; sourceTree = "<group>"; };
 		85AC90BC222CE46F00B00262 /* JHGTouchButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHGTouchButton.m; sourceTree = "<group>"; };
+		85B50C1323F90D2700277F47 /* ListDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDemoViewController.h; sourceTree = "<group>"; };
+		85B50C1423F90D2700277F47 /* ListDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListDemoViewController.m; sourceTree = "<group>"; };
 		85CC04DF21C21DCE006693DD /* UIViewController+JHGarage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JHGarage.h"; sourceTree = "<group>"; };
 		85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGarage.m"; sourceTree = "<group>"; };
 		85CC04E221C24094006693DD /* JHGSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSwizzle.m; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 				85A5388D21B7943D00E510AF /* New Group */,
 				85FC832B21A6F4DF0067F46B /* ViewController.h */,
 				85FC832C21A6F4DF0067F46B /* ViewController.m */,
+				85B50C1323F90D2700277F47 /* ListDemoViewController.h */,
+				85B50C1423F90D2700277F47 /* ListDemoViewController.m */,
 				85FC832E21A6F4DF0067F46B /* Main.storyboard */,
 				85FC833121A6F4E00067F46B /* Assets.xcassets */,
 				85FC833321A6F4E00067F46B /* LaunchScreen.storyboard */,
@@ -522,21 +527,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/SIAlertView/SIAlertView/SIAlertView.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SIAlertView.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JHGarage/Pods-JHGarage-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -581,6 +581,7 @@
 				85FC833821A6F4E00067F46B /* main.m in Sources */,
 				85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */,
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
+				85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
 				85A5386521B770EC00E510AF /* UIView+JHGShortcut.m in Sources */,
 				85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */,

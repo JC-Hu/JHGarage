@@ -13,32 +13,34 @@
 
 @interface UIViewController (JHGTable) <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *jhg_dataArray;
 
-@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) IBOutlet UITableView *jhg_mainTableView;
 
 // call this in viewDidLoad to use JHGTable
-- (void)setupJHGTableView;
+- (void)jhg_setupJHGTableView;
 
 
-- (JHCellConfig *)cellConfigOfIndexPath:(NSIndexPath *)indexPath;
+- (JHCellConfig *)jhg_cellConfigOfIndexPath:(NSIndexPath *)indexPath;
+
 
 // to rewrite
-- (UITableViewStyle)getTableStyle;
-- (UITableViewCellSeparatorStyle)getSeparatorStyle;
-- (UIColor *)getSeparatorColor;
-- (UIColor *)getTableViewBackgroundColor;
+- (UITableViewStyle)jhg_getTableStyle;
+- (UITableViewCellSeparatorStyle)jhg_getSeparatorStyle;
+- (UIColor *)jhg_getSeparatorColor;
+- (UIColor *)jhg_getTableViewBackgroundColor;
 
 #pragma mark - refresh header footer
 
-- (BOOL)needRefreshHeader;
-- (void)refreshHeaderAction;
-- (BOOL)needRefreshFooter;
-- (void)refreshFooterAction;
-- (void)triggerRefreshManully;
-- (void)endHeaderFooterRefreshing;
-- (void)setNoMoreData;
-- (void)resetNoMoreData;
+- (BOOL)jhg_needRefreshHeader;
+- (void)jhg_refreshHeaderAction;
+- (BOOL)jhg_needRefreshFooter;
+- (void)jhg_refreshFooterAction;
+- (void)jhg_triggerRefreshManully;
+- (void)jhg_endHeaderFooterRefreshing;
+- (void)jhg_setNoMoreData;
+- (void)jhg_resetNoMoreData;
+
 
 @end
 

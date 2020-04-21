@@ -14,83 +14,76 @@
 static NSString * const JHCellConfig_Key_DataArray;
 static NSString * const JHCellConfig_Key_MainTableView;
 
+@implementation UIViewController (DXZJHGTable)
 
-@implementation UIViewController (JHGTable)
-+ (void)load
+- (void)jhg_setupJHGTableView
 {
-    [self jhg_swizzleMethod:@selector(viewDidLoad) withMethod:@selector(jhgt_viewDidLoad) error:nil];
-}
-
-- (void)jhgt_viewDidLoad
-{
+    [self.view addSubview:self.jhg_mainTableView];
     
-    [self jhgt_viewDidLoad];
-
-}
-
-
-- (void)setupJHGTableView
-{
-    [self.view addSubview:self.mainTableView];
-    
-    if ([self needRefreshHeader]) {
-        MJRefreshNormalHeader *loadingHeader = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshHeaderAction)];
+    if ([self jhg_needRefreshHeader]) {
+        MJRefreshNormalHeader *loadingHeader = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(jhg_refreshHeaderAction)];
         // 隐藏时间
         loadingHeader.lastUpdatedTimeLabel.hidden = YES;
         // 隐藏状态
         // loadingHeader.stateLabel.hidden = YES;
-        self.mainTableView.mj_header = loadingHeader;
+        self.jhg_mainTableView.mj_header = loadingHeader;
     }
     
-    if ([self needRefreshFooter]) {
-        self.mainTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshFooterAction)];
+    if ([self jhg_needRefreshFooter]) {
+        self.jhg_mainTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(jhg_refreshFooterAction)];
     }
 }
 
 #pragma mark -
 
-- (UITableViewStyle)getTableStyle
+- (UITableViewStyle)jhg_getTableStyle
 {
     return UITableViewStyleGrouped;
 }
 
-- (UITableViewCellSeparatorStyle)getSeparatorStyle
+- (UITableViewCellSeparatorStyle)jhg_getSeparatorStyle
 {
     return UITableViewCellSeparatorStyleNone;
 }
 
-- (UIColor *)getSeparatorColor
+- (UIColor *)jhg_getSeparatorColor
 {
     return [UIColor colorWithWhite:.9 alpha:1];
 }
 
-- (UIColor *)getTableViewBackgroundColor
+- (UIColor *)jhg_getTableViewBackgroundColor
 {
     return [UIColor whiteColor];
 }
 
+
+
 #pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (![self isTwoDimensionalDataArray]) {
-        if (self.dataArray.count) {
+    if (tableView!=self.jhg_mainTableView) {
+        return 1;
+    }
+    
+    if (![self jhg_isTwoDimensionalDataArray]) {
+        if (self.jhg_dataArray.count) {
             return 1;
         } else {
             return 0;
         }
     } else {
-        return self.dataArray.count;
+        return self.jhg_dataArray.count;
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (![self isTwoDimensionalDataArray]) {
+    if (![self jhg_isTwoDimensionalDataArray]) {
         
-        return self.dataArray.count;
+        return self.jhg_dataArray.count;
     } else {
-        if (self.dataArray.count > section) {
-            id object = self.dataArray[section];
+        if (self.jhg_dataArray.count > section) {
+            id object = self.jhg_dataArray[section];
             
             if ([object respondsToSelector:@selector(count)]) {
                 return [object count];
@@ -104,7 +97,7 @@ static NSString * const JHCellConfig_Key_MainTableView;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 拿到cellConfig
-    JHCellConfig *cellConfig = [self cellConfigOfIndexPath:indexPath];
+    JHCellConfig *cellConfig = [self jhg_cellConfigOfIndexPath:indexPath];
     
     // 拿到对应cell并根据模型显示
     UITableViewCell *cell = [cellConfig cellOfCellConfigWithTableView:tableView];
@@ -115,15 +108,19 @@ static NSString * const JHCellConfig_Key_MainTableView;
 #pragma mark - TableView Delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    JHCellConfig *cellConfig = [self cellConfigOfIndexPath:indexPath];
+    if (tableView != self.jhg_mainTableView) {
+        return tableView.rowHeight;
+    }
+    
+    JHCellConfig *cellConfig = [self jhg_cellConfigOfIndexPath:indexPath];
     cellConfig.tableView = tableView;
-
+    
     return [cellConfig cellHeight];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    JHCellConfig *cellConfig = [self cellConfigOfIndexPath:indexPath];
+    JHCellConfig *cellConfig = [self jhg_cellConfigOfIndexPath:indexPath];
     if (cellConfig.selectBlock) {
         cellConfig.selectBlock(cellConfig, [tableView cellForRowAtIndexPath:indexPath]);
     }
@@ -131,27 +128,35 @@ static NSString * const JHCellConfig_Key_MainTableView;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (tableView != self.jhg_mainTableView) {
+           return tableView.sectionHeaderHeight;
+    }
     return 0.01;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+    if (tableView != self.jhg_mainTableView) {
+           return tableView.sectionFooterHeight;
+    }
     return 0.01;
 }
 
+
+
 #pragma mark -
-- (JHCellConfig *)cellConfigOfIndexPath:(NSIndexPath *)indexPath
+- (JHCellConfig *)jhg_cellConfigOfIndexPath:(NSIndexPath *)indexPath
 {
-    if (![self isTwoDimensionalDataArray]) {
+    if (![self jhg_isTwoDimensionalDataArray]) {
         
-        if (self.dataArray.count > indexPath.row) {
-            return self.dataArray[indexPath.row];
+        if (self.jhg_dataArray.count > indexPath.row) {
+            return self.jhg_dataArray[indexPath.row];
         }
     } else {
         NSInteger section = indexPath.section;
-        if (self.dataArray.count > section) {
+        if (self.jhg_dataArray.count > section) {
             
-            id object = self.dataArray[section];
+            id object = self.jhg_dataArray[section];
             
             if ([object isKindOfClass:[NSArray class]] && [object count] > indexPath.row) {
                 return object[indexPath.row];
@@ -161,53 +166,53 @@ static NSString * const JHCellConfig_Key_MainTableView;
     return nil;
 }
 
-- (BOOL)isTwoDimensionalDataArray
+- (BOOL)jhg_isTwoDimensionalDataArray
 {
-    if (self.dataArray.firstObject && [self.dataArray.firstObject isKindOfClass:[NSArray class]]) {
+    if (self.jhg_dataArray.firstObject && [self.jhg_dataArray.firstObject isKindOfClass:[NSArray class]]) {
         return YES;
     }
     return NO;
 }
 
-#pragma mark -
-- (void)setDataArray:(NSMutableArray *)dataArray
+#pragma mark - property
+- (void)setJhg_dataArray:(NSMutableArray *)dataArray
 {
     objc_setAssociatedObject(self, &JHCellConfig_Key_DataArray, dataArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSMutableArray *)dataArray
+- (NSMutableArray *)jhg_dataArray
 {
     NSMutableArray *_value = objc_getAssociatedObject(self, &JHCellConfig_Key_DataArray);
     if (!_value) {
         _value = [NSMutableArray array];
-        self.dataArray = _value;
+        self.jhg_dataArray = _value;
     }
     return _value;
 }
 
-- (void)setMainTableView:(UITableView *)mainTableView
+- (void)setJhg_mainTableView:(UITableView *)mainTableView
 {
     objc_setAssociatedObject(self, &JHCellConfig_Key_MainTableView, mainTableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
 }
 
-- (UITableView *)mainTableView
+- (UITableView *)jhg_mainTableView
 {
     UITableView *_value = objc_getAssociatedObject(self, &JHCellConfig_Key_MainTableView);
     
     if (!_value) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds
-                                                              style:[self getTableStyle]];
+                                                              style:[self jhg_getTableStyle]];
         _value = tableView;
-        self.mainTableView = _value;
+        self.jhg_mainTableView = _value;
         
         tableView.autoresizingMask =
         UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        tableView.separatorStyle = [self getSeparatorStyle];
-        tableView.separatorColor = [self getSeparatorColor];
+        tableView.separatorStyle = [self jhg_getSeparatorStyle];
+        tableView.separatorColor = [self jhg_getSeparatorColor];
         tableView.delegate = self;
         tableView.dataSource = self;
-        tableView.backgroundColor = [self getTableViewBackgroundColor];
+        tableView.backgroundColor = [self jhg_getTableViewBackgroundColor];
         
         tableView.estimatedRowHeight = 0;
         tableView.estimatedSectionHeaderHeight = 0;
@@ -220,53 +225,49 @@ static NSString * const JHCellConfig_Key_MainTableView;
 }
 
 
-
 #pragma mark - refresh header footer
-- (BOOL)needRefreshHeader
+- (BOOL)jhg_needRefreshHeader
 {
     return NO;
 }
 
-- (void)refreshHeaderAction
+- (void)jhg_refreshHeaderAction
 {
     
 }
 
-- (BOOL)needRefreshFooter
+- (BOOL)jhg_needRefreshFooter
 {
     return NO;
 }
 
-- (void)refreshFooterAction
+- (void)jhg_refreshFooterAction
 {
     
 }
 
-- (void)triggerRefreshManully
+- (void)jhg_triggerRefreshManully
 {
-    [self.mainTableView.mj_header beginRefreshing];
+    [self.jhg_mainTableView.mj_header beginRefreshing];
 }
 
-- (void)endHeaderFooterRefreshing
+- (void)jhg_endHeaderFooterRefreshing
 {
-    [self.mainTableView.mj_header endRefreshing];
-    if (self.mainTableView.mj_footer.state != MJRefreshStateNoMoreData) {
-        [self.mainTableView.mj_footer endRefreshing];
+    [self.jhg_mainTableView.mj_header endRefreshing];
+    if (self.jhg_mainTableView.mj_footer.state != MJRefreshStateNoMoreData) {
+        [self.jhg_mainTableView.mj_footer endRefreshing];
     }
 }
 
-- (void)setNoMoreData
+- (void)jhg_setNoMoreData
 {
-    self.mainTableView.mj_footer.state = MJRefreshStateNoMoreData;
+    self.jhg_mainTableView.mj_footer.state = MJRefreshStateNoMoreData;
 }
 
-- (void)resetNoMoreData
+- (void)jhg_resetNoMoreData
 {
-    [self.mainTableView.mj_footer resetNoMoreData];
+    [self.jhg_mainTableView.mj_footer resetNoMoreData];
 }
-
-
-
 
 
 @end
