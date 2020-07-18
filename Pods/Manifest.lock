@@ -1,5 +1,4 @@
 PODS:
-  - ActionSheetPicker-3.0 (2.3.0)
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -63,7 +62,6 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - ActionSheetPicker-3.0
   - AFNetworking (~> 3.2.1)
   - BlocksKit (~> 2.2.5)
   - FMDB
@@ -88,7 +86,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - ActionSheetPicker-3.0
     - AFNetworking
     - BlocksKit
     - FMDB
@@ -112,7 +109,6 @@ SPEC REPOS:
     - YYWebImage
 
 SPEC CHECKSUMS:
-  ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -135,6 +131,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d8afdbf446e37a670dc8161be992581ed332cb4d
+PODFILE CHECKSUM: 0e5af1ba2854f22b59bdaf9a3248cbd134212ba2
 
 COCOAPODS: 1.8.4
