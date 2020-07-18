@@ -42,7 +42,7 @@ target 'JHGarage' do
     pod 'NJKWebViewProgress'
     pod 'SIAlertView'
     pod 'WZLBadge'
-    pod 'ActionSheetPicker-3.0'
+    #pod 'ActionSheetPicker-3.0'
     
     # 工具--
     pod 'INTULocationManager', '~> 4.3.2'

@@ -44,7 +44,7 @@ s.dependency   'IQKeyboardManager'
 s.dependency   'NJKWebViewProgress'
 s.dependency   'SIAlertView'
 s.dependency   'WZLBadge'
-s.dependency   'ActionSheetPicker-3.0'
+# s.dependency   'ActionSheetPicker-3.0'
 
 # 工具--
 s.dependency   'INTULocationManager', '~> 4.3.2'
