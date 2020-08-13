@@ -73,18 +73,51 @@ return __singleton__;                                                   \
 #define JHWeakSelf @weakify(self);
 #define JHStrongSelf @strongify(self);
 
+// SafeArea底部缩进
+#define kSafeAreaInsetsBottom ({\
+double tmp = 0.0;\
+if (@available(iOS 11.0, *)) {\
+if ([UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom > 0) {\
+tmp = [UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom;\
+}else{\
+tmp = 0.0;\
+}\
+}else{\
+tmp = 0.0;\
+}\
+tmp;\
+})
+
 //系统控件默认高度
-#define kStatusBarHeight (20.f)
-
+#define kStatusBarHeight ([UIApplication sharedApplication].statusBarFrame.size.height)
 #define kNavBarHeight (44.f)
+#define kTabBarHeight (kSafeAreaInsetsBottom + 49.f)
+#define kSafeAreaTopHeight       (kStatusBarHeight + kNavBarHeight)
 
-#define kTabBarHeight (49.f)
+// iPhoneX系列
+#define kDevice_X \
+({ BOOL x = NO; \
+    if (@available(iOS 11.0, *)) { \
+        x = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0; \
+    } \
+x; \
+})
 
-#define kCellDefaultHeight (44.f)
 
 // 屏幕宽高
 #define kJHScreenWidth     ([UIScreen mainScreen].bounds.size.width)
 #define kJHScreenHeight    ([UIScreen mainScreen].bounds.size.height)
+
+
+// HEX
+#define HEX_COlOR_A(HexValue,Alpha) [UIColor colorWithRed:((float)((HexValue & 0xFF0000) >> 16))/255.0 green:((float)((HexValue & 0xFF00) >> 8))/255.0 blue:((float)(HexValue & 0xFF))/255.0 alpha:Alpha]
+#define HEX_COlOR(HexValue) COLOR_HEX_A(HexValue,1)
+
+//DEBUG模式下,打印日志(包括函数名、行号)
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"%s [Line %d] \n" fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+# define DLog(...)
 
 typedef void(^JHSingleSelectionBlock)(id model);
 

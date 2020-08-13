@@ -31,7 +31,7 @@ target 'JHGarage' do
     pod 'Masonry'
     pod 'MJRefresh'
     pod 'Toast', '~> 4.0.0'
-    
+    pod 'MyLayout'
     
     
     # Table
