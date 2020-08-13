@@ -120,6 +120,9 @@ static NSString * const JHCellConfig_Key_MainTableView;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView != self.jhg_mainTableView) {
+        return;
+    }
     JHCellConfig *cellConfig = [self jhg_cellConfigOfIndexPath:indexPath];
     if (cellConfig.selectBlock) {
         cellConfig.selectBlock(cellConfig, [tableView cellForRowAtIndexPath:indexPath]);
