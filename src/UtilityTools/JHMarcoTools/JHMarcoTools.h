@@ -109,9 +109,16 @@ x; \
 #define kJHScreenHeight    ([UIScreen mainScreen].bounds.size.height)
 
 
-// HEX
-#define HEX_COlOR_A(HexValue,Alpha) [UIColor colorWithRed:((float)((HexValue & 0xFF0000) >> 16))/255.0 green:((float)((HexValue & 0xFF00) >> 8))/255.0 blue:((float)(HexValue & 0xFF))/255.0 alpha:Alpha]
-#define HEX_COlOR(HexValue) COLOR_HEX_A(HexValue,1)
+// Color
+#define HEX_COLOR_A(HexValue,Alpha)    [UIColor colorWithRed:((float)((HexValue & 0xFF0000) >> 16))/255.0 green:((float)((HexValue & 0xFF00) >> 8))/255.0 blue:((float)(HexValue & 0xFF))/255.0 alpha:Alpha]
+
+#define HEX_COLOR(HexValue)            HEX_COLOR_A(HexValue,1)
+
+
+#define RGBA_COLOR(r,g,b,a)            ([UIColor colorWithRed:(r/255.f) green:(g/255.f) blue:(b/255.f) alpha:a])
+
+#define RGB_COLOR(r,g,b) RGBA_COLOR(r,g,b,1)
+
 
 //DEBUG模式下,打印日志(包括函数名、行号)
 #ifdef DEBUG
