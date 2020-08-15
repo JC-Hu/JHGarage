@@ -35,7 +35,6 @@ s.dependency   'AFNetworking','~> 3.2.1'
 s.dependency   'SDWebImage'
 s.dependency   'MBProgressHUD'
 s.dependency   'Masonry'
-s.dependency   'MyLayout'
 s.dependency   'MJRefresh'
 s.dependency   'Toast', '~> 4.0.0'
 # Table
