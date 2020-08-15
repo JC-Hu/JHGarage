@@ -13,6 +13,7 @@
 		8529EEB121FAE7B100F2AE9B /* JHGBlankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8529EEAF21FAE7B000F2AE9B /* JHGBlankView.m */; };
 		8562B1BF21DF304E00C2C6D7 /* UIViewController+JHGTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */; };
 		8562B1C521DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */; };
+		8566E91E24E839C300FEF0B1 /* JHGSeparatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8566E91C24E839C300FEF0B1 /* JHGSeparatorCell.m */; };
 		8592BA36228D23360085DFA7 /* JHGDomainSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8592BA35228D23360085DFA7 /* JHGDomainSwitchViewController.m */; };
 		8592BA39228D29120085DFA7 /* JHGDomainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8592BA38228D29120085DFA7 /* JHGDomainManager.m */; };
 		85A5385D21B76F2600E510AF /* JHGBlankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5385721B76F2500E510AF /* JHGBlankCell.m */; };
@@ -80,6 +81,8 @@
 		8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGTable.m"; sourceTree = "<group>"; };
 		8562B1C321DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JHCellConfig.h"; sourceTree = "<group>"; };
 		8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JHCellConfig.m"; sourceTree = "<group>"; };
+		8566E91C24E839C300FEF0B1 /* JHGSeparatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSeparatorCell.m; sourceTree = "<group>"; };
+		8566E91D24E839C300FEF0B1 /* JHGSeparatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGSeparatorCell.h; sourceTree = "<group>"; };
 		8592BA34228D23360085DFA7 /* JHGDomainSwitchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHGDomainSwitchViewController.h; sourceTree = "<group>"; };
 		8592BA35228D23360085DFA7 /* JHGDomainSwitchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHGDomainSwitchViewController.m; sourceTree = "<group>"; };
 		8592BA37228D29120085DFA7 /* JHGDomainManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHGDomainManager.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */,
 				85A5385821B76F2600E510AF /* JHGBlankCell.h */,
 				85A5385721B76F2500E510AF /* JHGBlankCell.m */,
+				8566E91D24E839C300FEF0B1 /* JHGSeparatorCell.h */,
+				8566E91C24E839C300FEF0B1 /* JHGSeparatorCell.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -581,6 +586,7 @@
 				85FC833821A6F4E00067F46B /* main.m in Sources */,
 				85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */,
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
+				8566E91E24E839C300FEF0B1 /* JHGSeparatorCell.m in Sources */,
 				85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
 				85A5386521B770EC00E510AF /* UIView+JHGShortcut.m in Sources */,
