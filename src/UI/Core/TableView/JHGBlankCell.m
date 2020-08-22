@@ -36,6 +36,7 @@
     JHGBlankCellModel *model = self.cellConfig.dataModel;
     
     self.contentView.backgroundColor = model.color;
+    self.backgroundColor = model.color;
 }
 
 + (CGFloat)cellHeightWithCellConfig:(JHCellConfig *)cellConfig
