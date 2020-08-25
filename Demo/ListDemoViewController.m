@@ -26,14 +26,14 @@
 
 - (void)updateDataArray
 {
-    [self clearCells];
+    [self jhg_clearCells];
     
     //
     for (int i = 0; i < 20; i++) {
         NSDictionary *obj = @{
             @"index": @(i)
         };
-        [self addCell:[self listCell:obj]];
+        [self jhg_addCell:[self listCell:obj]];
     }
 }
 

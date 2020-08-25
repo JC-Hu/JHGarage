@@ -179,20 +179,20 @@ static NSString * const JHCellConfig_Key_MainTableView;
 
 #pragma mark -
 
-- (void)addCell:(JHCellConfig *)cellConfig
+- (void)jhg_addCell:(JHCellConfig *)cellConfig
 {
     if (cellConfig) {
         [self.jhg_dataArray addObject:cellConfig];
     }
 }
-- (void)addSectionCells:(NSArray <__kindof JHCellConfig *> *)cellConfigs
+- (void)jhg_addSectionCells:(NSArray <__kindof JHCellConfig *> *)cellConfigs
 {
     if (cellConfigs) {
         [self.jhg_dataArray addObject:cellConfigs];
     }
 }
 
-- (void)clearCells
+- (void)jhg_clearCells
 {
     [self.jhg_dataArray removeAllObjects];
 }

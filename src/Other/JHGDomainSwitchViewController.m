@@ -56,11 +56,11 @@
 
 - (void)updateDataArray
 {
-    [self clearCells];
+    [self jhg_clearCells];
     
     //
     for (NSDictionary *obj in self.listDataArray) {
-        [self addCell:[self listCell:obj]];
+        [self jhg_addCell:[self listCell:obj]];
     }
 }
 
