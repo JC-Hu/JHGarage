@@ -34,7 +34,7 @@ static NSString * const JHCellConfig_Key_MainTableView;
     }
 }
 
-#pragma mark -
+#pragma mark - style
 
 - (UITableViewStyle)jhg_getTableStyle
 {
@@ -147,7 +147,7 @@ static NSString * const JHCellConfig_Key_MainTableView;
 
 
 
-#pragma mark -
+#pragma mark - find cellconfig
 - (JHCellConfig *)jhg_cellConfigOfIndexPath:(NSIndexPath *)indexPath
 {
     if (![self jhg_isTwoDimensionalDataArray]) {
@@ -175,6 +175,26 @@ static NSString * const JHCellConfig_Key_MainTableView;
         return YES;
     }
     return NO;
+}
+
+#pragma mark -
+
+- (void)addCell:(JHCellConfig *)cellConfig
+{
+    if (cellConfig) {
+        [self.jhg_dataArray addObject:cellConfig];
+    }
+}
+- (void)addSectionCells:(NSArray <__kindof JHCellConfig *> *)cellConfigs
+{
+    if (cellConfigs) {
+        [self.jhg_dataArray addObject:cellConfigs];
+    }
+}
+
+- (void)clearCells
+{
+    [self.jhg_dataArray removeAllObjects];
 }
 
 #pragma mark - property

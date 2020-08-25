@@ -26,17 +26,15 @@
 
 - (void)updateDataArray
 {
-    [self.jhg_dataArray removeAllObjects];
+    [self clearCells];
     
     //
     for (int i = 0; i < 20; i++) {
         NSDictionary *obj = @{
             @"index": @(i)
         };
-        [self.jhg_dataArray addObject:[self listCell:obj]];
+        [self addCell:[self listCell:obj]];
     }
-
-    
 }
 
 - (JHCellConfig *)listCell:(NSDictionary *)obj

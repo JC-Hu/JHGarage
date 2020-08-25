@@ -20,6 +20,11 @@
 // call this in viewDidLoad to use JHGTable
 - (void)jhg_setupJHGTableView;
 
+// use only one of the two methods below in one vc, dont mix
+- (void)addCell:(JHCellConfig *)cellConfig;
+- (void)addSectionCells:(NSArray <__kindof JHCellConfig *> *)cellConfigs;
+// removeAllObjects of dataArray
+- (void)clearCells;
 
 - (JHCellConfig *)jhg_cellConfigOfIndexPath:(NSIndexPath *)indexPath;
 
