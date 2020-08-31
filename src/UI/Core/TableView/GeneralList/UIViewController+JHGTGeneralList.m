@@ -81,8 +81,6 @@ static NSString * const JHCellConfig_Key_ModelArray;
 // 重制页码刷新
 - (void)jhg_resetListAndPage
 {
-    [self jhg_clearCells];
-    [self.jhg_mainTableView reloadData];
     self.jhg_pageCount = [self jhg_firstPageCount];
     [self.jhg_modelArray removeAllObjects];
     [self jhg_resetNoMoreData];
