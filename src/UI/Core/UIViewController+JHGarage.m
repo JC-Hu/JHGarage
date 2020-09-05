@@ -37,13 +37,23 @@
 - (void)jhg_viewWillAppear:(BOOL)animated
 {
     [self jhg_viewWillAppear:animated];
-    NSLog(@"%@ viewWillAppear", NSStringFromClass(self.class));
+    
+    NSString *className = NSStringFromClass(self.class);
+    if ([className hasPrefix:@"_"]||[className hasPrefix:@"UI"]||[className hasPrefix:@"NS"]) {
+        return;
+    }
+    NSLog(@"%@ viewWillAppear", className);
 }
 
 - (void)jhg_viewWillDisappear:(BOOL)animated
 {
     [self jhg_viewWillDisappear:animated];
-    NSLog(@"%@ viewWillDisappear", NSStringFromClass(self.class));
+    
+    NSString *className = NSStringFromClass(self.class);
+    if ([className hasPrefix:@"_"]||[className hasPrefix:@"UI"]||[className hasPrefix:@"NS"]) {
+        return;
+    }
+    NSLog(@"%@ viewWillDisappear", className);
 }
 
 - (void)jhg_viewDidAppear:(BOOL)animated {
@@ -52,9 +62,12 @@
 
 - (void)jhg_dealloc
 {
-    NSString *str = NSStringFromClass(self.class);
+    NSString *className = NSStringFromClass(self.class);
     [self jhg_dealloc];
-    NSLog(@"%@ dealloc", str);
+    if ([className hasPrefix:@"_"]||[className hasPrefix:@"UI"]||[className hasPrefix:@"NS"]) {
+        return;
+    }
+    NSLog(@"%@ dealloc", className);
 }
 
 #pragma mark -
