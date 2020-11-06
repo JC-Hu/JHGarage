@@ -11,6 +11,7 @@
 
 @protocol JHGHttpEngineDelegate <NSObject>
 
+@optional
 - (void)willSendRequestItem:(JHGRequestItem *)item;
 - (void)didSendRequestItem:(JHGRequestItem *)item;
 - (void)didFinishRequestItem:(JHGRequestItem *)item;
