@@ -26,7 +26,7 @@ MMSingletonInterface
 
 @property (nonatomic, assign) BOOL disableLog;
 
-@property (nonatomic, assign) id<JHGHttpEngineDelegate> delegate;
+@property (nonatomic, weak) id<JHGHttpEngineDelegate> delegate;
 
 
 - (NSURLSessionDataTask *)sendAsynchronousWithRequestItem:(JHGRequestItem *)item;
