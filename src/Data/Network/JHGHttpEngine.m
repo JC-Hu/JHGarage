@@ -5,7 +5,7 @@
 //
 
 #import "JHGHttpEngine.h"
-#import "AFNetworking.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 
 #define LogSucceed NSLog(@"request successed,the response is %@",operation.responseString)

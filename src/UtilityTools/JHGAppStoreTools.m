@@ -7,7 +7,7 @@
 
 #import "JHGAppStoreTools.h"
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 @interface  JHGAppStoreTools ()
 

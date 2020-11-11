@@ -18,7 +18,6 @@ s.requires_arc = true
 # Pod Dependencies
 
 s.dependency   'JRSwizzle'
-s.dependency   'BlocksKit'
 s.dependency   'YYModel'
 s.dependency   'YYCache'
 s.dependency   'YYImage'
@@ -28,7 +27,7 @@ s.dependency   'YYDispatchQueuePool'
 s.dependency   'YYAsyncLayer'
 
 # 网络数据--
-s.dependency   'AFNetworking','~> 3.2.1'
+  pod 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
 
 # UI--
 # Basic

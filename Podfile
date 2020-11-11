@@ -8,7 +8,6 @@ target 'JHGarage' do
     # Pods for JHGarage
     inhibit_all_warnings!
     
-    pod 'BlocksKit', '~> 2.2.5'
     pod 'YYModel'
     pod 'YYCache'
     pod 'YYImage'
@@ -18,8 +17,8 @@ target 'JHGarage' do
     pod 'YYAsyncLayer'
     
     # 网络数据--
-    pod 'AFNetworking','~> 3.2.1'
-    
+    pod 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
+
     # 本地数据--
     pod 'FMDB'
     

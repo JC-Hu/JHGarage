@@ -28,9 +28,9 @@
 
 #import "JHFontMarco.h"
 
-#import <BlocksKit/UIBarButtonItem+BlocksKit.h>
-#import <BlocksKit/UIControl+BlocksKit.h>
-#import <BlocksKit/UIGestureRecognizer+BlocksKit.h>
-#import <BlocksKit/UITextField+BlocksKit.h>
-#import <BlocksKit/UIView+BlocksKit.h>
-#import <BlocksKit/UITextField+BlocksKit.h>
+//#import <BlocksKit/UIBarButtonItem+BlocksKit.h>
+//#import <BlocksKit/UIControl+BlocksKit.h>
+//#import <BlocksKit/UIGestureRecognizer+BlocksKit.h>
+//#import <BlocksKit/UITextField+BlocksKit.h>
+//#import <BlocksKit/UIView+BlocksKit.h>
+//#import <BlocksKit/UITextField+BlocksKit.h>
