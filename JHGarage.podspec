@@ -27,7 +27,10 @@ s.dependency   'YYDispatchQueuePool'
 s.dependency   'YYAsyncLayer'
 
 # 网络数据--
-s.dependency 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
+s.dependency 'AFNetworking/Reachability', '~> 3.2.1'
+s.dependency 'AFNetworking/Serialization', '~> 3.2.1'
+s.dependency 'AFNetworking/Security', '~> 3.2.1'
+s.dependency 'AFNetworking/NSURLSession', '~> 3.2.1'
 
 # UI--
 # Basic
