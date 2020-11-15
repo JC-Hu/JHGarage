@@ -23,7 +23,7 @@
 #import "UIViewController+JHGTable.h"
 
 
-#import "UIView+JHGShortcut.h"
+#import <YYCategories/UIView+YYAdd.h>
 #import <Masonry/Masonry.h>
 
 #import "JHFontMarco.h"

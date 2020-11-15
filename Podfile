@@ -15,6 +15,8 @@ target 'JHGarage' do
     pod 'YYText'
     pod 'YYDispatchQueuePool'
     pod 'YYAsyncLayer'
+    pod 'YYCategories'
+
     
     # 网络数据--
     pod 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']

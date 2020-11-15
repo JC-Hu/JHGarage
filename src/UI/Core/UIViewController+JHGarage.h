@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import <Masonry/Masonry.h>
-#import "UIView+JHGShortcut.h"
+#import <YYCategories/UIView+YYAdd.h>
 
 
 @class JHGRequestItem;

@@ -25,6 +25,7 @@ s.dependency   'YYWebImage'
 s.dependency   'YYText'
 s.dependency   'YYDispatchQueuePool'
 s.dependency   'YYAsyncLayer'
+s.dependency   'YYCategories'
 
 # 网络数据--
 s.dependency 'AFNetworking/Reachability', '~> 3.2.1'

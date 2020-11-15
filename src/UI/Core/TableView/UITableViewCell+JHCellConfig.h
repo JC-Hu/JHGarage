@@ -10,7 +10,7 @@
 
 #import <JHCellConfig/JHCellConfig.h>
 #import <Masonry/Masonry.h>
-#import "UIView+JHGShortcut.h"
+#import <YYCategories/UIView+YYAdd.h>
 
 @interface UITableViewCell (JHCellConfig) <JHCellConfigProtocol>
 
