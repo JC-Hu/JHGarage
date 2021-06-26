@@ -13,5 +13,8 @@
 //返回该图片是否有透明度通道
 - (BOOL)hasAlphaChannel;
 
+// 渐变色图片
+- (UIImage *)gradientImageWithColors:(NSArray *)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint locations:(NSArray *)points size:(CGSize)size;
+
 
 @end

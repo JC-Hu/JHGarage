@@ -71,5 +71,22 @@
             alpha == kCGImageAlphaPremultipliedLast);
 }
 
-
+- (UIImage *)gradientImageWithColors:(NSArray *)colors startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint locations:(NSArray *)locations size:(CGSize)size {
+    // CAGradientLayer类对其绘制渐变背景颜色、填充层的形状(包括圆角)
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    // 创建渐变色数组，需要转换为CGColor颜色
+    gradientLayer.colors = colors;
+    // 设置渐变颜色方向，左上点为(0,0), 右下点为(1,1)
+    gradientLayer.startPoint = startPoint;
+    gradientLayer.endPoint = endPoint;
+    //  设置颜色变化点，取值范围 0.0~1.0
+    gradientLayer.locations = locations;
+    
+    UIGraphicsBeginImageContext(gradientLayer.frame.size);
+    [gradientLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return gradientImage;
+}
 @end
