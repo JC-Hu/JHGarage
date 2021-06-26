@@ -14,6 +14,8 @@
 		8562B1BF21DF304E00C2C6D7 /* UIViewController+JHGTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1BE21DF304E00C2C6D7 /* UIViewController+JHGTable.m */; };
 		8562B1C521DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */; };
 		8566E91E24E839C300FEF0B1 /* JHGSeparatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8566E91C24E839C300FEF0B1 /* JHGSeparatorCell.m */; };
+		856A51F926872D7000A9376F /* UIAlertController+JHGAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 856A51F826872D6F00A9376F /* UIAlertController+JHGAlert.m */; };
+		856A51FC26872D7D00A9376F /* UIButton+AreaExpansion.m in Sources */ = {isa = PBXBuildFile; fileRef = 856A51FB26872D7D00A9376F /* UIButton+AreaExpansion.m */; };
 		856FE952255C370200B7F034 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 856FE949255C370100B7F034 /* UIView+BlocksKit.m */; };
 		856FE953255C370200B7F034 /* UIGestureRecognizer+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 856FE94A255C370100B7F034 /* UIGestureRecognizer+BlocksKit.m */; };
 		856FE954255C370200B7F034 /* UIBarButtonItem+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 856FE94B255C370100B7F034 /* UIBarButtonItem+BlocksKit.m */; };
@@ -107,6 +109,10 @@
 		8562B1C421DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JHCellConfig.m"; sourceTree = "<group>"; };
 		8566E91C24E839C300FEF0B1 /* JHGSeparatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSeparatorCell.m; sourceTree = "<group>"; };
 		8566E91D24E839C300FEF0B1 /* JHGSeparatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGSeparatorCell.h; sourceTree = "<group>"; };
+		856A51F726872D6F00A9376F /* UIAlertController+JHGAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JHGAlert.h"; sourceTree = "<group>"; };
+		856A51F826872D6F00A9376F /* UIAlertController+JHGAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+JHGAlert.m"; sourceTree = "<group>"; };
+		856A51FA26872D7D00A9376F /* UIButton+AreaExpansion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AreaExpansion.h"; sourceTree = "<group>"; };
+		856A51FB26872D7D00A9376F /* UIButton+AreaExpansion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AreaExpansion.m"; sourceTree = "<group>"; };
 		856FE949255C370100B7F034 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlocksKit.m"; sourceTree = "<group>"; };
 		856FE94A255C370100B7F034 /* UIGestureRecognizer+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+BlocksKit.m"; sourceTree = "<group>"; };
 		856FE94B255C370100B7F034 /* UIBarButtonItem+BlocksKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BlocksKit.m"; sourceTree = "<group>"; };
@@ -463,6 +469,10 @@
 				85A5387121B774AB00E510AF /* UIImage+JHGColor.m */,
 				85A5386D21B7749C00E510AF /* UIImage+JHGImageUtil.h */,
 				85A5386C21B7749C00E510AF /* UIImage+JHGImageUtil.m */,
+				856A51F726872D6F00A9376F /* UIAlertController+JHGAlert.h */,
+				856A51F826872D6F00A9376F /* UIAlertController+JHGAlert.m */,
+				856A51FA26872D7D00A9376F /* UIButton+AreaExpansion.h */,
+				856A51FB26872D7D00A9376F /* UIButton+AreaExpansion.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -763,6 +773,7 @@
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
 				856FE98F255C37A300B7F034 /* A2DynamicDelegate.m in Sources */,
 				8566E91E24E839C300FEF0B1 /* JHGSeparatorCell.m in Sources */,
+				856A51F926872D7000A9376F /* UIAlertController+JHGAlert.m in Sources */,
 				85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */,
 				856FE99A255C37A300B7F034 /* NSObject+BKAssociatedObjects.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
@@ -775,6 +786,7 @@
 				856FE999255C37A300B7F034 /* NSOrderedSet+BlocksKit.m in Sources */,
 				856FE993255C37A300B7F034 /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				856FE98C255C37A300B7F034 /* NSCache+BlocksKit.m in Sources */,
+				856A51FC26872D7D00A9376F /* UIButton+AreaExpansion.m in Sources */,
 				85A5389221B7944700E510AF /* ZTBaseResponseModel.m in Sources */,
 				856FE99C255C37A300B7F034 /* NSObject+BKBlockExecution.m in Sources */,
 				8529EEAA21FADD8A00F2AE9B /* UIViewController+JHGTGeneralList.m in Sources */,

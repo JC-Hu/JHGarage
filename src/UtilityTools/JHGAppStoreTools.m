@@ -27,9 +27,8 @@
 
 - (void)requestIfNeededIsInReviewWithAppID:(NSString *)appID block:(void (^)(BOOL inReview))block
 {
-    // 是否绕过
     // 使用商店信息判断是否审核中
-    __block BOOL inReview = NO; // 默认开启
+    __block BOOL inReview = NO;
     
     if ([self isInReview] == JHGInReviewStatusNone) {
         // 没有版本信息
@@ -44,7 +43,7 @@
                 // 版本信息请求失败
                 
             }
-            // 付款逻辑
+            //
             if (block) {
                 block(inReview);
             }
@@ -55,7 +54,7 @@
             // 审核中
             inReview = YES;
         }
-        // 付款逻辑
+        //
         if (block) {
             block(inReview);
         }
