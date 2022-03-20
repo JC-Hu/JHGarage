@@ -8,7 +8,7 @@
 #ifndef JHEXTScope_h
 #define JHEXTScope_h
 
-#import "JHMetaMarcos.h"
+#import "JHMetaMacros.h"
 
 #ifndef weakify
     #if DEBUG

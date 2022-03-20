@@ -66,10 +66,17 @@
 		85A5389521B7944700E510AF /* ZTBaseRequestItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389121B7944700E510AF /* ZTBaseRequestItem.m */; };
 		85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389C21B7954700E510AF /* JHGAppStoreTools.m */; };
 		85A5389E21B7954800E510AF /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A5389C21B7954700E510AF /* JHGAppStoreTools.m */; };
+		85A985AF27E7817400868630 /* JHGWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A985AE27E7817400868630 /* JHGWeakProxy.m */; };
+		85A985B527E78A6200868630 /* JHGUrlStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A985B327E78A6200868630 /* JHGUrlStringUtil.m */; };
+		85A985B927E78B2B00868630 /* JHGAuthorizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A985B727E78B2B00868630 /* JHGAuthorizationManager.m */; };
+		85A985BE27E78BD300868630 /* JHGJudgeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A985BD27E78BD300868630 /* JHGJudgeTextField.m */; };
+		85A985C227E78C3F00868630 /* JHGQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A985C127E78C3F00868630 /* JHGQRCodeUtil.m */; };
+		85A985C627E78CAC00868630 /* JHGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A985C527E78CAC00868630 /* JHGPageViewController.m */; };
 		85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC90BC222CE46F00B00262 /* JHGTouchButton.m */; };
 		85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B50C1423F90D2700277F47 /* ListDemoViewController.m */; };
 		85CC04E121C21DCE006693DD /* UIViewController+JHGarage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */; };
 		85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CC04E221C24094006693DD /* JHGSwizzle.m */; };
+		85CFDE2B27E776B600BF50B6 /* JHGTimeUpdateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFDE2A27E776B600BF50B6 /* JHGTimeUpdateHelper.m */; };
 		85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DC4CEF22E1AD0900DBA83D /* JHBaseUserDefaults.m */; };
 		85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832921A6F4DF0067F46B /* AppDelegate.m */; };
 		85FC832D21A6F4DF0067F46B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FC832C21A6F4DF0067F46B /* ViewController.m */; };
@@ -192,11 +199,23 @@
 		85A5389021B7944600E510AF /* ZTBaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTBaseResponseModel.h; sourceTree = "<group>"; };
 		85A5389121B7944700E510AF /* ZTBaseRequestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTBaseRequestItem.m; sourceTree = "<group>"; };
 		85A5389721B7952900E510AF /* JHEXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHEXTScope.h; sourceTree = "<group>"; };
-		85A5389821B7952900E510AF /* JHMetaMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMetaMarcos.h; sourceTree = "<group>"; };
-		85A5389921B7952900E510AF /* JHFontMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHFontMarco.h; sourceTree = "<group>"; };
-		85A5389A21B7952900E510AF /* JHMarcoTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMarcoTools.h; sourceTree = "<group>"; };
+		85A5389821B7952900E510AF /* JHMetaMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMetaMacros.h; sourceTree = "<group>"; };
+		85A5389921B7952900E510AF /* JHFontMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHFontMacro.h; sourceTree = "<group>"; };
+		85A5389A21B7952900E510AF /* JHMacroTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMacroTools.h; sourceTree = "<group>"; };
 		85A5389B21B7954700E510AF /* JHGAppStoreTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAppStoreTools.h; sourceTree = "<group>"; };
 		85A5389C21B7954700E510AF /* JHGAppStoreTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAppStoreTools.m; sourceTree = "<group>"; };
+		85A985AD27E7817400868630 /* JHGWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHGWeakProxy.h; path = src/UtilityTools/JHGWeakProxy/JHGWeakProxy.h; sourceTree = SOURCE_ROOT; };
+		85A985AE27E7817400868630 /* JHGWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JHGWeakProxy.m; path = src/UtilityTools/JHGWeakProxy/JHGWeakProxy.m; sourceTree = SOURCE_ROOT; };
+		85A985B327E78A6200868630 /* JHGUrlStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGUrlStringUtil.m; sourceTree = "<group>"; };
+		85A985B427E78A6200868630 /* JHGUrlStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGUrlStringUtil.h; sourceTree = "<group>"; };
+		85A985B727E78B2B00868630 /* JHGAuthorizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAuthorizationManager.m; sourceTree = "<group>"; };
+		85A985B827E78B2B00868630 /* JHGAuthorizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAuthorizationManager.h; sourceTree = "<group>"; };
+		85A985BC27E78BD300868630 /* JHGJudgeTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGJudgeTextField.h; sourceTree = "<group>"; };
+		85A985BD27E78BD300868630 /* JHGJudgeTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGJudgeTextField.m; sourceTree = "<group>"; };
+		85A985C027E78C3F00868630 /* JHGQRCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGQRCodeUtil.h; sourceTree = "<group>"; };
+		85A985C127E78C3F00868630 /* JHGQRCodeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGQRCodeUtil.m; sourceTree = "<group>"; };
+		85A985C427E78CAC00868630 /* JHGPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGPageViewController.h; sourceTree = "<group>"; };
+		85A985C527E78CAC00868630 /* JHGPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGPageViewController.m; sourceTree = "<group>"; };
 		85AC90BB222CE46F00B00262 /* JHGTouchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHGTouchButton.h; sourceTree = "<group>"; };
 		85AC90BC222CE46F00B00262 /* JHGTouchButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHGTouchButton.m; sourceTree = "<group>"; };
 		85B50C1323F90D2700277F47 /* ListDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDemoViewController.h; sourceTree = "<group>"; };
@@ -205,6 +224,8 @@
 		85CC04E021C21DCE006693DD /* UIViewController+JHGarage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JHGarage.m"; sourceTree = "<group>"; };
 		85CC04E221C24094006693DD /* JHGSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSwizzle.m; sourceTree = "<group>"; };
 		85CC04E321C24094006693DD /* JHGSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGSwizzle.h; sourceTree = "<group>"; };
+		85CFDE2927E776B600BF50B6 /* JHGTimeUpdateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGTimeUpdateHelper.h; sourceTree = "<group>"; };
+		85CFDE2A27E776B600BF50B6 /* JHGTimeUpdateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGTimeUpdateHelper.m; sourceTree = "<group>"; };
 		85DC4CEE22E1AD0900DBA83D /* JHBaseUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHBaseUserDefaults.h; sourceTree = "<group>"; };
 		85DC4CEF22E1AD0900DBA83D /* JHBaseUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHBaseUserDefaults.m; sourceTree = "<group>"; };
 		85FC831F21A6EAB60067F46B /* JHGarage.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JHGarage.podspec; sourceTree = "<group>"; };
@@ -333,10 +354,7 @@
 		852697D821B75957009F2CE6 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				8592BA34228D23360085DFA7 /* JHGDomainSwitchViewController.h */,
-				8592BA35228D23360085DFA7 /* JHGDomainSwitchViewController.m */,
-				8592BA37228D29120085DFA7 /* JHGDomainManager.h */,
-				8592BA38228D29120085DFA7 /* JHGDomainManager.m */,
+				85A985B127E7880F00868630 /* JHGDomainSwitch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -344,10 +362,13 @@
 		852697D921B75957009F2CE6 /* UtilityTools */ = {
 			isa = PBXGroup;
 			children = (
-				85A5389B21B7954700E510AF /* JHGAppStoreTools.h */,
-				85A5389C21B7954700E510AF /* JHGAppStoreTools.m */,
-				85CC04E321C24094006693DD /* JHGSwizzle.h */,
-				85CC04E221C24094006693DD /* JHGSwizzle.m */,
+				85A985BF27E78C3F00868630 /* JHGQRCodeUtil */,
+				85A985B627E78B2B00868630 /* JHGAuthorization */,
+				85A985B227E78A6200868630 /* JHGUrlStringUtil */,
+				85A985AC27E7814E00868630 /* JHGWeakProxy */,
+				85CFDE2827E776B600BF50B6 /* JHGTimeUpdateHelper */,
+				85CFDE2727E7768B00BF50B6 /* JHGAppStoreTools */,
+				85CFDE2627E7766E00BF50B6 /* JHGSwizzle */,
 				85A5389621B7952900E510AF /* JHMarcoTools */,
 				85A5386721B770FB00E510AF /* Category */,
 			);
@@ -505,20 +526,122 @@
 			isa = PBXGroup;
 			children = (
 				85A5389721B7952900E510AF /* JHEXTScope.h */,
-				85A5389821B7952900E510AF /* JHMetaMarcos.h */,
-				85A5389921B7952900E510AF /* JHFontMarco.h */,
-				85A5389A21B7952900E510AF /* JHMarcoTools.h */,
+				85A5389821B7952900E510AF /* JHMetaMacros.h */,
+				85A5389921B7952900E510AF /* JHFontMacro.h */,
+				85A5389A21B7952900E510AF /* JHMacroTools.h */,
 			);
 			path = JHMarcoTools;
 			sourceTree = "<group>";
 		};
-		85AC90BA222CE45300B00262 /* CustomViews */ = {
+		85A985AC27E7814E00868630 /* JHGWeakProxy */ = {
+			isa = PBXGroup;
+			children = (
+				85A985AD27E7817400868630 /* JHGWeakProxy.h */,
+				85A985AE27E7817400868630 /* JHGWeakProxy.m */,
+			);
+			path = JHGWeakProxy;
+			sourceTree = "<group>";
+		};
+		85A985B127E7880F00868630 /* JHGDomainSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				8592BA34228D23360085DFA7 /* JHGDomainSwitchViewController.h */,
+				8592BA35228D23360085DFA7 /* JHGDomainSwitchViewController.m */,
+				8592BA37228D29120085DFA7 /* JHGDomainManager.h */,
+				8592BA38228D29120085DFA7 /* JHGDomainManager.m */,
+			);
+			path = JHGDomainSwitch;
+			sourceTree = "<group>";
+		};
+		85A985B227E78A6200868630 /* JHGUrlStringUtil */ = {
+			isa = PBXGroup;
+			children = (
+				85A985B427E78A6200868630 /* JHGUrlStringUtil.h */,
+				85A985B327E78A6200868630 /* JHGUrlStringUtil.m */,
+			);
+			path = JHGUrlStringUtil;
+			sourceTree = "<group>";
+		};
+		85A985B627E78B2B00868630 /* JHGAuthorization */ = {
+			isa = PBXGroup;
+			children = (
+				85A985B727E78B2B00868630 /* JHGAuthorizationManager.m */,
+				85A985B827E78B2B00868630 /* JHGAuthorizationManager.h */,
+			);
+			path = JHGAuthorization;
+			sourceTree = "<group>";
+		};
+		85A985BA27E78BC700868630 /* JHGTouchButton */ = {
 			isa = PBXGroup;
 			children = (
 				85AC90BB222CE46F00B00262 /* JHGTouchButton.h */,
 				85AC90BC222CE46F00B00262 /* JHGTouchButton.m */,
 			);
+			path = JHGTouchButton;
+			sourceTree = "<group>";
+		};
+		85A985BB27E78BD300868630 /* JHGJudgeTextField */ = {
+			isa = PBXGroup;
+			children = (
+				85A985BC27E78BD300868630 /* JHGJudgeTextField.h */,
+				85A985BD27E78BD300868630 /* JHGJudgeTextField.m */,
+			);
+			path = JHGJudgeTextField;
+			sourceTree = "<group>";
+		};
+		85A985BF27E78C3F00868630 /* JHGQRCodeUtil */ = {
+			isa = PBXGroup;
+			children = (
+				85A985C027E78C3F00868630 /* JHGQRCodeUtil.h */,
+				85A985C127E78C3F00868630 /* JHGQRCodeUtil.m */,
+			);
+			path = JHGQRCodeUtil;
+			sourceTree = "<group>";
+		};
+		85A985C327E78CAC00868630 /* JHGPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				85A985C427E78CAC00868630 /* JHGPageViewController.h */,
+				85A985C527E78CAC00868630 /* JHGPageViewController.m */,
+			);
+			path = JHGPageViewController;
+			sourceTree = "<group>";
+		};
+		85AC90BA222CE45300B00262 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				85A985C327E78CAC00868630 /* JHGPageViewController */,
+				85A985BB27E78BD300868630 /* JHGJudgeTextField */,
+				85A985BA27E78BC700868630 /* JHGTouchButton */,
+			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		85CFDE2627E7766E00BF50B6 /* JHGSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				85CC04E321C24094006693DD /* JHGSwizzle.h */,
+				85CC04E221C24094006693DD /* JHGSwizzle.m */,
+			);
+			path = JHGSwizzle;
+			sourceTree = "<group>";
+		};
+		85CFDE2727E7768B00BF50B6 /* JHGAppStoreTools */ = {
+			isa = PBXGroup;
+			children = (
+				85A5389B21B7954700E510AF /* JHGAppStoreTools.h */,
+				85A5389C21B7954700E510AF /* JHGAppStoreTools.m */,
+			);
+			path = JHGAppStoreTools;
+			sourceTree = "<group>";
+		};
+		85CFDE2827E776B600BF50B6 /* JHGTimeUpdateHelper */ = {
+			isa = PBXGroup;
+			children = (
+				85CFDE2927E776B600BF50B6 /* JHGTimeUpdateHelper.h */,
+				85CFDE2A27E776B600BF50B6 /* JHGTimeUpdateHelper.m */,
+			);
+			path = JHGTimeUpdateHelper;
 			sourceTree = "<group>";
 		};
 		85FC828421A6E5670067F46B = {
@@ -758,6 +881,7 @@
 				856FE956255C370200B7F034 /* UIControl+BlocksKit.m in Sources */,
 				856FE99E255C37A300B7F034 /* NSMutableDictionary+BlocksKit.m in Sources */,
 				8529EEB121FAE7B100F2AE9B /* JHGBlankView.m in Sources */,
+				85CFDE2B27E776B600BF50B6 /* JHGTimeUpdateHelper.m in Sources */,
 				856FE955255C370200B7F034 /* UITextField+BlocksKit.m in Sources */,
 				856FE954255C370200B7F034 /* UIBarButtonItem+BlocksKit.m in Sources */,
 				85A5385D21B76F2600E510AF /* JHGBlankCell.m in Sources */,
@@ -776,13 +900,17 @@
 				856A51F926872D7000A9376F /* UIAlertController+JHGAlert.m in Sources */,
 				85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */,
 				856FE99A255C37A300B7F034 /* NSObject+BKAssociatedObjects.m in Sources */,
+				85A985AF27E7817400868630 /* JHGWeakProxy.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
+				85A985B527E78A6200868630 /* JHGUrlStringUtil.m in Sources */,
 				856FE990255C37A300B7F034 /* NSObject+A2DynamicDelegate.m in Sources */,
 				85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */,
+				85A985B927E78B2B00868630 /* JHGAuthorizationManager.m in Sources */,
 				85A5387221B774AB00E510AF /* UIImage+JHGColor.m in Sources */,
 				856FE997255C37A300B7F034 /* NSSet+BlocksKit.m in Sources */,
 				856FE995255C37A300B7F034 /* NSTimer+BlocksKit.m in Sources */,
 				85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */,
+				85A985C227E78C3F00868630 /* JHGQRCodeUtil.m in Sources */,
 				856FE999255C37A300B7F034 /* NSOrderedSet+BlocksKit.m in Sources */,
 				856FE993255C37A300B7F034 /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				856FE98C255C37A300B7F034 /* NSCache+BlocksKit.m in Sources */,
@@ -791,7 +919,9 @@
 				856FE99C255C37A300B7F034 /* NSObject+BKBlockExecution.m in Sources */,
 				8529EEAA21FADD8A00F2AE9B /* UIViewController+JHGTGeneralList.m in Sources */,
 				8592BA36228D23360085DFA7 /* JHGDomainSwitchViewController.m in Sources */,
+				85A985C627E78CAC00868630 /* JHGPageViewController.m in Sources */,
 				85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */,
+				85A985BE27E78BD300868630 /* JHGJudgeTextField.m in Sources */,
 				85A5387E21B77CEF00E510AF /* JHGWebViewController.m in Sources */,
 				8562B1BF21DF304E00C2C6D7 /* UIViewController+JHGTable.m in Sources */,
 				856FE994255C37A300B7F034 /* NSObject+BKBlockObservation.m in Sources */,
@@ -980,7 +1110,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLG6FGTY6V;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -999,7 +1129,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLG6FGTY6V;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

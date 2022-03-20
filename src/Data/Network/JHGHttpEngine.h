@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JHMarcoTools.h"
+#import "JHMacroTools.h"
 #import "JHGRequestItem.h"
 
 @protocol JHGHttpEngineDelegate <NSObject>

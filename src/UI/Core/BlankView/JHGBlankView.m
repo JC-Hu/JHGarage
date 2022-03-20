@@ -4,7 +4,7 @@
 
 #import "JHGBlankView.h"
 #import "Masonry.h"
-#import "JHFontMarco.h"
+#import "JHFontMacro.h"
 
 @implementation JHGBlankView
 

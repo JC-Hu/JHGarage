@@ -6,9 +6,15 @@
 static JHBaseUserDefaults *userDefaults = nil;
 
 + (instancetype)sharedManager {
-    @synchronized(self) {
-        if (!userDefaults) {
-            userDefaults = [self new];
+    Class selfClass = [self class];
+    // 从类中获取对象
+    id instance = objc_getAssociatedObject(selfClass, @"sharedInstance");
+    @synchronized (self) {
+        if (!instance) {
+            // 不存在，创建对象
+            instance = [[super allocWithZone:NULL] init];
+            // 给类绑定对象
+            objc_setAssociatedObject(selfClass, @"sharedInstance", instance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
     }
     return userDefaults;

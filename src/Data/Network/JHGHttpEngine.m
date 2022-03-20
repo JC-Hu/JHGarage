@@ -7,10 +7,6 @@
 #import "JHGHttpEngine.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 
-
-#define LogSucceed NSLog(@"request successed,the response is %@",operation.responseString)
-#define LogFailed NSLog(@"request failed,the response is %@,error = %@",operation.responseString,error)
-
 #if defined(DEBUG) && DEBUG
 #define HttpRequestLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
 #else

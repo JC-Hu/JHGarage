@@ -6,7 +6,7 @@
 #import <UIKit/UIKit.h>
 
 // Tool
-#import "JHMarcoTools.h"
+#import "JHMacroTools.h"
 #import <YYModel/YYModel.h>
 
 // Network
@@ -26,7 +26,7 @@
 #import <YYCategories/UIView+YYAdd.h>
 #import <Masonry/Masonry.h>
 
-#import "JHFontMarco.h"
+#import "JHFontMacro.h"
 
 #import "UIBarButtonItem+BlocksKit.h"
 #import "UIControl+BlocksKit.h"

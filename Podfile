@@ -39,8 +39,6 @@ target 'JHGarage' do
     
     # other
     pod 'IQKeyboardManager'
-    pod 'NJKWebViewProgress'
-    pod 'SIAlertView'
     pod 'WZLBadge'
     #pod 'ActionSheetPicker-3.0'
     
