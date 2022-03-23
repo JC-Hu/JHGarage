@@ -61,7 +61,7 @@ MMSingletonImplementation
     switch (item.httpMethod){
         case JHGHTTPGET:
         {
-            sessionTask = [manager GET:item.urlString parameters:paramDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            sessionTask = [manager GET:item.urlString parameters:paramDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                   [self successRequestProcessWith:task responseObject:responseObject item:item];
@@ -72,7 +72,7 @@ MMSingletonImplementation
             break;
         case JHGHTTPPOST:
         {
-            sessionTask = [manager POST:item.urlString parameters:paramDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            sessionTask = [manager POST:item.urlString parameters:paramDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                 [self successRequestProcessWith:task responseObject:responseObject item:item];
@@ -83,7 +83,7 @@ MMSingletonImplementation
             break;
         case JHGHTTPPUT:
         {
-            sessionTask = [manager PUT:item.urlString parameters:paramDict success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+            sessionTask = [manager PUT:item.urlString parameters:paramDict headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                 [self successRequestProcessWith:task responseObject:responseObject item:item];
             }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self failureRequestProcessWith:task error:error item:item];
@@ -92,7 +92,7 @@ MMSingletonImplementation
             break;
         case JHGHTTPDELETE:
         {
-            sessionTask = [manager DELETE:item.urlString parameters:paramDict success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+            sessionTask = [manager DELETE:item.urlString parameters:paramDict headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                 [self successRequestProcessWith:task responseObject:responseObject item:item];
             }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self failureRequestProcessWith:task error:error item:item];

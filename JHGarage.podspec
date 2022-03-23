@@ -48,10 +48,10 @@ s.dependency   'YYAsyncLayer'
 s.dependency   'YYCategories'
 
 # 网络数据--
-s.dependency 'AFNetworking/Reachability', '~> 3.2.1'
-s.dependency 'AFNetworking/Serialization', '~> 3.2.1'
-s.dependency 'AFNetworking/Security', '~> 3.2.1'
-s.dependency 'AFNetworking/NSURLSession', '~> 3.2.1'
+s.dependency 'AFNetworking/Reachability', '~> 4.0.1'
+s.dependency 'AFNetworking/Serialization', '~> 4.0.1'
+s.dependency 'AFNetworking/Security', '~> 4.0.1'
+s.dependency 'AFNetworking/NSURLSession', '~> 4.0.1'
 
 # UI--
 # Basic
@@ -60,15 +60,12 @@ s.dependency   'MBProgressHUD'
 s.dependency   'Masonry'
 s.dependency   'MJRefresh'
 s.dependency   'Toast', '~> 4.0.0'
+
 # Table
-s.dependency   'JHCellConfig', '~> 2.1.0'
+s.dependency   'JHCellConfig'
+
 # other
 s.dependency   'IQKeyboardManager'
-s.dependency   'WZLBadge'
-# s.dependency   'ActionSheetPicker-3.0'
-
-# 工具--
-s.dependency   'INTULocationManager', '~> 4.3.2'
 
 
 

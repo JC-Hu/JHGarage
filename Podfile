@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'JHGarage' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -19,10 +19,9 @@ target 'JHGarage' do
 
     
     # 网络数据--
-    pod 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
+    pod 'AFNetworking', '~> 4.0.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
 
     # 本地数据--
-    pod 'FMDB'
     
     # UI--
     # Basic
@@ -32,17 +31,14 @@ target 'JHGarage' do
     pod 'Masonry'
     pod 'MJRefresh'
     pod 'Toast', '~> 4.0.0'
-    
+    pod 'MyLayout'
     
     # Table
-    pod 'JHCellConfig', '~> 2.1.0'
+    pod 'JHCellConfig', '2.2.0'
     
     # other
     pod 'IQKeyboardManager'
-    pod 'WZLBadge'
-    #pod 'ActionSheetPicker-3.0'
     
     # 工具--
-    pod 'INTULocationManager', '~> 4.3.2'
     
 end

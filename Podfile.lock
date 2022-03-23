@@ -1,25 +1,21 @@
 PODS:
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - FMDB (2.7.5):
-    - FMDB/standard (= 2.7.5)
-  - FMDB/standard (2.7.5)
-  - INTULocationManager (4.3.2)
-  - IQKeyboardManager (6.2.0)
-  - JHCellConfig (2.1.0)
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - IQKeyboardManager (6.5.9)
+  - JHCellConfig (2.2.0)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.1.0)
-  - MJRefresh (3.1.15.7)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.5)
+  - MyLayout (1.9.8)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - Toast (4.0.0)
-  - WZLBadge (1.2.6)
   - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -36,20 +32,18 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - AFNetworking/NSURLSession (~> 3.2.1)
-  - AFNetworking/Reachability (~> 3.2.1)
-  - AFNetworking/Security (~> 3.2.1)
-  - AFNetworking/Serialization (~> 3.2.1)
-  - FMDB
-  - INTULocationManager (~> 4.3.2)
+  - AFNetworking/NSURLSession (~> 4.0.1)
+  - AFNetworking/Reachability (~> 4.0.1)
+  - AFNetworking/Security (~> 4.0.1)
+  - AFNetworking/Serialization (~> 4.0.1)
   - IQKeyboardManager
-  - JHCellConfig (~> 2.1.0)
+  - JHCellConfig (= 2.2.0)
   - Masonry
   - MBProgressHUD
   - MJRefresh
+  - MyLayout
   - SDWebImage
   - Toast (~> 4.0.0)
-  - WZLBadge
   - YYAsyncLayer
   - YYCache
   - YYCategories
@@ -60,40 +54,35 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - FMDB
-    - INTULocationManager
+  trunk:
+    - AFNetworking
     - IQKeyboardManager
     - JHCellConfig
     - Masonry
     - MBProgressHUD
     - MJRefresh
+    - MyLayout
     - SDWebImage
     - Toast
-    - WZLBadge
     - YYAsyncLayer
     - YYCache
+    - YYCategories
     - YYDispatchQueuePool
     - YYImage
     - YYModel
     - YYText
     - YYWebImage
-  trunk:
-    - AFNetworking
-    - YYCategories
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  INTULocationManager: e5dc524611b0cd582f473bc56cc8c389adb2f338
-  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
-  JHCellConfig: b2fd83a1d43c66d6afb7d7564e070b06dcdb866a
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  JHCellConfig: 57a06eb605fe2ca46137c00f8ffd26ef2dbe7bdc
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  MyLayout: 6ca47dbf27648aa011496094cfe1162217e3c912
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  WZLBadge: 9ec779dcfd94c825518b395e8315fccaabff1bfa
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -103,6 +92,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 266a6c245b7d985f15155595a4952a3bad1a86b7
+PODFILE CHECKSUM: d91a382dfb335d3dca6db8aefa8fd8f0003997a2
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

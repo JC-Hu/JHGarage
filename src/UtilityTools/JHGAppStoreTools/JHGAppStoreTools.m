@@ -73,7 +73,7 @@
     
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     
-    [mgr POST:checkVersionURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [mgr POST:checkVersionURL parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSDictionary *recvDict = responseObject;
         NSArray *infoArray = [recvDict objectForKey:@"results"];
