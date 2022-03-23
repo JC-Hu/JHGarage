@@ -1,12 +1,15 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '12.0'
 
-target 'JHGarage' do
-    # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-    # use_frameworks!
+
+
+targets = ['JHGarage']
+
+targets.each do |t|
+  target t do
     
     # Pods for JHGarage
     inhibit_all_warnings!
+#    use_frameworks!
     
     pod 'YYModel'
     pod 'YYCache'
@@ -16,11 +19,11 @@ target 'JHGarage' do
     pod 'YYDispatchQueuePool'
     pod 'YYAsyncLayer'
     pod 'YYCategories'
-
+    
     
     # 网络数据--
     pod 'AFNetworking', '~> 4.0.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
-
+    
     # 本地数据--
     
     # UI--
@@ -40,5 +43,14 @@ target 'JHGarage' do
     pod 'IQKeyboardManager'
     
     # 工具--
-    
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # some older pods don't support some architectures, anything over iOS 11 resolves that
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+    end
+  end
 end

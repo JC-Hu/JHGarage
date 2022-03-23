@@ -3,7 +3,7 @@
 //
 
 #import "JHGBlankView.h"
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #import "JHFontMacro.h"
 
 @implementation JHGBlankView
