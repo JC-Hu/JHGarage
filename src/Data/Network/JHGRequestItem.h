@@ -20,7 +20,7 @@ typedef void(^JHGRequestSuccessBlock)(NSDictionary *responseData, NSURLSessionDa
 typedef void(^JHGRequestFailureBlock)(NSDictionary *responseData, NSError* error, NSURLSessionDataTask *task);
 
 
-@class JHGRequestItem;
+@class JHGRequestItem,JHGUploadFormModel;
 
 // Auto HUD
 @protocol JHGRequestItemHUDDelegate<NSObject>
@@ -67,7 +67,11 @@ typedef void(^JHGRequestFailureBlock)(NSDictionary *responseData, NSError* error
 // to rewrite
 - (NSURLSessionDataTask *)sendRequest; // 发送请求
 
+@property (nonatomic, strong) NSDictionary *customHeaderDict;
 
+#pragma mark - Upload
+@property (nonatomic, strong) NSArray < __kindof JHGUploadFormModel *>*uploadForms;
+@property (nonatomic, copy) void(^progressBlock)(NSProgress *progress);
 
 #pragma mark - AutoHUD AutoBlank
 @property (nonatomic, weak) UIViewController <JHGRequestItemHUDDelegate,JHGRequestItemBlankDelegate>*vcRelated;

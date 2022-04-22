@@ -24,6 +24,7 @@
 MMSingletonInterface
 
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) AFHTTPSessionManager *uploadManager;
 
 @property (nonatomic, assign) BOOL disableLog;
 
@@ -34,6 +35,7 @@ MMSingletonInterface
 
 // to rewrite
 - (AFHTTPSessionManager *)createAFSessionManager;
+- (NSDictionary *)requestHeaderDict;
 
 @end
 
