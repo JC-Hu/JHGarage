@@ -6,10 +6,7 @@
 
 #import "JHGHttpEngine.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
-
-
-#define LogSucceed NSLog(@"request successed,the response is %@",operation.responseString)
-#define LogFailed NSLog(@"request failed,the response is %@,error = %@",operation.responseString,error)
+#import "JHGUploadFormModel.h"
 
 #if defined(DEBUG) && DEBUG
 #define HttpRequestLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
@@ -25,15 +22,29 @@ MMSingletonImplementation
 - (AFHTTPSessionManager *)createAFSessionManager
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 8;
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.securityPolicy.allowInvalidCertificates = YES;
     manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [manager.requestSerializer setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.requestSerializer.timeoutInterval = 8;
     
     return manager;
+}
+
+- (NSDictionary *)requestHeaderDict
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    return dict;
+}
+
+- (void)updateRequestHeader
+{
+    for (NSString *httpHeaderField in self.requestHeaderDict.allKeys) {
+        NSString *value = self.requestHeaderDict[httpHeaderField];
+        [self.manager.requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
+    }
 }
 
 - (AFHTTPSessionManager *)manager
@@ -50,8 +61,9 @@ MMSingletonImplementation
         NSLog (@"HTTPEngine urlString = null");
         return nil;
     }
+    [self updateRequestHeader];
     
-    AFHTTPSessionManager *manager = [self createAFSessionManager];
+    AFHTTPSessionManager *manager = [self manager];
     
     if (!item.finalParamDict) {
         item.finalParamDict = item.paramsDic;
@@ -65,7 +77,7 @@ MMSingletonImplementation
     switch (item.httpMethod){
         case JHGHTTPGET:
         {
-            sessionTask = [manager GET:item.urlString parameters:paramDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            sessionTask = [manager GET:item.urlString parameters:paramDict headers:item.customHeaderDict progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                   [self successRequestProcessWith:task responseObject:responseObject item:item];
@@ -76,27 +88,48 @@ MMSingletonImplementation
             break;
         case JHGHTTPPOST:
         {
-            sessionTask = [manager POST:item.urlString parameters:paramDict progress:^(NSProgress * _Nonnull downloadProgress) {
-                
-            } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
-                [self successRequestProcessWith:task responseObject:responseObject item:item];
-            }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [self failureRequestProcessWith:task error:error item:item];
-            }];
+            if (item.uploadForms.count) {
+                // 上传
+                sessionTask = [manager POST:item.urlString parameters:paramDict headers:item.customHeaderDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                    
+                    for (JHGUploadFormModel *formModel in item.uploadForms) {
+                        [formData appendPartWithFileData:formModel.fileData name:formModel.name fileName:formModel.fileName mimeType:formModel.mimeType];
+                    }
+                    
+                }  progress:^(NSProgress * _Nonnull uploadProgress) {
+                    // item回调
+                    if (item.progressBlock) {
+                        item.progressBlock(uploadProgress);
+                    }
+                } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+                    [self successRequestProcessWith:task responseObject:responseObject item:item];
+                }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    [self failureRequestProcessWith:task error:error item:item];
+                }];
+            } else {
+                sessionTask = [manager POST:item.urlString parameters:paramDict headers:item.customHeaderDict progress:^(NSProgress * _Nonnull downloadProgress) {
+                    
+                } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+                    [self successRequestProcessWith:task responseObject:responseObject item:item];
+                }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    [self failureRequestProcessWith:task error:error item:item];
+                }];
+            }
         }
             break;
         case JHGHTTPPUT:
         {
-            sessionTask = [manager PUT:item.urlString parameters:paramDict success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+            sessionTask = [manager PUT:item.urlString parameters:paramDict headers:item.customHeaderDict success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                 [self successRequestProcessWith:task responseObject:responseObject item:item];
             }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self failureRequestProcessWith:task error:error item:item];
             }];
+            
         }
             break;
         case JHGHTTPDELETE:
         {
-            sessionTask = [manager DELETE:item.urlString parameters:paramDict success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+            sessionTask = [manager DELETE:item.urlString parameters:paramDict headers:item.customHeaderDict success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
                 [self successRequestProcessWith:task responseObject:responseObject item:item];
             }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [self failureRequestProcessWith:task error:error item:item];
@@ -217,14 +250,14 @@ MMSingletonImplementation
     if (self.disableLog) {
         return;
     }
-    NSString * methodName = request.HTTPMethod;
     
     NSMutableString *formatString =
     [NSMutableString stringWithString:@"\n============================================="
      @"==============================================="];
     [formatString appendFormat:@"\n----JHGHttpEngine Log-----"];
     [formatString appendFormat:@"\n----HttpUrl = %@",request.URL.absoluteString];
-    [formatString appendFormat:@"\n----HTTP send %@:%@",request.HTTPMethod, methodName];
+    [formatString appendFormat:@"\n----HTTP send %@",request.HTTPMethod];
+    [formatString appendFormat:@"\n----HeaderFields = %@",request.allHTTPHeaderFields];
     [formatString appendFormat:@"\n----formated args = %@", requestParams];
     
     if ([request.HTTPMethod isEqualToString:@"POST"]) {

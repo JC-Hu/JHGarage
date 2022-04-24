@@ -14,7 +14,7 @@
 static NSString * const JHCellConfig_Key_DataArray;
 static NSString * const JHCellConfig_Key_MainTableView;
 
-@implementation UIViewController (DXZJHGTable)
+@implementation UIViewController (JHGTable)
 
 - (void)jhg_setupJHGTableView
 {

@@ -1,12 +1,15 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '12.0'
 
-target 'JHGarage' do
-    # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-    # use_frameworks!
+
+
+targets = ['JHGarage']
+
+targets.each do |t|
+  target t do
     
     # Pods for JHGarage
     inhibit_all_warnings!
+#    use_frameworks!
     
     pod 'YYModel'
     pod 'YYCache'
@@ -16,13 +19,12 @@ target 'JHGarage' do
     pod 'YYDispatchQueuePool'
     pod 'YYAsyncLayer'
     pod 'YYCategories'
-
+    
     
     # 网络数据--
-    pod 'AFNetworking', '~> 3.2.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
-
+    pod 'AFNetworking', '~> 4.0.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
+    
     # 本地数据--
-    pod 'FMDB'
     
     # UI--
     # Basic
@@ -32,19 +34,23 @@ target 'JHGarage' do
     pod 'Masonry'
     pod 'MJRefresh'
     pod 'Toast', '~> 4.0.0'
-    
+    pod 'MyLayout'
     
     # Table
-    pod 'JHCellConfig', '~> 2.1.0'
+    pod 'JHCellConfig', '2.2.0'
     
     # other
     pod 'IQKeyboardManager'
-    pod 'NJKWebViewProgress'
-    pod 'SIAlertView'
-    pod 'WZLBadge'
-    #pod 'ActionSheetPicker-3.0'
     
     # 工具--
-    pod 'INTULocationManager', '~> 4.3.2'
-    
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # some older pods don't support some architectures, anything over iOS 11 resolves that
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+    end
+  end
 end

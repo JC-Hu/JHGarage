@@ -20,8 +20,8 @@ typedef void(^JHCellSelectBlock)(JHCellConfig *selectCellConfig, UITableViewCell
 /// 高度获取（可改为自定义的方法，见属性cellHeightMethod）
 + (CGFloat)cellHeightWithCellConfig:(JHCellConfig *)cellConfig;
 
-// 会在生成cell时调用，即cellOfCellConfigWithTableView:方法（如BaseCell定义了属性cellConfig，即可自动赋值，便于通过cell找到对应的cellConfig）
-- (void)setCellConfig:(JHCellConfig *)cellConfig;
+// 会在生成cell时调用，即cellOfCellConfigWithTableView:方法（如BaseCell定义了属性jhg_cellConfig，即可自动赋值，便于通过cell找到对应的cellConfig）
+- (void)setJhg_cellConfig:(JHCellConfig *)cellConfig;
 
 @end
 
@@ -50,6 +50,8 @@ typedef void(^JHCellSelectBlock)(JHCellConfig *selectCellConfig, UITableViewCell
 
 /// 更新界面的方法（默认为协议中的方法，可改为自定义的方法）
 @property (nonatomic, assign) SEL updateContentMethod;
+/// 更新界面方法的参数是否传dataModel，默认NO，默认传此JHCellConfig实例
+@property (nonatomic, assign) BOOL updateContentWithDataModel;
 /// 高度获取方法（默认为协议中的方法，可改为自定义的方法）
 @property (nonatomic, assign) SEL cellHeightMethod;
 

@@ -7,6 +7,7 @@
 #import "JHGRequestItem.h"
 
 #import "JHGHttpEngine.h"
+#import "JHGUploadFormModel.h"
 
 @implementation JHGRequestItem
 
