@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83DBB5122814EBE90016CAD8 /* SSTHUDToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB50E2814EBE90016CAD8 /* SSTHUDToastUtil.m */; };
+		83DBB5132814EBE90016CAD8 /* SSTAccessAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5102814EBE90016CAD8 /* SSTAccessAuthorization.m */; };
 		852697C821B4CD32009F2CE6 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852697C721B4CD32009F2CE6 /* Tests.m */; };
 		8529EEAA21FADD8A00F2AE9B /* UIViewController+JHGTGeneralList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8529EEA921FADD8A00F2AE9B /* UIViewController+JHGTGeneralList.m */; };
 		8529EEAE21FAE66400F2AE9B /* UIViewController+JHGBlankView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8529EEAD21FAE66400F2AE9B /* UIViewController+JHGBlankView.m */; };
@@ -94,6 +96,10 @@
 		57376C6813CC44B952A202D5 /* libPods-JHGarage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JHGarage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7ABE95832A852F61E76DB5 /* Pods-JHGarage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHGarage.release.xcconfig"; path = "Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage.release.xcconfig"; sourceTree = "<group>"; };
 		5DFA5293930547C84573D880 /* Pods-JHGarage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHGarage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage.debug.xcconfig"; sourceTree = "<group>"; };
+		83DBB50D2814EBE90016CAD8 /* SSTHUDToastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTHUDToastUtil.h; sourceTree = "<group>"; };
+		83DBB50E2814EBE90016CAD8 /* SSTHUDToastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTHUDToastUtil.m; sourceTree = "<group>"; };
+		83DBB5102814EBE90016CAD8 /* SSTAccessAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTAccessAuthorization.m; sourceTree = "<group>"; };
+		83DBB5112814EBE90016CAD8 /* SSTAccessAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTAccessAuthorization.h; sourceTree = "<group>"; };
 		852697C521B4CD32009F2CE6 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		852697C721B4CD32009F2CE6 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		852697C921B4CD32009F2CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,6 +255,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		83DBB50C2814EBE90016CAD8 /* HudToastUtil */ = {
+			isa = PBXGroup;
+			children = (
+				83DBB50D2814EBE90016CAD8 /* SSTHUDToastUtil.h */,
+				83DBB50E2814EBE90016CAD8 /* SSTHUDToastUtil.m */,
+			);
+			path = HudToastUtil;
+			sourceTree = "<group>";
+		};
+		83DBB50F2814EBE90016CAD8 /* AccessAuthorization */ = {
+			isa = PBXGroup;
+			children = (
+				83DBB5102814EBE90016CAD8 /* SSTAccessAuthorization.m */,
+				83DBB5112814EBE90016CAD8 /* SSTAccessAuthorization.h */,
+			);
+			path = AccessAuthorization;
+			sourceTree = "<group>";
+		};
 		852697C621B4CD32009F2CE6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +372,8 @@
 				85A5389C21B7954700E510AF /* JHGAppStoreTools.m */,
 				85CC04E321C24094006693DD /* JHGSwizzle.h */,
 				85CC04E221C24094006693DD /* JHGSwizzle.m */,
+				83DBB50F2814EBE90016CAD8 /* AccessAuthorization */,
+				83DBB50C2814EBE90016CAD8 /* HudToastUtil */,
 				85A5389621B7952900E510AF /* JHMarcoTools */,
 				85A5386721B770FB00E510AF /* Category */,
 			);
@@ -775,12 +801,14 @@
 				8566E91E24E839C300FEF0B1 /* JHGSeparatorCell.m in Sources */,
 				856A51F926872D7000A9376F /* UIAlertController+JHGAlert.m in Sources */,
 				85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */,
+				83DBB5132814EBE90016CAD8 /* SSTAccessAuthorization.m in Sources */,
 				856FE99A255C37A300B7F034 /* NSObject+BKAssociatedObjects.m in Sources */,
 				85A5389D21B7954800E510AF /* JHGAppStoreTools.m in Sources */,
 				856FE990255C37A300B7F034 /* NSObject+A2DynamicDelegate.m in Sources */,
 				85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */,
 				85A5387221B774AB00E510AF /* UIImage+JHGColor.m in Sources */,
 				856FE997255C37A300B7F034 /* NSSet+BlocksKit.m in Sources */,
+				83DBB5122814EBE90016CAD8 /* SSTHUDToastUtil.m in Sources */,
 				856FE995255C37A300B7F034 /* NSTimer+BlocksKit.m in Sources */,
 				85CC04E421C24094006693DD /* JHGSwizzle.m in Sources */,
 				856FE999255C37A300B7F034 /* NSOrderedSet+BlocksKit.m in Sources */,
@@ -978,7 +1006,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GLG6FGTY6V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -997,7 +1025,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GLG6FGTY6V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
