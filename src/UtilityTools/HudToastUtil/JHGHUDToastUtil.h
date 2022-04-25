@@ -4,7 +4,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SSTHUDToastUtil : NSObject
+@interface JHGHUDToastUtil : NSObject
 
 #pragma mark - Loading HUD
 /**

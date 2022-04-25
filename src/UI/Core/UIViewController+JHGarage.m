@@ -8,7 +8,7 @@
 
 #import "UIViewController+JHGarage.h"
 #import "JHGRequestItem.h"
-#import "Toast.h"
+#import "JHGHUDToastUtil.h"
 
 #import <objc/runtime.h>
 #import "JHGSwizzle.h"
@@ -77,12 +77,12 @@
 #pragma mark - Toast
 - (void)showToast:(NSString *)str
 {
-    [self.view makeToast:str duration:2 position:CSToastPositionCenter];
+    [JHGHUDToastUtil showToast:str inView:self.view];
 }
 
 - (void)showToastInNCView:(NSString *)str
 {
-    [self.navigationController.view makeToast:str duration:2 position:CSToastPositionCenter];
+    [JHGHUDToastUtil showToast:str inView:self.navigationController.view];
 }
 
 - (void)showToastNetworkError
@@ -167,12 +167,12 @@
 #pragma mark - HUD
 - (void)showLoadingHUD
 {
-    [self.view makeToastActivity:CSToastPositionCenter];
+    [JHGHUDToastUtil showProgressWithView:self.view animated:YES];
 }
 
 - (void)hideHUD
 {
-    [self.view hideToastActivity];
+    [JHGHUDToastUtil hideProgressWithView:self.view animated:NO];
 }
 
 

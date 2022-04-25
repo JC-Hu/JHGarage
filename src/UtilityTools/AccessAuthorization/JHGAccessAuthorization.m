@@ -1,98 +1,98 @@
 
 //
 
-#import "SSTAccessAuthorization.h"
+#import "JHGAccessAuthorization.h"
 #import <CoreLocation/CoreLocation.h>
 #import <Contacts/Contacts.h>
 #import <AddressBook/AddressBook.h>
 
 #import <Photos/Photos.h>
 #import <AVFoundation/AVFoundation.h>
-@implementation SSTAccessAuthorization
+@implementation JHGAccessAuthorization
 
 #pragma mark - 检查权限
-+ (SSTAuthorizationStatus)checkAccessForLocationServices {
++ (JHGAuthorizationStatus)checkAccessForLocationServices {
    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
    NSString *alwaysUsage = [info objectForKey:@"NSLocationAlwaysUsageDescription"];
    NSString *whenInUseUsage = [info objectForKey:@"NSLocationWhenInUseUsageDescription"];
     if (alwaysUsage == nil && whenInUseUsage == nil) {
-        return SSTAuthorizationStatus_NotInfoDesc;
+        return JHGAuthorizationStatus_NotInfoDesc;
     }
     if ([CLLocationManager locationServicesEnabled] == NO) {
-        return SSTAuthorizationStatus_NotSupport;
+        return JHGAuthorizationStatus_NotSupport;
     }
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     switch (status) {
         case kCLAuthorizationStatusNotDetermined:
-            return SSTAuthorizationStatus_NotDetermined;
+            return JHGAuthorizationStatus_NotDetermined;
         case kCLAuthorizationStatusRestricted:
-            return SSTAuthorizationStatus_Restricted;
+            return JHGAuthorizationStatus_Restricted;
         case kCLAuthorizationStatusDenied:
-            return SSTAuthorizationStatus_Denied;
+            return JHGAuthorizationStatus_Denied;
         case kCLAuthorizationStatusAuthorizedAlways:
-            return SSTAuthorizationLocaStatus_AlwaysUsage;
+            return JHGAuthorizationLocaStatus_AlwaysUsage;
         case kCLAuthorizationStatusAuthorizedWhenInUse:
-            return SSTAuthorizationLocaStatus_WhenInUseUsage;
+            return JHGAuthorizationLocaStatus_WhenInUseUsage;
     }
 }
-+ (SSTAuthorizationStatus)checkAccessForContacts {
++ (JHGAuthorizationStatus)checkAccessForContacts {
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     NSString *desc = [info objectForKey:@"NSContactsUsageDescription"];
     if (desc == nil) {
-         return SSTAuthorizationStatus_NotInfoDesc;
+         return JHGAuthorizationStatus_NotInfoDesc;
     }
     
     if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
         CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
-        return (SSTAuthorizationStatus)status;
+        return (JHGAuthorizationStatus)status;
     }else {
          ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
-         return (SSTAuthorizationStatus)status;
+         return (JHGAuthorizationStatus)status;
     }
 }
-+ (SSTAuthorizationStatus)checkAccessForPhotos {
++ (JHGAuthorizationStatus)checkAccessForPhotos {
      NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
      NSString *desc = [info objectForKey:@"NSPhotoLibraryUsageDescription"];
   //  NSString *desc = [info objectForKey:@"NSPhotoLibraryUsageDescription"];
     if (desc == nil) {
-        return SSTAuthorizationStatus_NotInfoDesc;
+        return JHGAuthorizationStatus_NotInfoDesc;
     }
      if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-         return SSTAuthorizationStatus_NotSupport;
+         return JHGAuthorizationStatus_NotSupport;
      }
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-    return (SSTAuthorizationStatus)status;
+    return (JHGAuthorizationStatus)status;
 }
-+ (SSTAuthorizationStatus)checkAccessForCamera:(BOOL)isRear {
++ (JHGAuthorizationStatus)checkAccessForCamera:(BOOL)isRear {
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     NSString *desc = [info objectForKey:@"NSCameraUsageDescription"];
     if (desc == nil) {
-         return SSTAuthorizationStatus_NotInfoDesc;
+         return JHGAuthorizationStatus_NotInfoDesc;
     }
     
     if (![UIImagePickerController isCameraDeviceAvailable:isRear ? UIImagePickerControllerCameraDeviceRear : UIImagePickerControllerCameraDeviceFront]) {
-        return SSTAuthorizationStatus_NotSupport;
+        return JHGAuthorizationStatus_NotSupport;
     }
      AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-     return (SSTAuthorizationStatus)status;
+     return (JHGAuthorizationStatus)status;
 }
-+ (SSTAuthorizationStatus)checkAccessForMicrophone {
++ (JHGAuthorizationStatus)checkAccessForMicrophone {
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     NSString *desc = [info objectForKey:@"NSMicrophoneUsageDescription"];
     if (desc == nil) {
-        return SSTAuthorizationStatus_NotInfoDesc;
+        return JHGAuthorizationStatus_NotInfoDesc;
     }
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-    return (SSTAuthorizationStatus)status;
+    return (JHGAuthorizationStatus)status;
 }
 #pragma mark - 检查并请求权限
 + (void)availableAccessForLocationServices:(UIViewController *)currentVC
                              jumpSettering:(BOOL)jumpSettering
                          alertNotAvailable:(BOOL)isAlert
-                               resultBlock:(SSTAuthorizationBlock)resultBlock {
-    SSTAuthorizationStatus status = [self checkAccessForLocationServices];
+                               resultBlock:(JHGAuthorizationBlock)resultBlock {
+    JHGAuthorizationStatus status = [self checkAccessForLocationServices];
     BOOL isAvail = NO;
-    if (status == SSTAuthorizationStatus_NotSupport) {
+    if (status == JHGAuthorizationStatus_NotSupport) {
         if (isAlert) {
             NSString *title = @"打开定位开关";
             NSString *message = [NSString stringWithFormat:@"定位服务未开启，请进入系统【设置】>【隐私】>【定位服务】中打开开关，并允许%@使用定位服务", [self appName]];
@@ -101,7 +101,7 @@
 
         }
        
-    }else if (status == SSTAuthorizationStatus_Denied || status == SSTAuthorizationStatus_Restricted) {
+    }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"开启定位服务";
             NSString *message = [NSString stringWithFormat:@"定位服务受限，请进入系统【设置】>【隐私】>【定位服务】中允许%@使用定位服务", [self appName]];
@@ -109,7 +109,7 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=LOCATION_SERVICES"];
 
             }
-    }else if (status == SSTAuthorizationStatus_NotInfoDesc){
+    }else if (status == JHGAuthorizationStatus_NotInfoDesc){
         if (isAlert) {
             NSString *title = @"访问受限";
             NSString *message = @"请在配置文件中设置描述";
@@ -127,10 +127,10 @@
 + (void)availablecheckAccessForContacts:(UIViewController *)currentVC
                           jumpSettering:(BOOL)jumpSettering
                       alertNotAvailable:(BOOL)isAlert
-                            resultBlock:(SSTAuthorizationBlock)resultBlock; {
-    SSTAuthorizationStatus status = [self checkAccessForContacts];
+                            resultBlock:(JHGAuthorizationBlock)resultBlock; {
+    JHGAuthorizationStatus status = [self checkAccessForContacts];
     BOOL isAvail = NO;
-    if (status == SSTAuthorizationStatus_Denied || status == SSTAuthorizationStatus_Restricted) {
+    if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问通讯录受限";
             NSString *message = [NSString stringWithFormat:@"通讯录访问受限，请进入系统【设置】>【隐私】>【通讯录】中允许%@访问你的通讯录", [self appName]];
@@ -138,14 +138,14 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Contacts"];
 
         }
-    }else if (status == SSTAuthorizationStatus_NotInfoDesc){
+    }else if (status == JHGAuthorizationStatus_NotInfoDesc){
         NSString *title = @"访问受限";
         NSString *message = @"请在配置文件中设置描述";
 
         [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:nil];
      
         
-    } else if (status == SSTAuthorizationStatus_Authorized){
+    } else if (status == JHGAuthorizationStatus_Authorized){
         
         isAvail = YES;
     }else{
@@ -154,11 +154,11 @@
             if (granted)
             {
                 if (resultBlock) {
-                    resultBlock(YES, (SSTAuthorizationStatus)status);
+                    resultBlock(YES, (JHGAuthorizationStatus)status);
                 }
             }else{
                 if (resultBlock) {
-                    resultBlock(NO, (SSTAuthorizationStatus)status);
+                    resultBlock(NO, (JHGAuthorizationStatus)status);
                 }
             }
         });
@@ -171,10 +171,10 @@
 + (void)availablecheckAccessForPhotos:(UIViewController *)currentVC
                         jumpSettering:(BOOL)jumpSettering
                     alertNotAvailable:(BOOL)isAlert
-                          resultBlock:(SSTAuthorizationBlock)resultBlock {
-    SSTAuthorizationStatus status = [self checkAccessForPhotos];
+                          resultBlock:(JHGAuthorizationBlock)resultBlock {
+    JHGAuthorizationStatus status = [self checkAccessForPhotos];
     BOOL isAvail = NO;
-    if (status == SSTAuthorizationStatus_NotSupport) {
+    if (status == JHGAuthorizationStatus_NotSupport) {
         if (isAlert) {
             NSString *title = @"照片不可用";
             NSString *message = @"设备不支持照片，请更换设备后再试";
@@ -183,7 +183,7 @@
 
         }
         
-    }else if (status == SSTAuthorizationStatus_Denied || status == SSTAuthorizationStatus_Restricted) {
+    }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问照片受限";
             NSString *message = [NSString stringWithFormat:@"照片访问受限，请进入系统【设置】>【隐私】>【照片】中允许%@访问照片", [self appName]];
@@ -191,7 +191,7 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Photos"];
 
         }
-    }else if (status == SSTAuthorizationStatus_NotInfoDesc){
+    }else if (status == JHGAuthorizationStatus_NotInfoDesc){
         if (isAlert) {
             NSString *title = @"访问受限";
             NSString *message = @"请在配置文件中设置描述";
@@ -199,20 +199,22 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:nil];
 
         }
-    } else if (status == SSTAuthorizationStatus_Authorized){
+    } else if (status == JHGAuthorizationStatus_Authorized){
       
         isAvail = YES;
     }else{
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-            if (status == PHAuthorizationStatusAuthorized) {
-                if (resultBlock) {
-                    resultBlock(YES, (SSTAuthorizationStatus)status);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (status == PHAuthorizationStatusAuthorized) {
+                    if (resultBlock) {
+                        resultBlock(YES, (JHGAuthorizationStatus)status);
+                    }
+                }else{
+                    if (resultBlock) {
+                        resultBlock(NO, (JHGAuthorizationStatus)status);
+                    }
                 }
-            }else{
-                if (resultBlock) {
-                    resultBlock(NO, (SSTAuthorizationStatus)status);
-                }
-            }
+            });
         }];
         
         return;
@@ -225,10 +227,10 @@
                          presentingVC:(UIViewController *)currentVC
                         jumpSettering:(BOOL)jumpSettering
                     alertNotAvailable:(BOOL)isAlert
-                          resultBlock:(SSTAuthorizationBlock)resultBlock {
-    SSTAuthorizationStatus status = [self checkAccessForCamera:isRear];
+                          resultBlock:(JHGAuthorizationBlock)resultBlock {
+    JHGAuthorizationStatus status = [self checkAccessForCamera:isRear];
     BOOL isAvail = NO;
-    if (status == SSTAuthorizationStatus_NotSupport) {
+    if (status == JHGAuthorizationStatus_NotSupport) {
         if (isAlert) {
             NSString *deviceName = isRear ? @"后置摄像头" : @"前置摄像头";
             NSString *title = [deviceName stringByAppendingString:@"不可用"];
@@ -238,7 +240,7 @@
 
         }
         
-    }else if (status == SSTAuthorizationStatus_Denied || status == SSTAuthorizationStatus_Restricted) {
+    }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问相机受限";
             NSString *message = [NSString stringWithFormat:@"相机访问受限，请进入系统【设置】>【隐私】>【相机】中允许%@访问相机", [self appName]];
@@ -246,7 +248,7 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Camera"];
 
         }
-    }else if (status == SSTAuthorizationStatus_NotInfoDesc){
+    }else if (status == JHGAuthorizationStatus_NotInfoDesc){
         if (isAlert) {
             NSString *title = @"访问受限";
             NSString *message = @"请在配置文件中设置描述";
@@ -254,17 +256,17 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:nil];
 
         }
-    } else if (status == SSTAuthorizationStatus_Authorized){
+    } else if (status == JHGAuthorizationStatus_Authorized){
         isAvail = YES;
     }else{
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
             if (granted) {
                 if (resultBlock) {
-                    resultBlock(YES, (SSTAuthorizationStatus)status);
+                    resultBlock(YES, (JHGAuthorizationStatus)status);
                 }
             }else{
                 if (resultBlock) {
-                    resultBlock(NO, (SSTAuthorizationStatus)status);
+                    resultBlock(NO, (JHGAuthorizationStatus)status);
                 }
             }
         }];
@@ -278,10 +280,10 @@
 + (void)availablecheckAccessForMicrophone:(UIViewController * _Nullable)currentVC
                             jumpSettering:(BOOL)jumpSettering
                         alertNotAvailable:(BOOL)isAlert
-                              resultBlock:(SSTAuthorizationBlock)resultBlock {
-    SSTAuthorizationStatus status = [self checkAccessForMicrophone];
+                              resultBlock:(JHGAuthorizationBlock)resultBlock {
+    JHGAuthorizationStatus status = [self checkAccessForMicrophone];
     BOOL isAvail = NO;
-    if (status == SSTAuthorizationStatus_NotSupport) {
+    if (status == JHGAuthorizationStatus_NotSupport) {
         if (isAlert) {
             NSString *title = @"麦克风不可用";
             NSString *message = @"设备不支持麦克风，请更换设备后再试";
@@ -290,7 +292,7 @@
             
         }
         
-    }else if (status == SSTAuthorizationStatus_Denied || status == SSTAuthorizationStatus_Restricted) {
+    }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问麦克风受限";
             NSString *message = [NSString stringWithFormat:@"麦克风访问受限，请进入系统【设置】>【隐私】>【麦克风】中允许%@访问麦克风", [self appName]];
@@ -298,7 +300,7 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Photos"];
             
         }
-    }else if (status == SSTAuthorizationStatus_NotInfoDesc){
+    }else if (status == JHGAuthorizationStatus_NotInfoDesc){
         if (isAlert) {
             NSString *title = @"访问受限";
             NSString *message = @"请在配置文件中设置描述";
@@ -306,16 +308,16 @@
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:nil];
             
         }
-    } else if (status == SSTAuthorizationStatus_Authorized){
+    } else if (status == JHGAuthorizationStatus_Authorized){
         
         isAvail = YES;
     }else{
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
             if (resultBlock) {
                 if (granted) {
-                    resultBlock(YES, (SSTAuthorizationStatus)status);
+                    resultBlock(YES, (JHGAuthorizationStatus)status);
                 }else{
-                    resultBlock(NO, (SSTAuthorizationStatus)status);
+                    resultBlock(NO, (JHGAuthorizationStatus)status);
                 }
             }
         }];

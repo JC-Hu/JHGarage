@@ -1,9 +1,9 @@
 
-#import "SSTHUDToastUtil.h"
+#import "JHGHUDToastUtil.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <Toast/Toast.h>
 
-@implementation SSTHUDToastUtil
+@implementation JHGHUDToastUtil
 
 #pragma mark - Loading HUD
 /**

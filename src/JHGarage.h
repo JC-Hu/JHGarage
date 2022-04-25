@@ -18,7 +18,7 @@
 //#import "JHUserDefault.h"
 
 // UI
-
+#import "JHGHUDToastUtil.h"
 #import "UIViewController+JHGarage.h"
 #import "UIViewController+JHGTable.h"
 
