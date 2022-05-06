@@ -104,7 +104,7 @@
     }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"开启定位服务";
-            NSString *message = [NSString stringWithFormat:@"定位服务受限，请进入系统【设置】>【隐私】>【定位服务】中允许%@使用定位服务", [self appName]];
+            NSString *message = [NSString stringWithFormat:@"定位服务受限，请进入App设置中允许%@使用定位服务", [self appName]];
 
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=LOCATION_SERVICES"];
 
