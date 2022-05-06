@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83C9B6322824FEBC00A2AF28 /* JHGAccessAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C9B6312824FEBC00A2AF28 /* JHGAccessAuthorization.m */; };
 		83DBB5792814EDB50016CAD8 /* JHGHUDToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5162814EDB40016CAD8 /* JHGHUDToastUtil.m */; };
 		83DBB57A2814EDB50016CAD8 /* JHGQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5182814EDB40016CAD8 /* JHGQRCodeUtil.m */; };
 		83DBB57B2814EDB50016CAD8 /* JHGAppStoreTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB51C2814EDB40016CAD8 /* JHGAppStoreTools.m */; };
-		83DBB57C2814EDB50016CAD8 /* JHGAuthorizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB51F2814EDB40016CAD8 /* JHGAuthorizationManager.m */; };
 		83DBB57D2814EDB50016CAD8 /* JHGSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5222814EDB40016CAD8 /* JHGSwizzle.m */; };
 		83DBB57E2814EDB50016CAD8 /* JHGUrlStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5252814EDB40016CAD8 /* JHGUrlStringUtil.m */; };
 		83DBB57F2814EDB50016CAD8 /* JHGTimeUpdateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5282814EDB40016CAD8 /* JHGTimeUpdateHelper.m */; };
-		83DBB5802814EDB50016CAD8 /* JHGAccessAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB52B2814EDB40016CAD8 /* JHGAccessAuthorization.m */; };
 		83DBB5812814EDB50016CAD8 /* UIImage+JHGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB52D2814EDB40016CAD8 /* UIImage+JHGColor.m */; };
 		83DBB5822814EDB50016CAD8 /* UIButton+AreaExpansion.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB52F2814EDB40016CAD8 /* UIButton+AreaExpansion.m */; };
 		83DBB5832814EDB50016CAD8 /* UIColor+JHGRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DBB5302814EDB40016CAD8 /* UIColor+JHGRandom.m */; };
@@ -99,22 +98,20 @@
 		57376C6813CC44B952A202D5 /* libPods-JHGarage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JHGarage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7ABE95832A852F61E76DB5 /* Pods-JHGarage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHGarage.release.xcconfig"; path = "Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage.release.xcconfig"; sourceTree = "<group>"; };
 		5DFA5293930547C84573D880 /* Pods-JHGarage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHGarage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JHGarage/Pods-JHGarage.debug.xcconfig"; sourceTree = "<group>"; };
+		83C9B6302824FEBC00A2AF28 /* JHGAccessAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAccessAuthorization.h; sourceTree = "<group>"; };
+		83C9B6312824FEBC00A2AF28 /* JHGAccessAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAccessAuthorization.m; sourceTree = "<group>"; };
 		83DBB5152814EDB40016CAD8 /* JHGHUDToastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGHUDToastUtil.h; sourceTree = "<group>"; };
 		83DBB5162814EDB40016CAD8 /* JHGHUDToastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGHUDToastUtil.m; sourceTree = "<group>"; };
 		83DBB5182814EDB40016CAD8 /* JHGQRCodeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGQRCodeUtil.m; sourceTree = "<group>"; };
 		83DBB5192814EDB40016CAD8 /* JHGQRCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGQRCodeUtil.h; sourceTree = "<group>"; };
 		83DBB51B2814EDB40016CAD8 /* JHGAppStoreTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAppStoreTools.h; sourceTree = "<group>"; };
 		83DBB51C2814EDB40016CAD8 /* JHGAppStoreTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAppStoreTools.m; sourceTree = "<group>"; };
-		83DBB51E2814EDB40016CAD8 /* JHGAuthorizationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAuthorizationManager.h; sourceTree = "<group>"; };
-		83DBB51F2814EDB40016CAD8 /* JHGAuthorizationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAuthorizationManager.m; sourceTree = "<group>"; };
 		83DBB5212814EDB40016CAD8 /* JHGSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGSwizzle.h; sourceTree = "<group>"; };
 		83DBB5222814EDB40016CAD8 /* JHGSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGSwizzle.m; sourceTree = "<group>"; };
 		83DBB5242814EDB40016CAD8 /* JHGUrlStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGUrlStringUtil.h; sourceTree = "<group>"; };
 		83DBB5252814EDB40016CAD8 /* JHGUrlStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGUrlStringUtil.m; sourceTree = "<group>"; };
 		83DBB5272814EDB40016CAD8 /* JHGTimeUpdateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGTimeUpdateHelper.h; sourceTree = "<group>"; };
 		83DBB5282814EDB40016CAD8 /* JHGTimeUpdateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGTimeUpdateHelper.m; sourceTree = "<group>"; };
-		83DBB52A2814EDB40016CAD8 /* JHGAccessAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGAccessAuthorization.h; sourceTree = "<group>"; };
-		83DBB52B2814EDB40016CAD8 /* JHGAccessAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHGAccessAuthorization.m; sourceTree = "<group>"; };
 		83DBB52D2814EDB40016CAD8 /* UIImage+JHGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JHGColor.m"; sourceTree = "<group>"; };
 		83DBB52E2814EDB40016CAD8 /* UIAlertController+JHGAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JHGAlert.h"; sourceTree = "<group>"; };
 		83DBB52F2814EDB40016CAD8 /* UIButton+AreaExpansion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AreaExpansion.m"; sourceTree = "<group>"; };
@@ -302,8 +299,8 @@
 		83DBB51D2814EDB40016CAD8 /* JHGAuthorization */ = {
 			isa = PBXGroup;
 			children = (
-				83DBB51E2814EDB40016CAD8 /* JHGAuthorizationManager.h */,
-				83DBB51F2814EDB40016CAD8 /* JHGAuthorizationManager.m */,
+				83C9B6302824FEBC00A2AF28 /* JHGAccessAuthorization.h */,
+				83C9B6312824FEBC00A2AF28 /* JHGAccessAuthorization.m */,
 			);
 			path = JHGAuthorization;
 			sourceTree = "<group>";
@@ -333,15 +330,6 @@
 				83DBB5282814EDB40016CAD8 /* JHGTimeUpdateHelper.m */,
 			);
 			path = JHGTimeUpdateHelper;
-			sourceTree = "<group>";
-		};
-		83DBB5292814EDB40016CAD8 /* AccessAuthorization */ = {
-			isa = PBXGroup;
-			children = (
-				83DBB52A2814EDB40016CAD8 /* JHGAccessAuthorization.h */,
-				83DBB52B2814EDB40016CAD8 /* JHGAccessAuthorization.m */,
-			);
-			path = AccessAuthorization;
 			sourceTree = "<group>";
 		};
 		83DBB52C2814EDB40016CAD8 /* Category */ = {
@@ -560,7 +548,6 @@
 			isa = PBXGroup;
 			children = (
 				83DBB52C2814EDB40016CAD8 /* Category */,
-				83DBB5292814EDB40016CAD8 /* AccessAuthorization */,
 				83DBB5142814EDB40016CAD8 /* HudToastUtil */,
 				83DBB51A2814EDB40016CAD8 /* JHGAppStoreTools */,
 				83DBB51D2814EDB40016CAD8 /* JHGAuthorization */,
@@ -897,6 +884,7 @@
 				85A5388721B793F900E510AF /* JHGHttpEngine.m in Sources */,
 				8562B1C521DF521E00C2C6D7 /* UITableViewCell+JHCellConfig.m in Sources */,
 				83DBB59E2814EDB50016CAD8 /* UIControl+BlocksKit.m in Sources */,
+				83C9B6322824FEBC00A2AF28 /* JHGAccessAuthorization.m in Sources */,
 				83DBB5962814EDB50016CAD8 /* UIGestureRecognizer+BlocksKit.m in Sources */,
 				85A5388B21B793F900E510AF /* JHGRequestItem.m in Sources */,
 				83DBB57F2814EDB50016CAD8 /* JHGTimeUpdateHelper.m in Sources */,
@@ -919,7 +907,6 @@
 				85AC90BD222CE46F00B00262 /* JHGTouchButton.m in Sources */,
 				85A5389421B7944700E510AF /* ZTBaseRequestItem.m in Sources */,
 				8566E91E24E839C300FEF0B1 /* JHGSeparatorCell.m in Sources */,
-				83DBB5802814EDB50016CAD8 /* JHGAccessAuthorization.m in Sources */,
 				85B50C1523F90D2700277F47 /* ListDemoViewController.m in Sources */,
 				85DC4CF022E1AD0900DBA83D /* JHBaseUserDefaults.m in Sources */,
 				83DBB59A2814EDB50016CAD8 /* NSObject+A2BlockDelegate.m in Sources */,
@@ -933,7 +920,6 @@
 				8592BA36228D23360085DFA7 /* JHGDomainSwitchViewController.m in Sources */,
 				85A985C627E78CAC00868630 /* JHGPageViewController.m in Sources */,
 				83DBB57E2814EDB50016CAD8 /* JHGUrlStringUtil.m in Sources */,
-				83DBB57C2814EDB50016CAD8 /* JHGAuthorizationManager.m in Sources */,
 				83DBB5832814EDB50016CAD8 /* UIColor+JHGRandom.m in Sources */,
 				85FC832A21A6F4DF0067F46B /* AppDelegate.m in Sources */,
 				85A985BE27E78BD300868630 /* JHGJudgeTextField.m in Sources */,

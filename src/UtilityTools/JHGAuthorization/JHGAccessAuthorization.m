@@ -133,7 +133,7 @@
     if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问通讯录受限";
-            NSString *message = [NSString stringWithFormat:@"通讯录访问受限，请进入系统【设置】>【隐私】>【通讯录】中允许%@访问你的通讯录", [self appName]];
+            NSString *message = [NSString stringWithFormat:@"通讯录访问受限，请进入App设置中允许%@访问你的通讯录", [self appName]];
 
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Contacts"];
 
@@ -186,7 +186,7 @@
     }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问照片受限";
-            NSString *message = [NSString stringWithFormat:@"照片访问受限，请进入系统【设置】>【隐私】>【照片】中允许%@访问照片", [self appName]];
+            NSString *message = [NSString stringWithFormat:@"照片访问受限，请进入App设置中允许%@访问照片", [self appName]];
 
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Photos"];
 
@@ -243,7 +243,7 @@
     }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问相机受限";
-            NSString *message = [NSString stringWithFormat:@"相机访问受限，请进入系统【设置】>【隐私】>【相机】中允许%@访问相机", [self appName]];
+            NSString *message = [NSString stringWithFormat:@"相机访问受限，请进入App设置中允许%@访问相机", [self appName]];
 
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Camera"];
 
@@ -260,15 +260,17 @@
         isAvail = YES;
     }else{
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-            if (granted) {
-                if (resultBlock) {
-                    resultBlock(YES, (JHGAuthorizationStatus)status);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (granted) {
+                    if (resultBlock) {
+                        resultBlock(YES, (JHGAuthorizationStatus)status);
+                    }
+                }else{
+                    if (resultBlock) {
+                        resultBlock(NO, (JHGAuthorizationStatus)status);
+                    }
                 }
-            }else{
-                if (resultBlock) {
-                    resultBlock(NO, (JHGAuthorizationStatus)status);
-                }
-            }
+            });
         }];
         return;
     }
@@ -295,7 +297,7 @@
     }else if (status == JHGAuthorizationStatus_Denied || status == JHGAuthorizationStatus_Restricted) {
         if (isAlert) {
             NSString *title = @"访问麦克风受限";
-            NSString *message = [NSString stringWithFormat:@"麦克风访问受限，请进入系统【设置】>【隐私】>【麦克风】中允许%@访问麦克风", [self appName]];
+            NSString *message = [NSString stringWithFormat:@"麦克风访问受限，请进入App设置中允许%@访问麦克风", [self appName]];
             
             [self showAlertVCWithTitle:title message:message currentVC:currentVC jumpSettering:jumpSettering settingURLString:@"root=Photos"];
             
@@ -313,13 +315,15 @@
         isAvail = YES;
     }else{
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
-            if (resultBlock) {
-                if (granted) {
-                    resultBlock(YES, (JHGAuthorizationStatus)status);
-                }else{
-                    resultBlock(NO, (JHGAuthorizationStatus)status);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (resultBlock) {
+                    if (granted) {
+                        resultBlock(YES, (JHGAuthorizationStatus)status);
+                    }else{
+                        resultBlock(NO, (JHGAuthorizationStatus)status);
+                    }
                 }
-            }
+            });
         }];
         
         return;
@@ -352,32 +356,23 @@
 }
 
 + (void)openURLString:(NSString *)string {
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"App-Prefs:" stringByAppendingString:string]] options:@{} completionHandler:nil];
-    }else{
-
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"prefs:" stringByAppendingString:string]]];
-
-    }
     
+    NSURL * settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    
+    if([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
+        
+        [[UIApplication sharedApplication] openURL:settingUrl options:@{} completionHandler:nil];
+    }
 }
 + (BOOL)whetherCanJumpToSetting {
     static BOOL canJump = NO;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
-        NSArray *URLTypes = [info objectForKey:@"CFBundleURLTypes"];
-        for (NSDictionary *childURLs in URLTypes) {
-            NSArray *URLScheme = [childURLs objectForKey:@"CFBundleURLSchemes"];
-            if ([URLScheme isKindOfClass:[NSArray class]]  && URLScheme.count) {
-                for (NSString *string in URLScheme) {
-                    if ([string isKindOfClass:[NSString class]] && [string isEqualToString:@"prefs"]) {
-                        canJump = YES;
-                        break;
-                    }
-                }
-
-            }
+        
+        NSURL * settingUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        
+        if([[UIApplication sharedApplication] canOpenURL:settingUrl]) {
+            canJump = YES;
         }
     });
     return canJump;
