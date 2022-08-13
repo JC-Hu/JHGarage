@@ -27,11 +27,11 @@ static NSString * const JHCellConfig_Key_CellConfig;
 }
 
 #pragma mark
-- (void)setCellConfig:(JHCellConfig *)cellConfig
+- (void)setJhg_CellConfig:(JHCellConfig *)cellConfig
 {
     objc_setAssociatedObject(self, &JHCellConfig_Key_CellConfig, cellConfig, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-- (JHCellConfig *)cellConfig
+- (JHCellConfig *)jhg_cellConfig
 {
     JHCellConfig *_value = objc_getAssociatedObject(self, &JHCellConfig_Key_CellConfig);
     return _value;

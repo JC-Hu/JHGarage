@@ -35,7 +35,7 @@
 
 - (void)updateContentWithCellConfig:(JHCellConfig *)cellConfig
 {
-    JHGSeparatorCellModel *model = self.cellConfig.dataModel;
+    JHGSeparatorCellModel *model = self.jhg_cellConfig.dataModel;
     
     self.mainView.backgroundColor = model.color;
     

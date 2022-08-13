@@ -14,7 +14,7 @@
 
 @interface UITableViewCell (JHCellConfig) <JHCellConfigProtocol>
 
-@property (nonatomic, strong) JHCellConfig *cellConfig;
+@property (nonatomic, strong) JHCellConfig *jhg_cellConfig;
 
 
 @end
