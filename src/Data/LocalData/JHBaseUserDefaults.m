@@ -137,11 +137,9 @@ static const char * getPropertyType(objc_property_t property) {
 
 - (void)saveWithDict:(NSDictionary *)dict {
     NSMutableArray *properties = [self getProperties];
-    DLog(@"saveWithDict %@",dict);
 
     for (NSString *property in properties) {
         id value = [dict objectForKey:property];
-        DLog(@"%@",value);
         if (value) {        
             NSString *setterSelString = [NSString stringWithFormat:@"set%@:", [self initialUpperString:property]];
             SEL setSel = NSSelectorFromString(setterSelString);
