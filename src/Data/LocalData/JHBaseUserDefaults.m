@@ -3,8 +3,6 @@
 
 @implementation JHBaseUserDefaults
 
-static JHBaseUserDefaults *userDefaults = nil;
-
 + (instancetype)sharedManager {
     Class selfClass = [self class];
     // 从类中获取对象
@@ -17,7 +15,7 @@ static JHBaseUserDefaults *userDefaults = nil;
             objc_setAssociatedObject(selfClass, @"sharedInstance", instance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
     }
-    return userDefaults;
+    return instance;
 }
 
 - (NSString *)userDefaultKeyForProperty:(NSString *)propertyName
