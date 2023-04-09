@@ -15,6 +15,7 @@
             objc_setAssociatedObject(selfClass, @"sharedInstance", instance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
     }
+    
     return instance;
 }
 
@@ -65,7 +66,7 @@
             if ([propertyType isEqualToString:@"BOOL"]) {
                 setImp = imp_implementationWithBlock(setBoolMethodBlock);
                 getImp = imp_implementationWithBlock(getBoolMethodBlock);
-            } else if ([propertyType isEqualToString:@"float"] || [propertyType isEqualToString:@"int"] || [propertyType isEqualToString:@"double"] || [propertyType isEqualToString:@"NSInteger"]) {
+            } else if ([propertyType isEqualToString:@"float"] || [propertyType isEqualToString:@"int"] || [propertyType isEqualToString:@"double"] || [propertyType isEqualToString:@"NSInteger"]|| [propertyType isEqualToString:@"NSUInteger"]) {
                 setImp = imp_implementationWithBlock(setIntegerMethodBlock);
                 getImp = imp_implementationWithBlock(getIntegerMethodBlock);
             } else {
@@ -96,6 +97,10 @@ static const char * getPropertyType(objc_property_t property) {
         return "double";
     } else if (strcmp(rawPropertyType, @encode(BOOL)) == 0) {
         return "BOOL";
+    } else if (strcmp(rawPropertyType, @encode(NSInteger)) == 0) {
+        return "NSInteger";
+    } else if (strcmp(rawPropertyType, @encode(NSUInteger)) == 0) {
+        return "NSUInteger";
     }
 //    else {
         return "id";
@@ -130,4 +135,26 @@ static const char * getPropertyType(objc_property_t property) {
     }
 }
 
+- (void)saveWithDict:(NSDictionary *)dict {
+    NSMutableArray *properties = [self getProperties];
+    DLog(@"saveWithDict %@",dict);
+
+    for (NSString *property in properties) {
+        id value = [dict objectForKey:property];
+        DLog(@"%@",value);
+        if (value) {        
+            NSString *setterSelString = [NSString stringWithFormat:@"set%@:", [self initialUpperString:property]];
+            SEL setSel = NSSelectorFromString(setterSelString);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [self performSelector:setSel withObject:value];
+#pragma clang diagnostic pop
+        }
+    }
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
 @end

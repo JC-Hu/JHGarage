@@ -6,4 +6,6 @@
 
 - (void)removeAll;
 
+- (void)saveWithDict:(NSDictionary *)dict;
+
 @end
