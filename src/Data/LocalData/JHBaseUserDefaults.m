@@ -140,7 +140,7 @@ static const char * getPropertyType(objc_property_t property) {
 
     for (NSString *property in properties) {
         id value = [dict objectForKey:property];
-        if (value) {        
+        if (value&&![value isEqual:NSNull.null]) {
             NSString *setterSelString = [NSString stringWithFormat:@"set%@:", [self initialUpperString:property]];
             SEL setSel = NSSelectorFromString(setterSelString);
 #pragma clang diagnostic push
