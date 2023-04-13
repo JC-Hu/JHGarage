@@ -101,7 +101,7 @@
  @param message 消息
  */
 + (void)showToast:(NSString *)message {
-    [self showToast:message inView:nil];
+    [self showToast:message inView:[UIApplication sharedApplication].keyWindow];
 }
 
 /**
