@@ -1,0 +1,105 @@
+{
+  "name": "JHGarage",
+  "version": "0.1.0",
+  "summary": "Personal Usage.",
+  "homepage": "https://github.com/JC-Hu/JHGarage",
+  "license": "MIT",
+  "authors": {
+    "JC-Hu": "jchu_dlcn@icloud.com"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "git": "https://github.com/JC-Hu/JHGarage.git",
+    "tag": "0.1.0"
+  },
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "requires_arc": true,
+  "source_files": "src/**/*.{h,m,c,mm}",
+  "resources": [
+    "src/**/*.{bundle,plist,xib,storyboard}"
+  ],
+  "vendored_frameworks": "src/**/*.framework",
+  "vendored_libraries": "src/**/*.a",
+  "dependencies": {
+    "YYModel": [
+
+    ],
+    "YYCache": [
+
+    ],
+    "YYImage": [
+
+    ],
+    "YYWebImage": [
+
+    ],
+    "YYText": [
+
+    ],
+    "YYDispatchQueuePool": [
+
+    ],
+    "YYAsyncLayer": [
+
+    ],
+    "YYCategories": [
+
+    ],
+    "AFNetworking/Reachability": [
+      "~> 4.0.1"
+    ],
+    "AFNetworking/Serialization": [
+      "~> 4.0.1"
+    ],
+    "AFNetworking/Security": [
+      "~> 4.0.1"
+    ],
+    "AFNetworking/NSURLSession": [
+      "~> 4.0.1"
+    ],
+    "SDWebImage": [
+
+    ],
+    "MBProgressHUD": [
+
+    ],
+    "Masonry": [
+
+    ],
+    "MJRefresh": [
+
+    ],
+    "Toast": [
+      "~> 4.0.0"
+    ],
+    "JHCellConfig": [
+
+    ],
+    "IQKeyboardManager": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Data",
+      "source_files": "src/Data/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "Other",
+      "source_files": "src/Other/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "UI",
+      "source_files": "src/UI/**/*.{h,m,c,mm}"
+    },
+    {
+      "name": "UtilityTools",
+      "source_files": "src/UtilityTools/**/*.{h,m,c,mm}"
+    }
+  ]
+}

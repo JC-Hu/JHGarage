@@ -7,42 +7,13 @@ targets = ['JHGarage']
 targets.each do |t|
   target t do
     
-    # Pods for JHGarage
     inhibit_all_warnings!
-#    use_frameworks!
-    
-    pod 'YYModel'
-    pod 'YYCache'
-    pod 'YYImage'
-    pod 'YYWebImage'
-    pod 'YYText'
-    pod 'YYDispatchQueuePool'
-    pod 'YYAsyncLayer'
-    pod 'YYCategories'
+    use_frameworks!
     
     
-    # 网络数据--
-    pod 'AFNetworking', '~> 4.0.1', :subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
+    #本地pod
+    pod 'JHGarage', :path => './'
     
-    # 本地数据--
-    
-    # UI--
-    # Basic
-    
-    pod 'SDWebImage'
-    pod 'MBProgressHUD'
-    pod 'Masonry'
-    pod 'MJRefresh'
-    pod 'Toast', '~> 4.0.0'
-    pod 'MyLayout'
-    
-    # Table
-    pod 'JHCellConfig', '2.2.0'
-    
-    # other
-    pod 'IQKeyboardManager'
-    
-    # 工具--
   end
 end
 
