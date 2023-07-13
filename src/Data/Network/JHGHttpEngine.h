@@ -21,7 +21,7 @@
 @class AFHTTPSessionManager;
 @interface JHGHttpEngine : NSObject
 
-MMSingletonInterface
++ (instancetype)sharedInstance;
 
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, strong) AFHTTPSessionManager *uploadManager;

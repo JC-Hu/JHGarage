@@ -9,6 +9,7 @@
 #import "JHGUploadFormModel.h"
 
 #if defined(DEBUG) && DEBUG
+#ifdef DEBUG
 #define HttpRequestLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
 #else
 #define HttpRequestLog(...)
@@ -17,7 +18,21 @@
 
 @implementation JHGHttpEngine
 
-MMSingletonImplementation
++ (instancetype)sharedInstance {
+    Class selfClass = [self class];
+    // 从类中获取对象
+    id instance = objc_getAssociatedObject(selfClass, @"sharedInstance");
+    @synchronized (self) {
+        if (!instance) {
+            // 不存在，创建对象
+            instance = [[super allocWithZone:NULL] init];
+            // 给类绑定对象
+            objc_setAssociatedObject(selfClass, @"sharedInstance", instance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        }
+    }
+    
+    return instance;
+}
 
 - (AFHTTPSessionManager *)createAFSessionManager
 {
